@@ -71,11 +71,46 @@ A comprehensive guide for acquiring users through Reddit without getting banned 
 
 | Subreddit | Best For |
 |-----------|----------|
-| r/SideProject | Sharing what you built |
+| r/SideProject | Sharing what you built — "gold standard for project sharing" |
 | r/Entrepreneur | Business journey stories |
 | r/startups | Startup advice threads |
 | r/SaaS | SaaS-specific discussions |
 | r/IndieHackers | Very welcoming to builders |
+
+### Beta-Friendly Subreddits (Self-Promo Allowed)
+
+| Subreddit | Best For |
+|-----------|----------|
+| r/alphaandbetausers | SaaS products, mobile apps, web services in beta |
+| r/TestMyApp | Mobile apps, web apps, fitness/productivity apps |
+| r/IMadeThis | Showcasing personal projects |
+| r/shamelessplug | Direct self-promotion allowed |
+
+---
+
+## Best Times to Post
+
+### Peak Engagement Windows (US Eastern Time)
+
+| Time | Why |
+|------|-----|
+| **6-9 AM EST** | Best overall — posts gain momentum before noon traffic |
+| **12-2 PM EST** | Lunch break browsing |
+| **7-9 PM EST** | Evening browsing (more competition) |
+
+### Best Days
+- **Tuesday, Wednesday, Thursday** = highest activity
+- **Monday/Friday** = slight dip
+- **Weekends** = lower activity, less competition
+
+### Why Timing Matters
+- The **first hour** after posting is critical — early upvotes signal quality to the algorithm
+- Morning posts outperform evening posts because they gain momentum before peak traffic
+- A post that gains 100 upvotes in 10 minutes ranks higher than one that gains 100 in 10 hours
+
+### Fitness Subreddit Timing
+- r/fitness and r/GYM peak during US morning hours (6-9 AM EST)
+- Evening posts face more competition but higher browsing volume
 
 ---
 
@@ -193,7 +228,7 @@ reddit.com/r/fitness "overwhelmed" workout
 ## What NOT TO DO
 
 1. **Don't drop links** in your first posts
-2. **Don't post the same thing** in multiple communities
+2. **Don't post the same thing** in multiple communities (triggers spam detection)
 3. **Don't make your profile** look like a sales page
 4. **Don't write low-effort comments** with links
 5. **Don't argue** with downvoters or mods
@@ -202,6 +237,104 @@ reddit.com/r/fitness "overwhelmed" workout
 8. **Don't say "Check out my app!"** — too salesy
 9. **Don't ignore negative feedback** — respond gracefully
 10. **Don't be pushy** if someone says no
+11. **Don't use a VPN** when creating a new account
+12. **Don't edit links into posts** after gaining traction (gets flagged)
+13. **Don't use marketing adjectives** (best, leading, revolutionary, game-changing)
+14. **Don't use duplicate content** — Reddit detects copy-paste across posts
+15. **Don't use corporate/branded usernames** (e.g., "TenXRep_Official")
+
+---
+
+## The "Proof Without Pitch" Framework
+
+When you DO post about TenXRep, use this structure:
+
+1. **Lead with clear disclosure:** "I'm the founder of TenXRep"
+2. **Share concrete data:** 3-7 specific numbers (users, feedback themes, time to build, etc.)
+3. **Document methods people can replicate** without your product
+4. **Include tradeoffs and what didn't work** — honesty builds trust
+5. **No link in the post** — let people ask for it
+
+**Example:**
+> I'm the founder of TenXRep. After 3 months of beta testing with 47 users, here's what I learned about workout tracking:
+>
+> - 80% of users said they didn't know which muscles they were neglecting
+> - The most requested feature was seeing muscle groups visually (which led me to build 3D visualization)
+> - What didn't work: trying to compete with Hevy/Strong on tracking features — they're too established
+>
+> If anyone's interested in the muscle visualization approach, happy to share more.
+
+---
+
+## The CTA Ladder (Trust-Building Progression)
+
+Progress through these levels over weeks/months:
+
+| Level | Action | When to Use |
+|-------|--------|-------------|
+| 1 | Zero-link posts (pure help, no asks) | First 2 weeks |
+| 2 | Comment-first seeding (10-20 threads/week, no product mention) | Weeks 2-4 |
+| 3 | Soft mentions without links | After 200+ karma |
+| 4 | Opt-in resources via DM only ("DM me if interested") | After positive engagement |
+| 5 | Links only when explicitly requested | When someone asks |
+| 6 | Hard CTAs | Rare — only in promo-allowed spaces |
+
+---
+
+## Weekly Engagement Cadence
+
+| Day | Activity |
+|-----|----------|
+| Mon/Wed/Fri | 5-7 high-effort comments (no promo) |
+| Tuesday | One "proof post" in builder subreddit (no link) |
+| Thursday | Feedback-request post or AMA |
+| Daily | 10-minute follow-up on previous comments |
+
+**Comment-to-Post Ratio:** Comments generate 3-5x more qualified engagement than posts for most SaaS companies.
+
+---
+
+## Karma Building (The Right Way)
+
+### Do:
+- Comment early on rising posts (first 20 comments = more visibility)
+- Be helpful in educational/professional subreddits (earn karma 30% faster)
+- Short, easy-to-understand, emotional/funny comments perform best
+- Post daily on niche hobby subs and act like a real user
+
+### Don't:
+- Post more than 4 times per hour or 12-16 times daily
+- Repost popular content or use clickbait
+- Downvotes hurt more than upvotes help (1 downvote = -2 to -3 karma, 1 upvote = +1)
+
+### Quick Karma Subreddits (to build baseline):
+- r/AskReddit — answer questions thoughtfully
+- r/pics — comment on rising posts
+- r/todayilearned — add context to posts
+- Then transition to r/fitness, r/bodyweightfitness for relevant karma
+
+---
+
+## Shadowban Prevention & Detection
+
+### What is a Shadowban?
+Your posts/comments are visible to YOU but hidden from everyone else. You won't know unless you check.
+
+### How to Check:
+1. **Incognito test:** Open your profile in incognito/private mode. If "page not found" = shadowbanned
+2. **r/ShadowBan:** Post there — a bot will tell you your status
+3. **Online tools:** cable.ayra.ch/reddit/ or shadowbanchecker.net
+
+### Prevention:
+- Don't use VPN when creating accounts
+- Don't interact with your posts from alternate accounts
+- Don't spam multiple subreddits at once with the same link
+- Don't post duplicate content
+
+### If Shadowbanned:
+- Don't create a new account to evade (leads to permanent ban)
+- File an appeal at reddit.com/appeals
+- Be polite and honest
 
 ---
 
@@ -295,14 +428,31 @@ go.tenxrep.com/bwf → tenxrep.com?utm_source=reddit&utm_medium=social&utm_campa
 
 ## Gotchas & Lessons Learned
 
-*[Add your own learnings here as you go]*
-
 ### From Research:
+
+**Account & Posting:**
 - The failure rate is 80% — patience and authenticity are everything
+- Accounts that skip warmup have a 90% ban rate within 30 days
+- One marketer: "My old strategy was: create account, join relevant subreddits, start commenting with links. Within 3 days, banned. Every single time."
+- Reddit detects duplicate content and flags it — never copy-paste the same comment
+
+**Content & Engagement:**
 - Posts that include personal stories have the best engagement
 - Specificity wins: "I built a tool that does X because I was tired of Y" > "I built a workout app"
-- Reddit rewards patience and punishes shortcuts
+- Comments generate 3-5x more qualified engagement than posts
+- The first hour after posting is everything — early upvotes are crucial
 - A post from 6 hours ago with 3 comments might explode to 200 by tomorrow
+
+**What Gets Flagged:**
+- The "stealth promotion pattern": Generic value story → humble disclaimer → product mention → link drop
+- Using "humblebrag" tone or marketing speak
+- Editing links into posts after gaining traction
+- Corporate/branded usernames
+
+**Timing:**
+- Morning posts consistently outperform evening posts
+- Engagement starts to decline after 12-3 PM
+- Posts published late in the day often miss the noon traffic cycle and get buried
 
 ### From Experience:
 - *(Add your own learnings as you engage)*
@@ -311,13 +461,32 @@ go.tenxrep.com/bwf → tenxrep.com?utm_source=reddit&utm_medium=social&utm_campa
 
 ## Sources
 
+### Primary Research:
 - [3 Founders Who Found 100+ Customers on Reddit](https://www.indiehackers.com/post/3-founders-who-found-100-customers-on-reddit-real-numbers-real-stories-534dd26fec)
 - [Reddit Marketing Secrets for Indie Hackers 2025](https://superframeworks.com/blog/reddit-marketing-guide)
 - [How to Promote SaaS on Reddit Without Getting Banned](https://www.replyagent.ai/blog/how-promote-saas-reddit-without-getting-banned)
 - [How to Get Customers from Reddit in 2025](https://www.billybuzz.com/blog/how-to-get-customers-from-reddit-in-2025)
 - [Founders Who Did a Damn Good Job on Reddit](https://www.indiehackers.com/post/these-founders-did-a-damn-good-job-promoting-their-startups-on-reddit-so-i-analyzed-them-2a2b16e0c4)
-- [SubredditSignals: 9 Proven Reddit Marketing Tips](https://www.subredditsignals.com/blog/subreddit-signals-the-reddit-marketing-tool-for-authentic-ban-safe-growth-in-2026-plus-the-7-step-system-saas-founders-use-to-turn-threads-into-leads)
-- [Using Reddit for Organic Brand Promotion](https://www.francescatabor.com/articles/2025/8/21/using-reddit-for-organic-brand-promotion-a-step-by-step-guide)
+- [SubredditSignals: 9 Proven SaaS Reddit Plays](https://www.subredditsignals.com/blog/stop-value-post-backlash-saas-reddit-marketing-that-actually-drives-leads-without-getting-banned)
+
+### Timing & Algorithm:
+- [Best Times to Post on Reddit](https://www.singlegrain.com/search-everywhere-optimization/best-times-to-post-on-reddit-for-maximum-engagement/)
+- [Best Time to Post on Reddit 2025](https://socialbu.com/blog/best-time-to-post-on-reddit)
+- [Delay for Reddit Analysis](https://www.delayforreddit.com/analysis)
+
+### Rules & Bans:
+- [Reddit Self-Promotion Rules](https://www.replyagent.ai/blog/reddit-self-promotion-rules-naturally-mention-product)
+- [7 Reddit Marketing Mistakes That Get You Banned](https://www.reddit-radar-marketing.com/blog/reddit-marketing-mistakes)
+- [How to Promote Without Getting Banned](https://www.wappkit.com/blog/reddit-promotion-without-ban-guide-2025)
+
+### Karma & Shadowbans:
+- [How to Get Karma on Reddit Fast](https://multilogin.com/blog/how-to-get-karma-on-reddit/)
+- [Reddit Karma for Marketing Success](https://www.singlegrain.com/search-everywhere-optimization/reddit-karma-how-to-build-high-karma-accounts-for-marketing-success/)
+- [Reddit Shadowban Detection](https://redaccs.com/reddit-shadowban/)
+
+### Self-Promo Subreddits:
+- [Top 10 Subreddits That Allow Self-Promotion](https://toffu.ai/blog/top-10-subreddits-self-promotion-2025)
+- [Marketing on r/SideProject](https://www.mediafa.st/marketing-on-rsideproject)
 
 ---
 
