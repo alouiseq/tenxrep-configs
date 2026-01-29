@@ -27,6 +27,17 @@ From user currently on Fitbod looking for alternatives:
 - No data export
 - **TenXRep advantage:** Already web-based, works on desktop
 
+### Wearable Integration Expectations
+Users expect fitness apps to integrate with their devices:
+- **Apple Watch** - Log sets from wrist, sync workout data
+- **Apple Health / HealthKit** - Read/write workout data
+- **Garmin** - Less common, usually Garmin has its own tracking
+- **Google Fit** - Android equivalent of Apple Health
+
+**Evidence:** Users mention Strong and Hevy having Apple Health integration. This is becoming table stakes for serious fitness apps.
+
+**TenXRep limitation:** As a PWA/web app, TenXRep cannot integrate with Apple Health or have a native Watch app. This is a platform limitation, not a missing feature.
+
 ### What Users DON'T Mention (Unprompted)
 - Muscle visualization (TenXRep's differentiator)
 - 3D anatomy views
@@ -89,6 +100,7 @@ This doesn't mean it's not valuable - they may not know it exists. But it sugges
 | Feature | Frequency | Effort | Priority |
 |---------|-----------|--------|----------|
 | Workout programs | High (3+ mentions) | Medium-High | High - blocks conversions |
+| Apple Health/Watch integration | Medium (expected) | N/A | N/A - PWA limitation |
 | Data export | 1 mention | Low | Medium |
 | Dumbbell-only program | 1 mention | Medium | Medium |
 | Bikini/lower body program | 1 mention | Medium | Low (niche) |
@@ -102,6 +114,8 @@ This doesn't mean it's not valuable - they may not know it exists. But it sugges
 - Has 25+ programs including dumbbell-only
 - Generous free tier
 - Frequently recommended in tracking threads
+- Has Apple Health integration
+- Has Apple Watch app
 
 ### Fitbod
 - AI-driven recommendations (strength)
@@ -114,6 +128,8 @@ This doesn't mean it's not valuable - they may not know it exists. But it sugges
 - No programs
 - Showing age in 2026
 - No smart features
+- Has Apple Health integration
+- Has Apple Watch app
 
 ---
 
@@ -140,4 +156,4 @@ This doesn't mean it's not valuable - they may not know it exists. But it sugges
 
 ---
 
-*Last updated: 2026-01-27*
+*Last updated: 2026-01-28*
