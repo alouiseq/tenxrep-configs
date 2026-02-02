@@ -45,6 +45,8 @@ Users expect fitness apps to integrate with their devices:
 
 This doesn't mean it's not valuable - they may not know it exists. But it suggests this feature needs education/demonstration to land, not just a bullet point in a feature list.
 
+**UPDATE:** When shown to the right audience (Thread 5), muscle visualization DOES resonate strongly. Target user profile: education-focused gym-goers who want to understand the "why" behind exercises, not just follow instructions. They exist, but they don't ask for it - you have to show them.
+
 ---
 
 ## Reddit Threads Archive
@@ -92,6 +94,24 @@ This doesn't mean it's not valuable - they may not know it exists. But it sugges
 **Key Quote:** "I wish fitbod had a PC interface, a way to export data... but other than that it does a good job"
 **Relevance:** TenXRep is web-based (has PC interface by default)
 **Action:** Potential differentiator to highlight; consider data export feature
+
+---
+
+### Thread 5: Lost in the Gym (First Beta Tester Lead)
+**Subreddit:** r/fitness (likely)
+**Post:** User feeling "lost in the gym"
+**My Response:** Mentioned guided programs (Strong, Hevy, JEFIT), then offered TenXRep beta for muscle targeting visualization.
+**Initial User:** Declined beta ("I don't think I'm consistent enough") but appreciated the offer.
+**Second User (unsolicited):**
+> "I'd LOVE to beta test this app. I'm in the gym 3-4x a week and even though I have a trainer, getting the visuals helps immensely on the times she's not there. Plus, I'm obsessed with how muscles and our bodies work and the physics involved. This would also help a lot when I'm giving tips for workouts to friends."
+
+**Key Insights:**
+- First real validation that 3D muscle visualization resonates with right audience
+- User profile: serious (3-4x/week), has trainer, education-focused, shares tips with friends
+- Mentioned wanting visuals for when trainer isn't there (use case)
+- "Obsessed with how muscles and bodies work" = perfect target user
+
+**Action:** DM beta access. This is the user persona to target - people who want to understand the "why" behind their workouts, not just follow instructions.
 
 ---
 
@@ -148,6 +168,7 @@ This doesn't mean it's not valuable - they may not know it exists. But it sugges
 
 ## Next Actions
 
+- [ ] DM Thread 5 user with beta access (first real lead for visualization feature)
 - [ ] Consider adding 1-2 simple programs (dumbbell-only, basic PPL)
 - [ ] Add data export feature (CSV)
 - [ ] Create demo/video showing 3D visualization value
