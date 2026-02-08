@@ -207,3 +207,4 @@ Each project has comprehensive documentation:
 - **Web:** `tenxrep-web/CLAUDE.md` and `tenxrep-web/docs/`
 - **Marketing:** `tenxrep-marketing/CLAUDE.md`
 - **URL Shortener:** `tenxrep-go/vercel.json` (minimal config, uses API short-links endpoint)
+- **Monetization:** [`docs/MONETIZATION_STRATEGY.md`](docs/MONETIZATION_STRATEGY.md) - Pricing model, feature access matrix, trial strategy
