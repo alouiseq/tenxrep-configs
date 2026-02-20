@@ -18,6 +18,10 @@ tmux send-keys -t $SESSION:dev.1 'source venv/bin/activate && python --version &
 # Root window
 tmux new-window -t $SESSION -n "root" -c "$ROOT_DIR"
 
+# Set terminal tab title
+tmux set-option -t $SESSION set-titles on
+tmux set-option -t $SESSION set-titles-string "TenXRep Dev"
+
 # Key bindings: Alt+Arrow to navigate windows and panes
 tmux bind-key -n M-Right next-window
 tmux bind-key -n M-Left previous-window
