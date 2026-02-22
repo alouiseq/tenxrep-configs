@@ -1,2 +1,8 @@
 # Ignore all tenxrep project directories
 tenxrep-*/
+
+# Old configs clone (now merged into root)
+configs/
+
+# Local Claude settings
+.claude/settings.local.json
