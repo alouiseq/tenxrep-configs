@@ -19,6 +19,8 @@ TenXRep is a fitness tracking application that combines real-time workout tracki
 - Calisthenics skill tree progression (15 skills, 88 progressions)
 - Progress tracking with personal records
 - Desktop side-by-side layout with mini 3D preview
+- Open registration + Google OAuth login
+- Google account linking for existing users
 - Capacitor native shells (iOS + Android)
 - Beta waitlist and invite system
 
@@ -50,7 +52,7 @@ alembic upgrade head       # Run migrations
 ```
 
 ### tenxrep-web (Frontend)
-**Tech Stack:** React 18, Vite, TypeScript, Tailwind CSS, shadcn/ui, TanStack Query, Three.js
+**Tech Stack:** React 18, Vite, TypeScript, Tailwind CSS, shadcn/ui, TanStack Query, Three.js, PostHog, Sentry
 **Port:** 8080
 **Deployment:** Vercel
 **Documentation:** See [`tenxrep-web/CLAUDE.md`](tenxrep-web/CLAUDE.md)
@@ -99,7 +101,7 @@ cd tenxrep-go
 | Environment | URL | Description |
 |-------------|-----|-------------|
 | Production API | https://mqq3xyhgt5.us-west-2.awsapprunner.com/api/v1 | Backend API |
-| Production App | https://tenxrep.alouisequiatchon.com | Main web app |
+| Production App | https://app.tenxrep.com | Main web app |
 | Production Short Links | https://go.tenxrep.com | URL shortener |
 | Local API | http://localhost:8000/api/v1 | Dev backend |
 | Local App | http://localhost:8080 | Dev frontend |
