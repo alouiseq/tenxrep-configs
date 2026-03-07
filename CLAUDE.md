@@ -23,6 +23,7 @@ TenXRep is a fitness tracking application that combines real-time workout tracki
 - Google account linking for existing users
 - Capacitor native shells (iOS + Android)
 - Freemium gating with 14-day trial (6 feature gates, upgrade prompts)
+- Stripe subscription payments (checkout, billing portal, webhooks)
 - Beta waitlist and invite system
 
 ## Project Structure

@@ -153,14 +153,14 @@ The current 100-cap beta signup list represents warm leads:
 
 ### Technical Requirements
 
-- [ ] Payment provider integration (Stripe recommended)
-- [ ] Subscription management (create, cancel, reactivate)
-- [ ] Webhook handling (payment events, trial expiration)
-- [ ] `is_pro` flag on user model + trial expiration date
-- [ ] Feature gating in frontend (check subscription status)
+- [x] Payment provider integration (Stripe)
+- [x] Subscription management (checkout, billing portal, cancel via Stripe)
+- [x] Webhook handling (`checkout.session.completed`, `subscription.updated`, `subscription.deleted`, `invoice.payment_failed`)
+- [x] `subscription_tier` + `trial_ends_at` + `stripe_customer_id` on user model
+- [x] Feature gating in frontend (6 feature gates via `useSubscription` hook)
+- [x] Trial countdown/notification system (TrialBanner component)
+- [x] Upgrade flow in UI (UpgradePrompt overlay/toast, TrialBanner, Settings billing)
 - [ ] Feature gating in backend (protect Pro-only endpoints)
-- [ ] Trial countdown/notification system
-- [ ] Upgrade/downgrade flow in UI
 - [ ] Pricing page on marketing site
 
 ### Feature Gating Approach
@@ -215,3 +215,4 @@ Keep it simple - one `is_pro` boolean + `trial_ends_at` timestamp on the user mo
 | 2026-02-07 | Initial strategy document created |
 | 2026-02-22 | Updated trial duration from 7 days to 14 days (consistent with STRATEGY.md) |
 | 2026-02-22 | Finalized pricing: $5.99/mo, $39.99/yr. Unlimited free tracking. Gate depth not surface for 3D (free = Activation View Simple mode, Pro = Volume/Balance/Advanced). Show pricing before signup. Beta users get extended free Pro (3-6 months). Immediate lock after trial. 30-day refund. 5 custom exercises free, unlimited Pro. |
+| 2026-03-07 | Stripe integration complete: checkout sessions, billing portal, webhook handler, trial banner, upgrade prompts |
