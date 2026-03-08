@@ -160,8 +160,8 @@ The current 100-cap beta signup list represents warm leads:
 - [x] Feature gating in frontend (6 feature gates via `useSubscription` hook)
 - [x] Trial countdown/notification system (TrialBanner component)
 - [x] Upgrade flow in UI (UpgradePrompt overlay/toast, TrialBanner, Settings billing)
-- [ ] Feature gating in backend (protect Pro-only endpoints)
-- [ ] Pricing page on marketing site
+- [x] Feature gating in backend (custom exercise limit enforced with 403)
+- [x] Pricing page on marketing site (Free vs Pro comparison)
 
 ### Feature Gating Approach
 
