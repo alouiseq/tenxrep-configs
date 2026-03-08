@@ -162,6 +162,7 @@ The current 100-cap beta signup list represents warm leads:
 - [x] Upgrade flow in UI (UpgradePrompt overlay/toast, TrialBanner, Settings billing)
 - [x] Feature gating in backend (custom exercise limit enforced with 403)
 - [x] Pricing page on marketing site (Free vs Pro comparison)
+- [x] Conversion triggers (imbalance nudge toast + isolation inquiry modal)
 
 ### Feature Gating Approach
 
