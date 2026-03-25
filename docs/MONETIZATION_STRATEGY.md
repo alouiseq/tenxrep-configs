@@ -31,11 +31,11 @@ One subscription unlocks everything. No feature bundles or separate add-ons.
 | Hevy | $24/yr | Free with ads + limits |
 | FitBod | $80/yr | 3 free workouts total, then paywall |
 | JEFIT | $70/yr | Free with limits |
-| **TenXRep** | **$39.99/yr** | $5.99/mo or $39.99/yr (~44% savings) |
+| **TenXRep** | **$34.99/yr** | $4.99/mo or $34.99/yr (~42% savings) |
 
 TenXRep has something no competitor offers (3D viz + tracking), but is web-only with no wearable integration. Price reflects unique value while staying competitive.
 
-**Pricing:** $5.99/mo or $39.99/yr (~44% annual savings). Show pricing before signup for transparency.
+**Pricing:** $4.99/mo or $34.99/yr (~44% annual savings). Show pricing before signup for transparency.
 
 ---
 
@@ -188,7 +188,7 @@ Keep it simple - one `is_pro` boolean + `trial_ends_at` timestamp on the user mo
 
 ## Resolved Decisions
 
-- [x] **Price:** $5.99/mo or $39.99/yr (~44% annual savings)
+- [x] **Price:** $4.99/mo or $34.99/yr (~44% annual savings)
 - [x] **Trial duration:** 14 days
 - [x] **Pricing visibility:** Show before signup
 - [x] **Workout tracking:** Unlimited for free (compete on depth, not surface)
@@ -205,7 +205,7 @@ Keep it simple - one `is_pro` boolean + `trial_ends_at` timestamp on the user mo
 
 - [ ] Skill tree gating — fully Pro or 1-2 free paths?
 - [ ] Marketing budget and acquisition strategy
-- [ ] When to add RevenueCat / native IAP
+- [x] Apple IAP via @capgo/native-purchases (StoreKit 2) — in progress
 
 ---
 
@@ -217,3 +217,4 @@ Keep it simple - one `is_pro` boolean + `trial_ends_at` timestamp on the user mo
 | 2026-02-22 | Updated trial duration from 7 days to 14 days (consistent with STRATEGY.md) |
 | 2026-02-22 | Finalized pricing: $5.99/mo, $39.99/yr. Unlimited free tracking. Gate depth not surface for 3D (free = Activation View Simple mode, Pro = Volume/Balance/Advanced). Show pricing before signup. Beta users get extended free Pro (3-6 months). Immediate lock after trial. 30-day refund. 5 custom exercises free, unlimited Pro. |
 | 2026-03-07 | Stripe integration complete: checkout sessions, billing portal, webhook handler, trial banner, upgrade prompts |
+| 2026-03-25 | Updated pricing to $4.99/mo, $34.99/yr. Apple IAP implementation in progress (Small Business Program — 15% commission). |
