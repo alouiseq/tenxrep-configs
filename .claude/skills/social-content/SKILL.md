@@ -1,6 +1,6 @@
 ---
 name: social-content
-description: Generate TikTok and YouTube Shorts content (caption, title, description, hashtags) for an exercise video. Use whenever the user mentions creating social content, uploading a video, or producing a clip for a TenXRep exercise — even if they don't explicitly say "social content" or "caption".
+description: Generate TikTok, YouTube Shorts, and Instagram Reels content (caption, title, description, hashtags) for an exercise video. Use whenever the user mentions creating social content, uploading a video, or producing a clip for a TenXRep exercise — even if they don't explicitly say "social content" or "caption".
 user_invocable: true
 arguments:
   - name: exercise
@@ -78,7 +78,7 @@ Rotate through these so the feed doesn't feel repetitive. Pick whichever fits th
 
 ## Step 4: Produce the content
 
-Once you've picked the hook, generate both TikTok and YouTube Shorts content using these templates.
+Once you've picked the hook, generate TikTok, YouTube Shorts, and Instagram Reels content using these templates.
 
 ### TikTok
 
@@ -123,8 +123,53 @@ Rules:
 - First 3 hashtags auto-appear above the title as clickable links
 - If the exercise uses equipment (parallettes, bar, rings), mention it here
 
+### Instagram Reels
+
+**Caption:**
+```
+[Hook text]
+
+[1-2 short lines expanding on the hook — slightly more descriptive than TikTok since Instagram doesn't truncate as aggressively]
+
+#calisthenics #muscleactivation #bodyweighttraining #[exercise-hashtag] #fitness
+```
+
+Rules:
+- Caption can be longer than TikTok — up to ~150 characters before hashtags is fine
+- 5-8 hashtags in the caption: mix broad (#calisthenics, #fitness, #workout) with niche (#muscleactivation, #bodyweighttraining) and exercise-specific
+- Additionally, post 5-10 more hashtags as the **first comment** for extra discovery. These should be broader/adjacent: #homeworkout, #fitnessmotivation, #strengthtraining, #coreworkout, #gymnast, etc. Pick ones relevant to the exercise.
+- Do NOT use #reels or #reelsinstagram (Instagram detects format automatically, and these tags are oversaturated/useless)
+- The exercise-specific hashtag uses the same format as TikTok (one word, lowercase, no spaces)
+- No TikTok-specific hashtags (#gymtok, #fyp) — these mark you as a cross-poster and can hurt reach
+
+**First comment hashtags example:**
+```
+#homeworkout #coreworkout #fitnessmotivation #strengthtraining #gymnast #workoutinspo #fitnessjourney
+```
+
+## Posting Schedule
+
+Stagger uploads across platforms — don't post to all three at the same time. This lets you engage with early comments on each platform individually and avoids splitting your attention.
+
+**Recommended order and peak times:**
+
+1. **TikTok first** (primary platform)
+   - Best times: Tue–Thu 7–9 AM, or Fri 11 AM–1 PM
+   - Fitness content also does well early morning (5–7 AM) when gym-goers are scrolling
+
+2. **Instagram Reels** — 2-4 hours after TikTok
+   - Best times: Mon–Fri 6–9 AM, Tue/Wed 10 AM–1 PM, Sun 7–9 PM
+   - Fitness content: early morning or Sunday evening (people planning workouts)
+
+3. **YouTube Shorts** — same evening or next day
+   - Best times: Fri–Sat 9–11 AM, weekdays 12–3 PM
+   - Shorts have a longer discovery tail than TikTok/Reels, so exact timing matters less
+
+All times are local to your audience's timezone. Once you have 15-20+ posts, check each platform's native analytics for when *your specific* audience is most active and adjust accordingly.
+
 ## Guidelines
 - Reference `docs/marketing/SHORT_FORM_VIDEO_BLUEPRINT.md` for the full strategy
 - Use "a" or "an" appropriately before the exercise name
 - Output ONLY the formatted content — no extra commentary unless the user asks
 - If you're unsure whether an exercise is surprising or textbook, ask the user rather than guessing
+- When cross-posting the same video: remove any TikTok watermark before uploading to Reels/Shorts, and never use platform-specific hashtags on the wrong platform (#gymtok on Instagram, #fyp on YouTube, etc.)
