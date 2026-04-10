@@ -229,3 +229,7 @@ push, pull, legs, upper, lower, calisthenics, perMuscleGroup
 - Always include at least 1 target muscle
 - Use singular names (Push-Up not Push-Ups)
 - Set `is_timed: true` for static holds
+
+## Adding a Brand-New Muscle Name (rare)
+
+If your exercise references a muscle that doesn't yet exist in the system (e.g. adding "Adductors" for the first time), see `tenxrep-api/CLAUDE.md` → "Adding a New Muscle Name". The most-forgotten step: **`scripts/seed_data.py` runs after migrations on every deploy and overwrites `muscle_names`**. You must update both the migration AND the seed script, or the deploy will silently undo your migration.
