@@ -20,7 +20,48 @@ Ask for (if not provided):
 - Is it a calisthenics skill? Which one?
 - Is it timed (static hold)?
 
-### 2. Research Target Muscles
+### 2. Check for Duplicates (REQUIRED — do this BEFORE anything else)
+
+**Always check if the exercise already exists or has a near-duplicate** before proceeding. Skipping this step has caused real bugs.
+
+```bash
+cd tenxrep-api && source venv/bin/activate && python3 -c "
+from scripts.all_exercises import allExercises as exercises
+# Search by keywords from the new exercise name
+for ex in exercises:
+    name_lower = ex['name'].lower()
+    for term in ['<keyword1>', '<keyword2>']:
+        if term in name_lower:
+            print(f'  - {ex[\"name\"]} [{ex[\"muscleGroup\"]}]')
+            break
+"
+```
+
+If a duplicate or near-duplicate exists:
+- **Stop and ask the user** — should we skip, replace, or add as a distinct variant?
+- Common gotchas: "Skull Crusher" vs "Skull Crushers (Barbell)", "Elbow Lever" vs "Elbow Lever on Parallettes", "Hip Thrust" vs "Barbell Hip Thrust"
+
+### 3. Check Calisthenics Skill Tree (REQUIRED for bodyweight exercises)
+
+If the exercise is bodyweight or could plausibly be part of a calisthenics progression, **check the existing skill tree** before deciding it's standalone:
+
+```bash
+source venv/bin/activate && python3 -c "
+from app.core.database import SessionLocal
+from sqlalchemy import text
+db = SessionLocal()
+result = db.execute(text('SELECT id, name FROM skills ORDER BY name'))
+for row in result:
+    print(f'  {row[0]}: {row[1]}')
+db.close()
+"
+```
+
+Existing skill trees: Planche, Front Lever, Back Lever, Handstand, HSPU, L-Sit, Human Flag, Dragon Flag, Pistol Squat, Skin the Cat, Muscle-Up, One-Arm Pull-Up, One-Arm Push-Up, Dips.
+
+If the exercise is a progression step in any of these (e.g. "Tuck Planche" → Planche tree, "Elevated Pike Push-Up" → HSPU tree), set `calisthenics_type` and link to the appropriate `skill_progression_id`. If not, leave `calisthenics_type` as None even if it's bodyweight.
+
+### 4. Research Target Muscles
 
 **Always research the exercise** to get accurate target muscles. Do NOT guess.
 
@@ -35,7 +76,7 @@ Ask for (if not provided):
 
 5. **Confirm with user** before proceeding
 
-### 3. Create Migration
+### 5. Create Migration
 
 Create an Alembic migration at `tenxrep-api/alembic/versions/`:
 
@@ -56,7 +97,7 @@ MUSCLE_GROUP_MAP = {
     'Front Delts': 3, 'Side Delts': 3,
     'Biceps (Long Head)': 4, 'Biceps (Short Head)': 4, 'Brachialis': 4,
     'Triceps (Long Head)': 5, 'Triceps (Lateral Head)': 5, 'Triceps (Medial Head)': 5,
-    'Quadriceps': 6, 'Hamstrings': 6, 'Hip Flexors': 6, 'Calves': 6, 'Tensor Fasciae Latae': 6,
+    'Quadriceps': 6, 'Hamstrings': 6, 'Hip Flexors': 6, 'Calves': 6, 'Adductors': 6, 'Tensor Fasciae Latae': 6,
     'Upper Abs': 7, 'Lower Abs': 7, 'Obliques': 7,
     'Forearms': 8, 'Forearm Flexors': 8, 'Forearm Extensors': 8, 'Forearm Supinators': 8,
     'Glutes (Maximus)': 9, 'Glutes (Medius)': 9, 'Glutes (Minimus)': 9,
@@ -128,7 +169,7 @@ def downgrade() -> None:
         ), {"name": ex["name"]})
 ```
 
-### 4. Update Seed Data
+### 6. Update Seed Data
 
 Add to `tenxrep-api/scripts/all_exercises.py` for consistency:
 
@@ -148,7 +189,7 @@ Add to `tenxrep-api/scripts/all_exercises.py` for consistency:
 }
 ```
 
-### 5. Test Locally
+### 7. Test Locally
 
 ```bash
 cd tenxrep-api && source venv/bin/activate
@@ -156,7 +197,7 @@ alembic upgrade head
 pytest tests/test_exercise_data_validation.py -v
 ```
 
-### 6. Summarize Results
+### 8. Summarize Results
 
 Report back to the user:
 - Exercise name and muscle mappings added
