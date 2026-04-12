@@ -76,6 +76,29 @@ Rotate through these so the feed doesn't feel repetitive. Pick whichever fits th
 5. **Full activation** — `Full muscle activation on the [exercise]`
    - Clinical, search-query friendly. Good default.
 
+### "Unc" angle hooks — age-defying persona
+
+The creator is 40+ ("unc"). These hooks lean into the age angle to create a scroll-stopping expectation gap. Use these to break up the muscle-activation hooks and build the personal brand. Mix them in roughly 1 in 3 videos — don't make every video about age, but keep it as a recurring flavor.
+
+Pick whichever fits the exercise and context:
+
+1. **Age challenge** — `40 year old attempts [exercise]`
+   - Works for harder/impressive moves. Sets low expectations, then delivers.
+
+2. **Defying doubt** — `They said start calisthenics in your 20s`
+   - Doesn't even need to name the exercise — the visual does the work. Great for advanced moves (planche, handstand, levers).
+
+3. **Unc flex** — `Things unc can do that you can't`
+   - Playful, confident, slightly confrontational. Good engagement bait.
+
+4. **Still got it** — `40+ and still hitting the [exercise]`
+   - Straightforward, inspirational tone. Good for moves that look impressive.
+
+5. **Age + activation combo** — `Unc's muscle activation on the [exercise]`
+   - Bridges the personal brand with the product. Shows the 3D visualization while nodding to the age angle.
+
+When using unc hooks, the TikTok hashtags should include #over40fitness or #fitover40 in addition to the regular calisthenics tags. These tap into the underserved 30-50 demographic that's actively looking for this content.
+
 ## Step 4: Produce the content
 
 Once you've picked the hook, generate TikTok, YouTube Shorts, and Instagram Reels content using these templates.
@@ -86,12 +109,12 @@ Once you've picked the hook, generate TikTok, YouTube Shorts, and Instagram Reel
 
 **Caption:**
 ```
-[Hook text] #gymtok #calisthenics #muscleactivation #bodyweighttraining #[exercise-hashtag]
+[Hook text] #gymtok #calisthenicsworkout #muscleactivation #bodyweighttraining #[exercise-hashtag]
 ```
 
 Rules:
 - Keep caption under ~80 characters before hashtags (TikTok truncates after that)
-- 3-5 hashtags: mix broad (#gymtok, #calisthenics, #fitness) with niche (#muscleactivation, #bodyweighttraining) and exercise-specific
+- 3-5 hashtags: mix broad (#gymtok, #calisthenicsworkout, #fitness) with niche (#muscleactivation, #bodyweighttraining) and exercise-specific
 - The exercise-specific hashtag should be the exercise name as one word, lowercase, no spaces (e.g., #frogstand, #lsit, #elbowlever)
 
 ### YouTube Shorts
@@ -149,21 +172,34 @@ Rules:
 
 ## Posting Schedule
 
-Stagger uploads across platforms — don't post to all three at the same time. This lets you engage with early comments on each platform individually and avoids splitting your attention.
+### Weekly cadence (3 videos/week across 3 platforms)
 
-**Recommended order and peak times:**
+The creator can't post daily. The goal is consistency over volume — 3 new videos per week, staggered across platforms so each one gets breathing room.
 
-1. **TikTok first** (primary platform)
-   - Best times: Tue–Thu 7–9 AM, or Fri 11 AM–1 PM
-   - Fitness content also does well early morning (5–7 AM) when gym-goers are scrolling
+**Recommended weekly rhythm:**
 
-2. **Instagram Reels** — 2-4 hours after TikTok
-   - Best times: Mon–Fri 6–9 AM, Tue/Wed 10 AM–1 PM, Sun 7–9 PM
-   - Fitness content: early morning or Sunday evening (people planning workouts)
+| Day | TikTok | Instagram Reels | YouTube Shorts |
+|-----|--------|-----------------|----------------|
+| **Tuesday** | New video #1 (7 AM) | — | — |
+| **Wednesday** | — | Video #1 (7 AM) | Video #1 (12 PM) |
+| **Thursday** | New video #2 (7 AM) | — | — |
+| **Friday** | — | Video #2 (7 AM) | Video #2 (12 PM) |
+| **Sunday** | New video #3 (7 PM) | — | — |
+| **Monday** | — | Video #3 (7 AM) | Video #3 (12 PM) |
 
-3. **YouTube Shorts** — same evening or next day
-   - Best times: Fri–Sat 9–11 AM, weekdays 12–3 PM
-   - Shorts have a longer discovery tail than TikTok/Reels, so exact timing matters less
+This gives you:
+- **TikTok**: 3 posts/week on your best-performing days (Tue, Thu, Sun)
+- **Instagram Reels**: 3 posts/week, staggered 1 day after TikTok
+- **YouTube Shorts**: 3 posts/week, same day as Reels but afternoon (Shorts have a longer discovery tail so exact timing matters less)
+- Each video gets its own day on TikTok (no competing with yourself)
+- You never post to more than 2 platforms on the same day
+
+This schedule is a starting point. Adjust based on what your analytics show after 3-4 weeks.
+
+### Peak times reference
+- **TikTok**: Tue–Thu 7–9 AM, Fri 11 AM–1 PM, fitness content also does well at 5–7 AM
+- **Instagram Reels**: Mon–Fri 6–9 AM, Tue/Wed 10 AM–1 PM, Sun 7–9 PM
+- **YouTube Shorts**: Fri–Sat 9–11 AM, weekdays 12–3 PM
 
 All times are local to your audience's timezone. Once you have 15-20+ posts, check each platform's native analytics for when *your specific* audience is most active and adjust accordingly.
 
