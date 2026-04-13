@@ -174,25 +174,20 @@ Rules:
 
 ### Weekly cadence (3 videos/week across 3 platforms)
 
-The creator can't post daily. The goal is consistency over volume — 3 new videos per week, staggered across platforms so each one gets breathing room.
+The creator can't post daily. The goal is consistency over volume — 3 new videos per week, posted to all 3 platforms on the same day at each platform's optimal time.
 
 **Recommended weekly rhythm:**
 
-| Day | TikTok | Instagram Reels | YouTube Shorts |
-|-----|--------|-----------------|----------------|
-| **Monday** | New video #1 (7 AM) | — | — |
-| **Tuesday** | — | Video #1 (7 AM) | Video #1 (12 PM) |
-| **Wednesday** | New video #2 (7 AM) | — | — |
-| **Thursday** | — | Video #2 (7 AM) | Video #2 (12 PM) |
-| **Sunday** | New video #3 (7 PM) | — | — |
-| **Monday** | — | Video #3 (7 AM) | Video #3 (12 PM) |
+| Day | TikTok (7 AM) | Instagram Reels (7 AM) | YouTube Shorts (12 PM) |
+|-----|---------------|------------------------|------------------------|
+| **Monday** | Video #1 | Video #1 | Video #1 |
+| **Wednesday** | Video #2 | Video #2 | Video #2 |
+| **Friday** | Video #3 | Video #3 | Video #3 |
 
-This gives you:
-- **TikTok**: 3 posts/week on best-performing days (Mon, Wed, Sun — Mon is the proven top day based on analytics)
-- **Instagram Reels**: 3 posts/week, staggered 1 day after TikTok
-- **YouTube Shorts**: 3 posts/week, same day as Reels but afternoon (Shorts have a longer discovery tail so exact timing matters less)
-- Each video gets its own day on TikTok (no competing with yourself)
-- You never post to more than 2 platforms on the same day
+- **Monday** is the proven best TikTok day based on analytics (frog stand: 730 views)
+- **Mon/Wed/Fri** are all strong weekdays across all platforms — weekend posts have consistently underperformed
+- Each platform's algorithm is independent — posting to all 3 the same day doesn't hurt any of them
+- Simple to remember: Mon/Wed/Fri, all three platforms, done
 
 This schedule is a starting point. Adjust based on what your analytics show after 3-4 weeks.
 
