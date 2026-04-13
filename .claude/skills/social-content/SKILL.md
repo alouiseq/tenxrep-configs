@@ -180,15 +180,15 @@ The creator can't post daily. The goal is consistency over volume — 3 new vide
 
 | Day | TikTok | Instagram Reels | YouTube Shorts |
 |-----|--------|-----------------|----------------|
-| **Tuesday** | New video #1 (7 AM) | — | — |
-| **Wednesday** | — | Video #1 (7 AM) | Video #1 (12 PM) |
-| **Thursday** | New video #2 (7 AM) | — | — |
-| **Friday** | — | Video #2 (7 AM) | Video #2 (12 PM) |
+| **Monday** | New video #1 (7 AM) | — | — |
+| **Tuesday** | — | Video #1 (7 AM) | Video #1 (12 PM) |
+| **Wednesday** | New video #2 (7 AM) | — | — |
+| **Thursday** | — | Video #2 (7 AM) | Video #2 (12 PM) |
 | **Sunday** | New video #3 (7 PM) | — | — |
 | **Monday** | — | Video #3 (7 AM) | Video #3 (12 PM) |
 
 This gives you:
-- **TikTok**: 3 posts/week on your best-performing days (Tue, Thu, Sun)
+- **TikTok**: 3 posts/week on best-performing days (Mon, Wed, Sun — Mon is the proven top day based on analytics)
 - **Instagram Reels**: 3 posts/week, staggered 1 day after TikTok
 - **YouTube Shorts**: 3 posts/week, same day as Reels but afternoon (Shorts have a longer discovery tail so exact timing matters less)
 - Each video gets its own day on TikTok (no competing with yourself)
