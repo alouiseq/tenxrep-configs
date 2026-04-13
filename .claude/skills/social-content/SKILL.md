@@ -178,7 +178,7 @@ The creator can't post daily. The goal is consistency over volume — 3 new vide
 
 **Recommended weekly rhythm:**
 
-| Day | TikTok (7 AM) | Instagram Reels (7 AM) | YouTube Shorts (12 PM) |
+| Day | TikTok (7 AM) | Instagram Reels (7 AM) | YouTube Shorts (7 PM) |
 |-----|---------------|------------------------|------------------------|
 | **Monday** | Video #1 | Video #1 | Video #1 |
 | **Wednesday** | Video #2 | Video #2 | Video #2 |
