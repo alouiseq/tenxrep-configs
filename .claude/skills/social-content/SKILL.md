@@ -51,53 +51,38 @@ If you're not sure, ask the user: "Does the app show any muscles here that would
 
 ## Step 3: Pick a hook template based on the classification
 
-### Surprising exercises → "didn't know" hook
+### Surprising exercises → "didn't know" hook family (primary — use by default)
 
-**On-screen hook text:** `Muscles you didn't know the [exercise] hits`
+This is the proven best-performing hook based on analytics (frog stand: 763 views, 8.5% like rate on TikTok). Use as the default whenever there's a genuinely non-obvious muscle in the target list. One hook, same content across all three platforms — keep it simple.
 
-Use this ONLY when there's a genuinely non-obvious muscle in the target list. The video/caption should highlight that specific muscle — otherwise the viewer feels baited.
+Rotate through these variants to avoid hook fatigue. They all deliver the same "your assumptions are wrong" curiosity gap, just with different wording:
 
-### Textbook exercises → pick one of these alternatives
+1. `Muscles you didn't know the [exercise] hits`
+2. `The [exercise] targets more muscles than you think`
+3. `You won't believe what muscles the [exercise] works`
+4. `The [exercise] hits muscles you'd never guess`
+5. `What the [exercise] actually targets`
 
-Rotate through these so the feed doesn't feel repetitive. Pick whichever fits the exercise best, or offer the user 2-3 options to choose from.
+Pick whichever hasn't been used recently. Don't repeat the same variant back-to-back.
 
-1. **Ranked breakdown** — `Every muscle the [exercise] hits, ranked`
-   - Honest, no surprise promise, just a clean visual breakdown.
+### Textbook exercises → alternative hooks
 
-2. **Harder than it looks** — `Why the [exercise] is harder than it looks`
-   - Frames effort and difficulty instead of novelty.
+Use these ONLY when the target muscles are all obvious and the "didn't know" hook would misfire (e.g., L-sit got "is that not obvious?" comment). Pick whichever fits best:
 
-3. **Killer move** — `The [exercise] is a [primary muscle] killer`
-   - Leans into the obvious instead of fighting it. Good for single-dominant-muscle moves.
+1. **Harder than it looks** — `Why the [exercise] is harder than it looks`
+   - Best for isometric holds and exercises that look deceptively simple.
 
-4. **POV / pain angle** — `POV: your [muscle] after 10 seconds of [exercise]`
-   - Relatable effort angle. Works well for isometric holds.
+2. **Full activation** — `Every muscle the [exercise] hits`
+   - Clean, search-friendly, honest. Safe default for textbook exercises.
 
-5. **Full activation** — `Full muscle activation on the [exercise]`
-   - Clinical, search-query friendly. Good default.
+3. **Ranked breakdown** — `Every muscle the [exercise] hits, ranked`
+   - Visual breakdown angle. No surprise promise.
 
-### "Unc" angle hooks — age-defying persona
+### Note on the "unc" (40+) angle
 
-The creator is 40+ ("unc"). These hooks lean into the age angle to create a scroll-stopping expectation gap. Use these to break up the muscle-activation hooks and build the personal brand. Mix them in roughly 1 in 3 videos — don't make every video about age, but keep it as a recurring flavor.
+The creator is 40+ ("unc"). Analytics showed that unc-angle hooks ("40 year old attempts X") underperformed on TikTok compared to "didn't know" hooks (274-351 views vs 453-763 views). However, the unc angle performed well on YouTube (1,230 views for tuck push-up).
 
-Pick whichever fits the exercise and context:
-
-1. **Age challenge** — `40 year old attempts [exercise]`
-   - Works for harder/impressive moves. Sets low expectations, then delivers.
-
-2. **Defying doubt** — `They said start calisthenics in your 20s`
-   - Doesn't even need to name the exercise — the visual does the work. Great for advanced moves (planche, handstand, levers).
-
-3. **Unc flex** — `Things unc can do that you can't`
-   - Playful, confident, slightly confrontational. Good engagement bait.
-
-4. **Still got it** — `40+ and still hitting the [exercise]`
-   - Straightforward, inspirational tone. Good for moves that look impressive.
-
-5. **Age + activation combo** — `Unc's muscle activation on the [exercise]`
-   - Bridges the personal brand with the product. Shows the 3D visualization while nodding to the age angle.
-
-When using unc hooks, the TikTok hashtags should include #over40fitness or #fitover40 in addition to the regular calisthenics tags. These tap into the underserved 30-50 demographic that's actively looking for this content.
+**Current strategy:** Keep the unc identity in the bio/profile/brand and comment replies, NOT in the on-screen hook. The "didn't know" hook is the primary hook across all platforms to keep things simple (KISS). The unc persona differentiates the creator, but the muscle activation curiosity gap is what makes people watch.
 
 ## Step 4: Produce the content
 
@@ -154,21 +139,19 @@ Rules:
 
 [1-2 short lines expanding on the hook — slightly more descriptive than TikTok since Instagram doesn't truncate as aggressively]
 
-#calisthenics #muscleactivation #bodyweighttraining #[exercise-hashtag] #fitness
+#calisthenics #muscleactivation #[exercise-hashtag] #bodyweighttraining #fitness
 ```
 
 Rules:
 - Caption can be longer than TikTok — up to ~150 characters before hashtags is fine
-- 5-8 hashtags in the caption: mix broad (#calisthenics, #fitness, #workout) with niche (#muscleactivation, #bodyweighttraining) and exercise-specific
-- Additionally, post 5-10 more hashtags as the **first comment** for extra discovery. These should be broader/adjacent: #homeworkout, #fitnessmotivation, #strengthtraining, #coreworkout, #gymnast, etc. Pick ones relevant to the exercise.
+- **5 hashtags max** in the caption — Instagram recommends 3-5; more can hurt reach
+- Mix broad (#calisthenics, #fitness) with niche (#muscleactivation, #bodyweighttraining) and exercise-specific
 - Do NOT use #reels or #reelsinstagram (Instagram detects format automatically, and these tags are oversaturated/useless)
 - The exercise-specific hashtag uses the same format as TikTok (one word, lowercase, no spaces)
 - No TikTok-specific hashtags (#gymtok, #fyp) — these mark you as a cross-poster and can hurt reach
-
-**First comment hashtags example:**
-```
-#homeworkout #coreworkout #fitnessmotivation #strengthtraining #gymnast #workoutinspo #fitnessjourney
-```
+- When using unc hooks, swap one broad hashtag for #over40fitness or #fitover40
+- **Add location** when posting — helps with local discovery, especially for new accounts
+- **AI Label**: leave off unless the video is primarily AI-generated. The 3D muscle overlay is a visual effect, not AI-generated content
 
 ## Posting Schedule
 
@@ -178,7 +161,7 @@ The creator can't post daily. The goal is consistency over volume — 3 new vide
 
 **Recommended weekly rhythm:**
 
-| Day | TikTok (7 AM) | Instagram Reels (7 AM) | YouTube Shorts (7 PM) |
+| Day | TikTok (7 AM) | Instagram Reels (7 PM) | YouTube Shorts (7 PM) |
 |-----|---------------|------------------------|------------------------|
 | **Monday** | Video #1 | Video #1 | Video #1 |
 | **Wednesday** | Video #2 | Video #2 | Video #2 |
