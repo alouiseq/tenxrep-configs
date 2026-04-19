@@ -72,10 +72,13 @@ Use these ONLY when the target muscles are all obvious and the "didn't know" hoo
 1. **Harder than it looks** — `Why the [exercise] is harder than it looks`
    - Best for isometric holds and exercises that look deceptively simple.
 
-2. **Full activation** — `Every muscle the [exercise] hits`
+2. **Comparison/vs** — `[Exercise] harder than [common exercise]?`
+   - Compares an advanced variation to the common version (e.g., "Lean push-ups harder than regular push-ups?"). Creates instant curiosity for anyone who does the common version. Works well for progressions.
+
+3. **Full activation** — `Every muscle the [exercise] hits`
    - Clean, search-friendly, honest. Safe default for textbook exercises.
 
-3. **Ranked breakdown** — `Every muscle the [exercise] hits, ranked`
+4. **Ranked breakdown** — `Every muscle the [exercise] hits, ranked`
    - Visual breakdown angle. No surprise promise.
 
 ### Note on the "unc" (40+) angle
