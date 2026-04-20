@@ -158,22 +158,24 @@ Rules:
 
 ## Posting Schedule
 
-### Weekly cadence (3 videos/week across 3 platforms)
+### Weekly cadence
 
-The creator can't post daily. The goal is consistency over volume — 3 new videos per week, posted to all 3 platforms on the same day at each platform's optimal time.
+Film 5 videos per week. Upload all 5 to YouTube. Pick the best 3 (curated) for TikTok and Instagram.
 
 **Recommended weekly rhythm:**
 
 | Day | TikTok (7 AM) | Instagram Reels (7 PM) | YouTube Shorts (7 PM) |
 |-----|---------------|------------------------|------------------------|
 | **Monday** | Video #1 | Video #1 | Video #1 |
-| **Wednesday** | Video #2 | Video #2 | Video #2 |
-| **Friday** | Video #3 | Video #3 | Video #3 |
+| **Tuesday** | — | — | Video #2 |
+| **Wednesday** | Video #3 | Video #3 | Video #3 |
+| **Thursday** | — | — | Video #4 |
+| **Friday** | Video #5 | Video #5 | Video #5 |
 
-- **Monday** is the proven best TikTok day based on analytics (frog stand: 730 views)
-- **Mon/Wed/Fri** are all strong weekdays across all platforms — weekend posts have consistently underperformed
-- Each platform's algorithm is independent — posting to all 3 the same day doesn't hurt any of them
-- Simple to remember: Mon/Wed/Fri, all three platforms, done
+- **YouTube**: Mon–Fri, 1 video/day (5/week). All exercises uploaded — builds the full reference library for the app.
+- **TikTok + Instagram**: Mon/Wed/Fri only (3/week). Curated picks from the 5 — visually impressive, surprising muscles, or niche calisthenics.
+- Monday is the proven best TikTok day based on analytics (frog stand: 730 views)
+- Weekends off for batch-filming
 
 This schedule is a starting point. Adjust based on what your analytics show after 3-4 weeks.
 
