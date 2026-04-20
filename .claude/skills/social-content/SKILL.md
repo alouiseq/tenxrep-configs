@@ -184,6 +184,33 @@ This schedule is a starting point. Adjust based on what your analytics show afte
 
 All times are local to your audience's timezone. Once you have 15-20+ posts, check each platform's native analytics for when *your specific* audience is most active and adjust accordingly.
 
+## Platform Strategy
+
+**YouTube = full library. TikTok/Instagram = curated highlights.**
+
+The creator has 270+ exercises in the TenXRep app. Each platform serves a different purpose:
+
+### YouTube Shorts — upload ALL exercises
+- YouTube is search-driven. Every exercise is a potential search entry point ("how to do a Bulgarian split squat").
+- These videos also serve as reference links in the TenXRep exercise library, replacing third-party video links.
+- YouTube doesn't punish "boring" content — low-view videos still serve their purpose as app reference material.
+- Volume builds channel authority in fitness/calisthenics.
+
+### TikTok & Instagram — curate heavily (~30-50 exercises)
+Only post exercises that meet at least one of these criteria:
+1. **Visually impressive** — handstands, planches, levers, muscle-ups. Scroll-stoppers.
+2. **Surprising muscle activation** — exercises where the app shows non-obvious muscles (the "didn't know" hook).
+3. **Uncommon/niche** — exercises most people haven't seen. Curiosity-driven.
+4. **Calisthenics/bodyweight** — this is the brand. The audience follows for bodyweight skills, not dumbbell curls.
+
+**Skip on TikTok/Instagram:**
+- Standard gym exercises (bicep curls, lat pulldowns, bench press) — oversaturated
+- Isolation exercises with obvious muscle targets — no curiosity gap
+- Exercises that don't look interesting in a 15-second clip
+- Anything where the 3D overlay doesn't add something the viewer couldn't already guess
+
+At 3 videos/week on TikTok/IG, ~50 curated exercises = almost a year of content.
+
 ## Guidelines
 - Reference `docs/marketing/SHORT_FORM_VIDEO_BLUEPRINT.md` for the full strategy
 - Use "a" or "an" appropriately before the exercise name
