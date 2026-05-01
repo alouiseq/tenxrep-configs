@@ -1,6 +1,6 @@
 ---
 name: social-content
-description: Generate TikTok, YouTube Shorts, and Instagram Reels content (caption, title, description, hashtags) for an exercise video. Use whenever the user mentions creating social content, uploading a video, or producing a clip for a TenXRep exercise — even if they don't explicitly say "social content" or "caption".
+description: Generate TikTok, YouTube Shorts, and Instagram Reels content (caption, title, description, hashtags) for an exercise video or a calisthenics progression/journey video. Use whenever the user mentions creating social content, uploading a video, or producing a clip for a TenXRep exercise or a calisthenics skill they're progressing on — even if they don't explicitly say "social content" or "caption".
 user_invocable: true
 arguments:
   - name: exercise
@@ -15,7 +15,16 @@ Generate social media content for a TenXRep exercise video upload. Follow the SH
 ## Input
 The user provides an exercise name as the argument: `$ARGUMENTS`
 
-## Step 1: Get the actual target muscle list
+## Step 1: Identify the content type
+
+There are two content tracks. Pick before going further:
+
+- **Activation video** — showing the muscles a single exercise hits, with the 3D overlay. Default for most YouTube uploads. Continue to Step 1a.
+- **Progression journey video** — filming attempts of a calisthenics skill the creator is working toward (planche, muscle-up, front lever, handstand, etc.). The angle is the journey, not muscle activation. Skip Step 1a and jump to Step 3's "Calisthenics progression" hook family.
+
+If it's not obvious from the argument or context, ask: "Is this an activation video or a progression journey video?" Skill names like "Planche", "Muscle-up", "Front lever", "Handstand" usually imply progression. Exercise names like "Frog stand", "L-sit", "Push-up" usually imply activation, but can be either.
+
+## Step 1a: Get the actual target muscle list (activation videos only)
 
 Before drafting anything, find out which muscles the TenXRep app actually shows as targets for this exercise. The hook depends on this — never guess or invent muscles.
 
@@ -81,6 +90,54 @@ Use these ONLY when the target muscles are all obvious and the "didn't know" hoo
 4. **Ranked breakdown** — `Every muscle the [exercise] hits, ranked`
    - Visual breakdown angle. No surprise promise.
 
+### Calisthenics progression videos → journey hook family
+
+For progression/skill journey content (planche, muscle-up, front lever, handstand, human flag, one-arm pull-up, etc.) where the angle is the journey of mastering the move, not muscle activation. The "exercise" argument is the skill name (e.g., "Planche", "Muscle-up").
+
+These hooks are tuned to keep working when the rep itself doesn't look dramatically different week-to-week — they lean on context (day count, cue, failure point, time delta) rather than the visual alone. Pick whichever fits the footage:
+
+1. **Attempt count** — `Day [N] attempting the [skill]`
+   - Best when there's a clear day count or attempt streak. Anchors the journey timeline and invites follow-back ("I want to see day 60").
+   - Examples: `Day 47 attempting the planche`, `Day 12 of trying the muscle-up`, `Month 3 chasing the front lever`
+
+2. **Breakthrough / cue** — `The cue that finally made the [skill] click`
+   - Use when a specific cue, tweak, or correction unlocked progress. Promises a takeaway, which performs well even on a plateau day.
+   - Examples: `The cue that finally made the planche click`, `What unlocked my muscle-up`, `The fix that saved my handstand`
+
+3. **Plateau / failure point** — `Why my [skill] keeps collapsing here`
+   - Use when there's visible failure footage. Honest "stuck" content — pairs well with form analysis or a slow-mo of the breakdown moment. Counter-intuitively performs well because it's relatable.
+   - Examples: `Why my planche keeps collapsing here`, `Where my front lever falls apart`, `The exact frame my muscle-up fails`
+
+4. **Then vs now** — `[Skill]: month [X] vs month [Y]`
+   - Best for side-by-side or split-screen comparison footage. Pure payoff content — only post when the delta is actually visible.
+   - Examples: `Planche: month 1 vs month 6`, `Muscle-up progression in 90 days`, `My handstand then vs now`
+
+**When to pick which:**
+- Got a visible win this week → **then vs now** or **breakthrough**
+- Plateau / no visible progress → **plateau** (with failure footage) or **attempt count** (anchors timeline regardless)
+- New cue or coaching insight → **breakthrough**
+- First post in a series → **attempt count** (sets up the journey arc)
+
+**Platform priority:** Progression content thrives on TikTok and Instagram (struggle → payoff arc beats algorithmic feeds). YouTube optional — if posting there too, use the **attempt count** or **then vs now** variant as the title since they're search-friendly. Skip YouTube on plateau/failure posts; they don't search well.
+
+**Skip Step 1a (muscle list)** for progression content — the hook is about the journey, not muscle activation.
+
+**Visual overlay — use the TenXRep skill tree, not the 3D muscle overlay.** The skill tree is the better visual for progression videos because it (a) shows the viewer exactly where the creator is in the progression (e.g., step 2 of 4 in the Dips path), (b) gives them a roadmap to care about, and (c) quietly differentiates the brand — no other calisthenics creator has a skill tree visualization. The 3D muscle overlay is for activation videos; skip it here.
+
+Two skill-tree views are available in the app, used for different moments in the cut:
+
+- **Tree node view** (compact vertical chain, e.g., "Dips — 4 skills | 25%" with orange/gray nodes) — **default overlay**. Glanceable in under a second. Use as:
+  - Corner inset during the rep
+  - 1-second intro card
+  - Both panels of a then-vs-now split-screen (the color delta tells the story)
+  - Plateau and attempt-count posts (the unchanged orange node *is* the message)
+
+- **Detail sheet view** (mobile bottom-sheet with title, stars, level, full progression path, rep/set targets, "Mastered!" badge, PR, date) — **the receipt**. Too text-dense to read during motion, but exactly what you want when you need credibility. Use as:
+  - Outro card on a "I just hit it" / breakthrough post (hold for ~2 seconds: green bar, PR, date)
+  - First-post-in-series setup ("here's what I'm chasing — 5 reps × 5 sets of Impossible Dip")
+
+**Default rule:** tree node view for the rep itself, detail sheet for outro/receipt moments.
+
 ### Note on the "unc" (40+) angle
 
 The creator is 40+ ("unc"). Analytics showed that unc-angle hooks ("40 year old attempts X") underperformed on TikTok compared to "didn't know" hooks (274-351 views vs 453-763 views). However, the unc angle performed well on YouTube (1,230 views for tuck push-up).
@@ -104,6 +161,7 @@ Rules:
 - Keep caption under ~80 characters before hashtags (TikTok truncates after that)
 - 3-5 hashtags: mix broad (#gymtok, #calisthenicsworkout, #fitness) with niche (#muscleactivation, #bodyweighttraining) and exercise-specific
 - The exercise-specific hashtag should be the exercise name as one word, lowercase, no spaces (e.g., #frogstand, #lsit, #elbowlever)
+- **For progression videos:** swap `#muscleactivation` for `#calisthenicsprogression` (or `#[skill]progression` like `#plancheprogression`, `#muscleupprogression`). Keep `#calisthenicsworkout` and the skill-specific hashtag.
 
 ### YouTube Shorts
 
@@ -114,6 +172,8 @@ Examples:
 - Ranked → `[Exercise] Muscle Activation, Ranked`
 - Harder than it looks → `Why the [Exercise] Is Harder Than It Looks`
 - Full activation → `Every Muscle the [Exercise] Works`
+- Progression (attempt count) → `Day [N] Attempting the [Skill]`
+- Progression (then vs now) → `[Skill] Progression: [X] Months`
 
 Rules:
 - Write like a search query
@@ -153,6 +213,7 @@ Rules:
 - The exercise-specific hashtag uses the same format as TikTok (one word, lowercase, no spaces)
 - No TikTok-specific hashtags (#gymtok, #fyp) — these mark you as a cross-poster and can hurt reach
 - When using unc hooks, swap one broad hashtag for #over40fitness or #fitover40
+- **For progression videos:** swap `#muscleactivation` for `#calisthenicsprogression` and add `#[skill]progression` (e.g., `#plancheprogression`). Keep the 5-tag cap.
 - **Add location** when posting — helps with local discovery, especially for new accounts
 - **AI Label**: leave off unless the video is primarily AI-generated. The 3D muscle overlay is a visual effect, not AI-generated content
 
@@ -204,6 +265,7 @@ Only post exercises that meet at least one of these criteria:
 2. **Surprising muscle activation** — exercises where the app shows non-obvious muscles (the "didn't know" hook).
 3. **Uncommon/niche** — exercises most people haven't seen. Curiosity-driven.
 4. **Calisthenics/bodyweight** — this is the brand. The audience follows for bodyweight skills, not dumbbell curls.
+5. **Progression journey** — the creator's own attempts at a calisthenics skill (planche, muscle-up, front lever, handstand, human flag). Uses the journey hook family. This is a parallel content stream that runs alongside curated activation videos — it gives the audience a personal arc to follow rather than just standalone tips.
 
 **Skip on TikTok/Instagram:**
 - Standard gym exercises (bicep curls, lat pulldowns, bench press) — oversaturated
