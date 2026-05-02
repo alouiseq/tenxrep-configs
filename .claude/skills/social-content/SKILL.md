@@ -148,9 +148,9 @@ The creator is 40+ ("unc"). Analytics showed that unc-angle hooks ("40 year old 
 
 Once you've picked the hook, generate TikTok, YouTube Shorts, and Instagram Reels content using these templates.
 
-### TikTok
+**On-screen hook text (all platforms):** the hook you picked in Step 3. The same on-screen text is burned into the video and used across TikTok, YouTube Shorts, and Instagram Reels — list it once at the top of the output, not inside any single platform section.
 
-**On-screen hook text:** the hook you picked in Step 3
+### TikTok
 
 **Caption:**
 ```
