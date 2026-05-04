@@ -217,6 +217,43 @@ Rules:
 - **Add location** when posting — helps with local discovery, especially for new accounts
 - **AI Label**: leave off unless the video is primarily AI-generated. The 3D muscle overlay is a visual effect, not AI-generated content
 
+## Step 5: Save progression-journey runs to the tracker
+
+For **progression-journey videos only** (skip for activation videos), append a row to the **TenXRep Video Upload Tracker** Google Sheet under the `Progression Journeys` tab after producing the content. This keeps the Day-N series consolidated so the user can scan past entries when planning the next post.
+
+- **Spreadsheet ID:** `1lSTepAtLe3g_c0SL6nItITDavHGK5wRce8L2Pjh4Kks`
+- **Tab:** `Progression Journeys`
+- **Auth:** must be `tenxrep@gmail.com`. Verify with `gws drive about get --params '{"fields": "user(emailAddress)"}'` before writing. If a different account is returned, ask the user to run `gws auth logout && gws auth login` and pick `tenxrep@gmail.com` — do not write under the wrong account.
+
+**Columns (in order, A–O):**
+1. **Skill** — the skill name (e.g., `Freestanding Handstand`)
+2. **Day / Attempt** — the label used in the hook (e.g., `Day 1`, `Day 47`, `Month 3`)
+3. **Filmed Date** — today's date in `M/D/YY` format (e.g., `5/2/26`)
+4. **Hold Time / Metric** — leave blank; the user fills this in after reviewing the video
+5. **Hook Variant** — one of: `Attempt count`, `Breakthrough / cue`, `Plateau / failure point`, `Then vs now`
+6. **Notes** — short note on the post angle, overlay choices, or anything notable about the take
+7. **Curated (TT/IG)?** — `Yes` (progression videos are curated by default)
+8. **TikTok Date** — leave blank; user fills after posting
+9. **YouTube Date** — leave blank; user fills after posting
+10. **Instagram Date** — leave blank; user fills after posting
+11. **On-Screen Hook** — exact hook text burned into the video
+12. **TikTok Caption** — full caption with hashtags
+13. **YouTube Title** — search-friendly title
+14. **YouTube Description** — full description with hashtags
+15. **Instagram Caption** — full caption with hashtags
+
+**Append command** (use `valueInputOption: USER_ENTERED` so dates render correctly):
+
+```bash
+gws sheets spreadsheets values append \
+  --params '{"spreadsheetId": "1lSTepAtLe3g_c0SL6nItITDavHGK5wRce8L2Pjh4Kks", "range": "Progression Journeys!A1:O1", "valueInputOption": "USER_ENTERED", "insertDataOption": "INSERT_ROWS"}' \
+  --json '{"values": [[<15 column values in order>]]}'
+```
+
+After appending, confirm to the user with the sheet link and remind them which columns are blank for them to fill in later (Hold Time / Metric, TikTok / YouTube / Instagram Date).
+
+**Activation videos** go in the `Exercise Tracker` tab and **combo / "X to Y" moves** go in the `Combo Moves` tab — different schemas, ask before writing if the user wants those auto-appended too.
+
 ## Posting Schedule
 
 ### Weekly cadence
