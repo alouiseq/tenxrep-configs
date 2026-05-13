@@ -227,20 +227,22 @@ For **progression-journey videos only** (skip for activation videos), append a r
 
 **Columns (in order, A–O):**
 1. **Skill** — the skill name (e.g., `Freestanding Handstand`)
-2. **Day / Attempt** — the label used in the hook (e.g., `Day 1`, `Day 47`, `Month 3`)
-3. **Filmed Date** — today's date in `M/D/YY` format (e.g., `5/2/26`)
-4. **Hold Time / Metric** — leave blank; the user fills this in after reviewing the video
+2. **Day / Attempt** — the label used in the hook (e.g., `Day 1`, `Day 47`, `Month 3`). **Anchor the count to the filming date**, not the posting date.
+3. **Filmed Date** — the date the video was filmed, in `M/D/YY`. Defaults to today, but watch for clues that filming and posting are on different days (e.g., "filmed last week, uploading today").
+4. **Hold Time / Metric** — fill if the user has given you the number (e.g., `15s`); otherwise leave blank.
 5. **Hook Variant** — one of: `Attempt count`, `Breakthrough / cue`, `Plateau / failure point`, `Then vs now`
 6. **Notes** — short note on the post angle, overlay choices, or anything notable about the take
 7. **Curated (TT/IG)?** — `Yes` (progression videos are curated by default)
-8. **TikTok Date** — leave blank; user fills after posting
-9. **YouTube Date** — leave blank; user fills after posting
-10. **Instagram Date** — leave blank; user fills after posting
+8. **TikTok Date** — today's date in `M/D/YY` if posting to TikTok today, blank otherwise
+9. **YouTube Date** — today's date in `M/D/YY` if posting to YouTube today, blank otherwise
+10. **Instagram Date** — today's date in `M/D/YY` if posting to Instagram today, blank otherwise
 11. **On-Screen Hook** — exact hook text burned into the video
 12. **TikTok Caption** — full caption with hashtags
 13. **YouTube Title** — search-friendly title
 14. **YouTube Description** — full description with hashtags
 15. **Instagram Caption** — full caption with hashtags
+
+**Date defaults:** Fill posting dates (TikTok/YouTube/Instagram) with **today's date** by default for each platform the video is going to — these are the day the row is being created/posted. **Filmed Date** also defaults to today, but ask if the user mentions a filming/posting gap. The day count in column 2 should reflect the filming date, not the posting date — e.g., if Day 1 was filmed on May 2 and today's filming is May 6, this is Day 5 even if posting is delayed to May 13.
 
 **Append command** (use `valueInputOption: USER_ENTERED` so dates render correctly):
 
@@ -250,7 +252,7 @@ gws sheets spreadsheets values append \
   --json '{"values": [[<15 column values in order>]]}'
 ```
 
-After appending, confirm to the user with the sheet link and remind them which columns are blank for them to fill in later (Hold Time / Metric, TikTok / YouTube / Instagram Date).
+After appending, confirm to the user with the sheet link and the row number it landed on.
 
 ### Logging activation videos to Exercise Tracker
 
