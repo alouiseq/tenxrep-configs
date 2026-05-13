@@ -252,7 +252,41 @@ gws sheets spreadsheets values append \
 
 After appending, confirm to the user with the sheet link and remind them which columns are blank for them to fill in later (Hold Time / Metric, TikTok / YouTube / Instagram Date).
 
-**Activation videos** go in the `Exercise Tracker` tab and **combo / "X to Y" moves** go in the `Combo Moves` tab — different schemas, ask before writing if the user wants those auto-appended too.
+### Logging activation videos to Exercise Tracker
+
+For **activation videos**, ask the user if they want it logged after producing content. If yes, append to the `Exercise Tracker` tab using these 13 columns (A–M):
+
+| # | Column | How to fill |
+|---|--------|-------------|
+| 1 | Exercise | Title Case (e.g., `Archer Push-Up`, `Weighted Pull-Ups`) |
+| 2 | Muscle Group | Primary group (`Chest`, `Back`, `Legs`, `Deltoids`, `Core`) |
+| 3 | Weight Type | `body` for bodyweight, `weighted` for added load |
+| 4 | Target Muscles | Comma-separated, Title Case, matching how the app shows them |
+| 5 | Curated (TT/IG)? | `Yes` if also going on TikTok/IG, `No` if YouTube only |
+| 6 | TikTok Date | Today's date in `M/D/YY` if posting to TikTok, blank otherwise |
+| 7 | YouTube Date | Today's date in `M/D/YY` if posting to YouTube, blank otherwise |
+| 8 | Instagram Date | Today's date in `M/D/YY` if posting to Instagram, blank otherwise |
+| 9 | On-Screen Hook | Exact hook text |
+| 10 | TikTok Caption | Full caption with hashtags (blank if YouTube only) |
+| 11 | YouTube Title | Search-friendly title |
+| 12 | YouTube Description | Full description with hashtags |
+| 13 | Instagram Caption | Full caption with hashtags (blank if YouTube only) |
+
+**Date defaults:** Fill posting dates with **today's date** by default for each platform the video is going to — do not leave them blank. Detect platform-restriction hints from the input (e.g., `archer push-up (youtube only)` → fill only YouTube Date). If the user says nothing about platform restrictions, assume all three and fill all three dates with today.
+
+**Append command:**
+
+```bash
+gws sheets spreadsheets values append \
+  --params '{"spreadsheetId": "1lSTepAtLe3g_c0SL6nItITDavHGK5wRce8L2Pjh4Kks", "range": "Exercise Tracker!A1:M1", "valueInputOption": "USER_ENTERED", "insertDataOption": "INSERT_ROWS"}' \
+  --json '{"values": [[<13 column values in order>]]}'
+```
+
+After appending, confirm with the sheet link and the row number it landed on.
+
+### Logging combo / "X to Y" moves
+
+For **combo move videos** (e.g., `Leg Raise to L-Sit`), the `Combo Moves` tab uses a slightly different 15-column schema with extra `Hook Used` and `Notes` columns. Ask the user before appending and confirm column mapping with them.
 
 ## Posting Schedule
 
