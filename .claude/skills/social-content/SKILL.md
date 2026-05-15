@@ -112,17 +112,23 @@ These hooks are tuned to keep working when the rep itself doesn't look dramatica
    - Best for side-by-side or split-screen comparison footage. Pure payoff content — only post when the delta is actually visible.
    - Examples: `Planche: month 1 vs month 6`, `Muscle-up progression in 90 days`, `My handstand then vs now`
 
+5. **Conditioning / drill** — `[Skill] Progression: [Exercise]`
+   - Use when the video shows a conditioning drill or progression-tree predecessor toward the target skill (NOT a Day-N attempt at the target skill itself). The series label keeps the journey cohesive even when the content varies — viewers learn that all `[Skill] Progression: …` posts belong together.
+   - **Hybrid case — the only progression variant where the 3D muscle overlay is allowed alongside the skill tree.** The muscles ARE the payoff because the viewer is watching a strength drill, not an attempt. Show both overlays: skill tree (corner inset) + 3D muscle activation.
+   - Examples: `Handstand Progression: Press to Handstand`, `Planche Progression: Tuck Planche Holds`, `Muscle-up Progression: Explosive Pull-ups`, `Front Lever Progression: Tuck Holds`
+
 **When to pick which:**
 - Got a visible win this week → **then vs now** or **breakthrough**
 - Plateau / no visible progress → **plateau** (with failure footage) or **attempt count** (anchors timeline regardless)
 - New cue or coaching insight → **breakthrough**
 - First post in a series → **attempt count** (sets up the journey arc)
+- Filming a conditioning drill / progression-tree predecessor (not a Day-N attempt) → **conditioning / drill**
 
 **Platform priority:** Progression content thrives on TikTok and Instagram (struggle → payoff arc beats algorithmic feeds). YouTube optional — if posting there too, use the **attempt count** or **then vs now** variant as the title since they're search-friendly. Skip YouTube on plateau/failure posts; they don't search well.
 
 **Skip Step 1a (muscle list)** for progression content — the hook is about the journey, not muscle activation.
 
-**Visual overlay — use the TenXRep skill tree, not the 3D muscle overlay.** The skill tree is the better visual for progression videos because it (a) shows the viewer exactly where the creator is in the progression (e.g., step 2 of 4 in the Dips path), (b) gives them a roadmap to care about, and (c) quietly differentiates the brand — no other calisthenics creator has a skill tree visualization. The 3D muscle overlay is for activation videos; skip it here.
+**Visual overlay — use the TenXRep skill tree, not the 3D muscle overlay** (except for the **conditioning / drill** variant — see below). The skill tree is the better visual for progression videos because it (a) shows the viewer exactly where the creator is in the progression (e.g., step 2 of 4 in the Dips path), (b) gives them a roadmap to care about, and (c) quietly differentiates the brand — no other calisthenics creator has a skill tree visualization. The 3D muscle overlay is for activation videos and the conditioning / drill variant only; skip it for attempt count / breakthrough / plateau / then-vs-now videos.
 
 Two skill-tree views are available in the app, used for different moments in the cut:
 
@@ -227,10 +233,10 @@ For **progression-journey videos only** (skip for activation videos), append a r
 
 **Columns (in order, A–O):**
 1. **Skill** — the skill name (e.g., `Freestanding Handstand`)
-2. **Day / Attempt** — the label used in the hook (e.g., `Day 1`, `Day 47`, `Month 3`). **Anchor the count to the filming date**, not the posting date.
+2. **Day / Attempt** — the label used in the hook (e.g., `Day 1`, `Day 47`, `Month 3`). **Anchor the count to the filming date**, not the posting date. For **conditioning / drill** videos that don't have a Day-N count, use `Drill` so the row stays scan-filterable.
 3. **Filmed Date** — the date the video was filmed, in `M/D/YY`. Defaults to today, but watch for clues that filming and posting are on different days (e.g., "filmed last week, uploading today").
-4. **Hold Time / Metric** — fill if the user has given you the number (e.g., `15s`); otherwise leave blank.
-5. **Hook Variant** — one of: `Attempt count`, `Breakthrough / cue`, `Plateau / failure point`, `Then vs now`
+4. **Hold Time / Metric** — fill if the user has given you the number (e.g., `15s`); otherwise leave blank. Conditioning / drill videos typically leave this blank.
+5. **Hook Variant** — one of: `Attempt count`, `Breakthrough / cue`, `Plateau / failure point`, `Then vs now`, `Conditioning / drill`
 6. **Notes** — short note on the post angle, overlay choices, or anything notable about the take
 7. **Curated (TT/IG)?** — `Yes` (progression videos are curated by default)
 8. **TikTok Date** — today's date in `M/D/YY` if posting to TikTok today, blank otherwise
