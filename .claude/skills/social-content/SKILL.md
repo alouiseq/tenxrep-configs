@@ -188,13 +188,16 @@ Rules:
 
 **Description:**
 ```
+[Exercise name in Title Case]
+
 [1-2 short lines expanding on the title, mentioning equipment if relevant]
 
 #[exercise-hashtag] #calisthenics #muscleactivation #bodyweighttraining #fitness
 ```
 
 Rules:
-- 1-2 short lines expanding on the title
+- **Line 1 must be the exercise name in Title Case, on its own line** (e.g., `Press to Handstand`, `Archer Push-Up`, `Weighted Pull-Ups`). This is the first thing app-link viewers see when they click through from the TenXRep exercise library — gives them instant "this is the right video" confirmation before the curiosity copy. No label/prefix, just the name.
+- Blank line, then 1-2 short lines expanding on the title
 - 3-5 hashtags at the end
 - Do NOT include #Shorts (YouTube detects it automatically)
 - First 3 hashtags auto-appear above the title as clickable links
