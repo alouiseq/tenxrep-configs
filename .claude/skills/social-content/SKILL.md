@@ -185,19 +185,17 @@ Rules:
 - Write like a search query
 - Keep under 70 characters
 - No clickbait punctuation (!!)
+- **Title must include the exercise/skill name in plain form** (e.g., `Archer Push-Ups`, `Press to Handstand`, `Weighted Pull-Up` — not "the X" or paraphrased). App users click through from the TenXRep exercise library and the title is the biggest, most-visible confirmation they're on the right video. This rule is the *only* place the exercise name needs to appear above the description fold — don't also put it on description line 1 (redundant with the title).
 
 **Description:**
 ```
-[Exercise name in Title Case]
-
 [1-2 short lines expanding on the title, mentioning equipment if relevant]
 
 #[exercise-hashtag] #calisthenics #muscleactivation #bodyweighttraining #fitness
 ```
 
 Rules:
-- **Line 1 must be the exercise name in Title Case, on its own line** (e.g., `Press to Handstand`, `Archer Push-Up`, `Weighted Pull-Ups`). This is the first thing app-link viewers see when they click through from the TenXRep exercise library — gives them instant "this is the right video" confirmation before the curiosity copy. No label/prefix, just the name.
-- Blank line, then 1-2 short lines expanding on the title
+- 1-2 short lines expanding on the title
 - 3-5 hashtags at the end
 - Do NOT include #Shorts (YouTube detects it automatically)
 - First 3 hashtags auto-appear above the title as clickable links
