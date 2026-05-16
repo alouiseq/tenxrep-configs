@@ -13,7 +13,26 @@ arguments:
 Generate social media content for a TenXRep exercise video upload. Follow the SHORT_FORM_VIDEO_BLUEPRINT.md conventions exactly.
 
 ## Input
-The user provides an exercise name as the argument: `$ARGUMENTS`
+
+The user provides arguments in this shape: `<exercise> [(<muscles>)] [--<platform>]`
+
+- **`<exercise>`** (required) — the exercise or skill name (e.g., `archer push-up`, `freestanding handstand`).
+- **`(<muscles>)`** (optional) — comma-separated muscle list in parens. If supplied, **skip Step 1a's ask** and use this list as the target muscles. Trim/normalize to Title Case for downstream use (Exercise Tracker, captions).
+- **`--<platform>`** (optional) — `--youtube`, `--tiktok`, or `--instagram`. Case-insensitive. Restricts output to a single platform; if omitted, generate all three. Used by Exercise Tracker logging to decide which date columns to fill in.
+
+`$ARGUMENTS` is the raw argument string. Parse it accordingly.
+
+**Examples:**
+- `archer push-up (mid chest, upper chest, triceps long head, triceps lateral head, triceps medial head, front delts) --youtube` → activation, muscles pre-supplied, YouTube only
+- `weighted pull-ups (lats, biceps long head, biceps short head, rear delts, lower traps)` → activation, muscles pre-supplied, all three platforms
+- `press to handstand --youtube` → ask for muscles, YouTube only
+- `frog stand` → ask for muscles, all three platforms
+- `freestanding handstand` → ask if activation or progression journey (skill name)
+
+**Edge cases:**
+- **Progression journey videos** — ignore any muscles in parens (irrelevant for Day-N attempts). The platform flag still applies.
+- **Conditioning / drill hybrid** — muscles in parens are used (it's the only progression variant with a muscle overlay). The journey framing itself still needs to be confirmed in conversation.
+- **Multiple platforms** — out of scope. If you ever need TT + IG only, leave the flag off and ignore the YouTube block.
 
 ## Step 1: Identify the content type
 
@@ -28,9 +47,10 @@ If it's not obvious from the argument or context, ask: "Is this an activation vi
 
 Before drafting anything, find out which muscles the TenXRep app actually shows as targets for this exercise. The hook depends on this — never guess or invent muscles.
 
-Two ways to get the list:
-1. **Ask the user** — "Which muscles does the app show as targets for [exercise]? (or paste a screenshot)" This is the fastest path.
-2. **Check the exercise data** — if the user wants you to look it up, the source of truth is the exercise library in `tenxrep-api` (search the seed/exercise data files for the exercise name).
+Three ways to get the list:
+1. **Pre-supplied in the input** — if the user wrote `<exercise> (<muscles>) [--platform]` with muscles in parens, use that list directly. Skip the ask, go straight to Step 2.
+2. **Ask the user** — "Which muscles does the app show as targets for [exercise]? (or paste a screenshot)" This is the fastest path when not pre-supplied.
+3. **Check the exercise data** — if the user wants you to look it up, the source of truth is the exercise library in `tenxrep-api` (search the seed/exercise data files for the exercise name).
 
 Do not proceed to Step 2 until you have the confirmed muscle list.
 
@@ -152,7 +172,9 @@ The creator is 40+ ("unc"). Analytics showed that unc-angle hooks ("40 year old 
 
 ## Step 4: Produce the content
 
-Once you've picked the hook, generate TikTok, YouTube Shorts, and Instagram Reels content using these templates.
+Once you've picked the hook, generate content for the platforms requested.
+
+**Platform-flag handling:** if the input has `--youtube`, `--tiktok`, or `--instagram`, output only that platform's block and omit the other two entirely. If no flag is present, generate all three. The on-screen hook is burned into the video regardless and stays at the top of the output for any single-platform run.
 
 **On-screen hook text (all platforms):** the hook you picked in Step 3. The same on-screen text is burned into the video and used across TikTok, YouTube Shorts, and Instagram Reels — list it once at the top of the output, not inside any single platform section.
 
@@ -281,7 +303,7 @@ For **activation videos**, ask the user if they want it logged after producing c
 | 12 | YouTube Description | Full description with hashtags |
 | 13 | Instagram Caption | Full caption with hashtags (blank if YouTube only) |
 
-**Date defaults:** Fill posting dates with **today's date** by default for each platform the video is going to — do not leave them blank. Detect platform-restriction hints from the input (e.g., `archer push-up (youtube only)` → fill only YouTube Date). If the user says nothing about platform restrictions, assume all three and fill all three dates with today.
+**Date defaults:** Fill posting dates with **today's date** by default for each platform the video is going to — do not leave them blank. Read the input's platform flag: `--youtube` → fill only YouTube Date; `--tiktok` → only TikTok Date; `--instagram` → only Instagram Date. If no flag, fill all three with today.
 
 **Append command:**
 
