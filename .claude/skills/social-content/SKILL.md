@@ -283,6 +283,18 @@ gws sheets spreadsheets values append \
 
 After appending, confirm to the user with the sheet link and the row number it landed on.
 
+**Also update Exercise Tracker dates.** Progression journey exercises are exercises in the app library — the user needs to see in Exercise Tracker whether a video has been uploaded for that exercise. After the Progression Journeys append, also update Exercise Tracker:
+
+1. **Read column A** of `Exercise Tracker` to find a row where the Exercise name matches the Skill name from column 1 of the Progression Journeys row (case-insensitive). Match command:
+   ```bash
+   gws sheets spreadsheets values get \
+     --params '{"spreadsheetId": "1lSTepAtLe3g_c0SL6nItITDavHGK5wRce8L2Pjh4Kks", "range": "Exercise Tracker!A:A"}'
+   ```
+2. **If a row exists** for that exercise: overwrite columns F–H (TikTok Date, YouTube Date, Instagram Date) on that row with today's date for the platforms being posted to. Leave columns blank if not posting to that platform. Use `values.update` on the specific cell range (e.g., `Exercise Tracker!F123:H123`).
+3. **If no row exists**: append a minimal new row with Exercise (skill name), Curated = `Yes`, and the date columns. Other columns (Muscle Group, Weight Type, Target Muscles, captions, etc.) stay blank — those don't live here for progression journey videos.
+
+The purpose is **upload tracking**, not metadata duplication. Latest dates win; activation rows for the same exercise get their dates updated rather than preserved. Confirm in the response which Exercise Tracker row was updated (or created) and that the dates now reflect the latest video.
+
 ### Logging activation videos to Exercise Tracker
 
 For **activation videos**, ask the user if they want it logged after producing content. If yes, append to the `Exercise Tracker` tab using these 13 columns (A–M):
