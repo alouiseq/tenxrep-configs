@@ -255,7 +255,9 @@ For **progression-journey videos only** (skip for activation videos), append a r
 - **Auth:** must be `tenxrep@gmail.com`. Verify with `gws drive about get --params '{"fields": "user(emailAddress)"}'` before writing. If a different account is returned, ask the user to run `gws auth logout && gws auth login` and pick `tenxrep@gmail.com` — do not write under the wrong account.
 
 **Columns (in order, A–O):**
-1. **Skill** — the skill name (e.g., `Freestanding Handstand`)
+1. **Skill** — the exercise being filmed, matching the **canonical Exercise Tracker / app library name exactly** (case-insensitive). This is the lookup key for the Exercise Tracker date update. Watch out for two cases:
+   - **Equipment variants** — if the app library has multiple variants (e.g., `Parallettes Freestanding Handstand` AND `Freestanding Handstand` are separate library entries), use the *specific* variant you actually filmed. Don't generalize.
+   - **Conditioning / drill videos** — the Skill is the drill being filmed (e.g., `Press to Handstand`), NOT the journey destination (`Freestanding Handstand`). The journey destination lives in the hook/captions and Notes, but the Exercise Tracker lookup uses the drill name. If the app library has a parallettes variant of the drill, use that.
 2. **Day / Attempt** — the label used in the hook (e.g., `Day 1`, `Day 47`, `Month 3`). **Anchor the count to the filming date**, not the posting date. For **conditioning / drill** videos that don't have a Day-N count, use `Drill` so the row stays scan-filterable.
 3. **Filmed Date** — the date the video was filmed, in `M/D/YY`. Defaults to today, but watch for clues that filming and posting are on different days (e.g., "filmed last week, uploading today").
 4. **Hold Time / Metric** — fill if the user has given you the number (e.g., `15s`); otherwise leave blank. Conditioning / drill videos typically leave this blank.
