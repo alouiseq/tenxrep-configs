@@ -166,9 +166,42 @@ Two skill-tree views are available in the app, used for different moments in the
 
 ### Note on the "unc" (40+) angle
 
-The creator is 40+ ("unc"). Analytics showed that unc-angle hooks ("40 year old attempts X") underperformed on TikTok compared to "didn't know" hooks (274-351 views vs 453-763 views). However, the unc angle performed well on YouTube (1,230 views for tuck push-up).
+The creator is 40+ ("unc"). Two analytics batches now confirm unc-angle hooks are the **bottom-tier performers on TikTok** (2.7–5.8% like rates vs. the 7%+ floor for "didn't know" hooks). However, the unc angle performs well on YouTube (1,230 views for tuck push-up).
 
-**Current strategy:** Keep the unc identity in the bio/profile/brand and comment replies, NOT in the on-screen hook. The "didn't know" hook is the primary hook across all platforms to keep things simple (KISS). The unc persona differentiates the creator, but the muscle activation curiosity gap is what makes people watch.
+**Current strategy:** **Never use unc framing in the on-screen hook for TikTok.** Reserve unc-style framing for YouTube only (title or description copy). Across all platforms, keep the unc identity in the bio/profile/brand and comment replies. The "didn't know" hook is the primary hook on TikTok and IG; on YouTube the search-friendly title format is canonical. The unc persona differentiates the creator, but the muscle activation curiosity gap is what makes people watch.
+
+### TikTok performance benchmarks (from 15-video analysis)
+
+Use these as sanity checks when reviewing past performance or deciding whether a format is working:
+
+| Tier | Like rate (likes/views) | What hits this tier |
+|------|-------------------------|----------------------|
+| **Strong** | **7%+** | "Didn't know" hook on textbook-violating exercises (frog stand 7.5%, pike push-up 7.9%, wall handstand 7.4%, leg raise→L-sit 7.5%). The format that's working. |
+| Solid | 5–7% | First-post-in-series progression videos, strength flex (push-ups with kids 6.6%), most "didn't know" variants |
+| Mid | 3–5% | Mid-series progression posts, conditioning/drill videos (Day 5 handstand 4.7%, press to handstand 4.0%) |
+| Floor | <3% | Unc-angle hooks (2.7%), wide-distribution-but-low-niche-fit videos (weighted pull-ups 2.4%) |
+
+**Two-stream content split for TikTok:**
+
+| Stream | Job | Target like rate | Examples |
+|--------|-----|-------------------|----------|
+| Activation videos ("didn't know" hook) | Engagement + algorithm trust | 7%+ | Frog stand, pike push-ups, wall handstand |
+| Progression journey (Day-N / conditioning) | **Follower conversion** | 4–7% acceptable | Day 5 handstand, press to handstand drill |
+
+**Recommended mix: 60% activation / 40% progression journey.** Activation drives the algorithm; progression journey drives follows. Both are needed. Don't bias too heavily to one — pure activation gets liked but doesn't convert to follows; pure progression gets follows but the algorithm doesn't push it as hard.
+
+**Follower-conversion CTA for progression journey TikTok posts.** When generating content for a progression journey video on TikTok, **remind the user in the response to post a pinned comment** with a follow CTA after publishing. Format examples:
+- `Day [N+1] coming next week — follow for the journey`
+- `Will I hit the [goal]? follow to find out`
+- `Following the series? [emoji-free, just text]`
+
+The data shows progression posts drive ~+1–2 followers per post when CTAs are absent; with a clear "next post coming" CTA in the pinned comment, expect 2–3x. Don't put the CTA in the caption (TikTok truncates).
+
+**Series-freshness rule for long-running progressions.** As a series progresses past ~5 posts, vary the hook variant to keep the algorithm from reading repeated posts as duplicate content. Rotate between **attempt count**, **breakthrough / cue**, and **plateau / failure point** rather than running 10 consecutive "Day [N] chasing..." posts. The "then vs now" variant is a strong refresh point every ~10 posts when there's visible delta.
+
+**Skip on TikTok:**
+- Weighted-load variations where the load isn't the visual joke (weighted pull-ups format pulled 944 views but 2.4% like rate — the algorithm pushed wide, viewers didn't engage). Don't optimize for this.
+- Unc-angle hooks (see above).
 
 ## Step 4: Produce the content
 
