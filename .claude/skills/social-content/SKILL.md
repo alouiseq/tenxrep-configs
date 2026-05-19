@@ -424,6 +424,45 @@ Only post exercises that meet at least one of these criteria:
 
 At 3 videos/week on TikTok/IG, ~50 curated exercises = almost a year of content.
 
+## Profile Standards
+
+Profile setup (bio + photo) is the *follower-conversion layer* — the moment a non-follower clicks through from a viral video and decides whether to follow. Per-video content drives reach; profile drives conversion. They're separate problems with separate fixes.
+
+### TikTok bio
+
+**Character limit: 80** (including line breaks).
+
+**Required signals, in priority order:**
+1. **Calisthenics niche** — explicit or via skill names (planche, muscle-up, levers, etc. self-signal the niche to fitness-literate viewers).
+2. **Journey tease** — the active goal(s) the creator is chasing. Concrete and verb-first ("Chasing: ...").
+3. **App link** — `tenxrep.com` on its own line.
+
+**Forbidden in TikTok bio:**
+- **Unc framing** — two analytics batches confirm unc hooks underperform on TikTok. Don't reinforce the wrong angle on the profile page that converts viewers from TikTok content. Unc identity stays in the display name (e.g., `tenxunc`) and content comment replies, not the bio.
+- **Vague "builds things" / "creator" copy** — assumes context the viewer doesn't have.
+
+**Current canonical TikTok bio (locked 2026-05-19):**
+```
+Chasing: handstand, planche, muscle-up
+Muscle activation breakdowns
+tenxrep.com
+```
+~79 chars. Skills mentioned do the niche-signaling; "Muscle activation breakdowns" tells viewers what *type* of content to expect; `tenxrep.com` links the app. No unc framing.
+
+**Edit triggers:** update the bio when the skill list changes (achieve a goal, add a new series), or when the content-type focus shifts. Re-check character budget after each edit.
+
+### Profile photo
+
+**Must be fitness-coded.** A viewer landing from a calisthenics video must see calisthenics on the profile within 0.5 seconds. Anything else — coding setups, family photos, abstract logos — creates a visual disconnect that kills conversion.
+
+**Good:** a clean handstand or parallettes shot, action mid-rep, or a bright headshot with fitness setting (gym, parallettes visible, athletic wear). Recognizable at avatar-size (40px). Face or body clearly visible.
+
+**Bad:** dark silhouettes, desk/work setups, non-fitness pets/people, abstract logos.
+
+### YouTube and Instagram bios
+
+TBD — defaults to the TikTok approach (calisthenics niche, journey tease, app link, no unc framing) until platform-specific analytics show otherwise.
+
 ## Guidelines
 - Reference `docs/marketing/SHORT_FORM_VIDEO_BLUEPRINT.md` for the full strategy
 - Use "a" or "an" appropriately before the exercise name
