@@ -332,7 +332,9 @@ The purpose is **upload tracking**, not metadata duplication. Latest dates win; 
 
 ### Logging activation videos to Exercise Tracker
 
-For **activation videos**, ask the user if they want it logged after producing content. If yes, append to the `Exercise Tracker` tab using these 13 columns (A–M):
+For **activation videos**, ask the user if they want it logged after producing content. If yes, write to the `Exercise Tracker` tab. **Use search-update-or-append** — the tab mirrors the app's 270+ exercise library, so most exercises already have a row. Always look up first; only append if missing.
+
+**Schema (13 columns, A–M):**
 
 | # | Column | How to fill |
 |---|--------|-------------|
@@ -350,17 +352,21 @@ For **activation videos**, ask the user if they want it logged after producing c
 | 12 | YouTube Description | Full description with hashtags |
 | 13 | Instagram Caption | Full caption with hashtags (blank if YouTube only) |
 
-**Date defaults:** Fill posting dates with **today's date** by default for each platform the video is going to — do not leave them blank. Read the input's platform flag: `--youtube` → fill only YouTube Date; `--tiktok` → only TikTok Date; `--instagram` → only Instagram Date. If no flag, fill all three with today.
+**Write flow:**
 
-**Append command:**
+1. **Read column A** to find a row where Exercise name matches (case-insensitive):
+   ```bash
+   gws sheets spreadsheets values get \
+     --params '{"spreadsheetId": "1lSTepAtLe3g_c0SL6nItITDavHGK5wRce8L2Pjh4Kks", "range": "Exercise Tracker!A:A"}'
+   ```
 
-```bash
-gws sheets spreadsheets values append \
-  --params '{"spreadsheetId": "1lSTepAtLe3g_c0SL6nItITDavHGK5wRce8L2Pjh4Kks", "range": "Exercise Tracker!A1:M1", "valueInputOption": "USER_ENTERED", "insertDataOption": "INSERT_ROWS"}' \
-  --json '{"values": [[<13 column values in order>]]}'
-```
+2. **If a row exists** (most common case — the library entry is already there with cols A–E filled): **update only cols F–M** for that row. Preserve the existing metadata in cols A–E (Muscle Group, Weight Type, Target Muscles, Curated). Use `values.update` on `Exercise Tracker!F<row>:M<row>`. Curated stays as the library's existing value — don't flip it from `Yes` to `No` just because this specific upload is YouTube-only; the column tells you whether the *exercise* is curated for TT/IG content, not where today's video went.
 
-After appending, confirm with the sheet link and the row number it landed on.
+3. **If no row exists** (rare — only when the exercise isn't in the app library, e.g., a new weighted variant): append a new full row with all 13 columns filled.
+
+**Date defaults:** Fill posting dates with **today's date** by default for each platform the video is going to — do not leave them blank. Read the input's platform flags: `--youtube` → fill only YouTube Date; `--tiktok` → only TikTok Date; `--instagram` → only Instagram Date. Multiple flags fill multiple dates. No flag → fill all three.
+
+**Confirm in the response** which row was updated (or created) and which date columns now have today's date.
 
 ### Logging combo / "X to Y" moves
 
