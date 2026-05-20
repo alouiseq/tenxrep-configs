@@ -18,21 +18,21 @@ The user provides arguments in this shape: `<exercise> [(<muscles>)] [--<platfor
 
 - **`<exercise>`** (required) — the exercise or skill name (e.g., `archer push-up`, `freestanding handstand`).
 - **`(<muscles>)`** (optional) — comma-separated muscle list in parens. If supplied, **skip Step 1a's ask** and use this list as the target muscles. Trim/normalize to Title Case for downstream use (Exercise Tracker, captions).
-- **`--<platform>`** (optional) — `--youtube`, `--tiktok`, or `--instagram`. Case-insensitive. Restricts output to a single platform; if omitted, generate all three. Used by Exercise Tracker logging to decide which date columns to fill in.
+- **`--<platform>`** (optional, repeatable) — any combination of `--youtube`, `--tiktok`, `--instagram`. Case-insensitive. Each flag toggles that platform on. No flag = all three. Used by Exercise Tracker logging to decide which date columns to fill in.
 
 `$ARGUMENTS` is the raw argument string. Parse it accordingly.
 
 **Examples:**
 - `archer push-up (mid chest, upper chest, triceps long head, triceps lateral head, triceps medial head, front delts) --youtube` → activation, muscles pre-supplied, YouTube only
+- `elevated pike push-ups --tiktok --youtube` → activation, ask for muscles, TikTok + YouTube (skip IG)
 - `weighted pull-ups (lats, biceps long head, biceps short head, rear delts, lower traps)` → activation, muscles pre-supplied, all three platforms
 - `press to handstand --youtube` → ask for muscles, YouTube only
 - `frog stand` → ask for muscles, all three platforms
 - `freestanding handstand` → ask if activation or progression journey (skill name)
 
 **Edge cases:**
-- **Progression journey videos** — ignore any muscles in parens (irrelevant for Day-N attempts). The platform flag still applies.
+- **Progression journey videos** — ignore any muscles in parens (irrelevant for Day-N attempts). The platform flags still apply.
 - **Conditioning / drill hybrid** — muscles in parens are used (it's the only progression variant with a muscle overlay). The journey framing itself still needs to be confirmed in conversation.
-- **Multiple platforms** — out of scope. If you ever need TT + IG only, leave the flag off and ignore the YouTube block.
 
 ## Step 1: Identify the content type
 
@@ -207,7 +207,7 @@ The data shows progression posts drive ~+1–2 followers per post when CTAs are 
 
 Once you've picked the hook, generate content for the platforms requested.
 
-**Platform-flag handling:** if the input has `--youtube`, `--tiktok`, or `--instagram`, output only that platform's block and omit the other two entirely. If no flag is present, generate all three. The on-screen hook is burned into the video regardless and stays at the top of the output for any single-platform run.
+**Platform-flag handling:** flags are repeatable. Output the blocks for every platform flag present and omit the others. No flag = generate all three. The on-screen hook is burned into the video regardless and stays at the top of the output for any partial-platform run.
 
 **On-screen hook text (all platforms):** the hook you picked in Step 3. The same on-screen text is burned into the video and used across TikTok, YouTube Shorts, and Instagram Reels — list it once at the top of the output, not inside any single platform section.
 
