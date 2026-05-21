@@ -191,11 +191,13 @@ Use these as sanity checks when reviewing past performance or deciding whether a
 **Recommended mix: 60% activation / 40% progression journey.** Activation drives the algorithm; progression journey drives follows. Both are needed. Don't bias too heavily to one — pure activation gets liked but doesn't convert to follows; pure progression gets follows but the algorithm doesn't push it as hard.
 
 **Follower-conversion CTA for progression journey TikTok posts.** When generating content for a progression journey video on TikTok, **remind the user in the response to post a pinned comment** with a follow CTA after publishing. Format examples:
-- `Day [N+1] coming next week — follow for the journey`
-- `Will I hit the [goal]? follow to find out`
-- `Following the series? [emoji-free, just text]`
+- `Follow if you want to see if I hit [goal]` — **goal-anchored. Preferred.** Creates concrete stake without timing commitment.
+- `More [skill] updates coming — follow for the journey` — series-anchored, vague timing.
+- `Stacking the line a little more each session — follow to see when it locks` — process-framed, curiosity gap.
 
-The data shows progression posts drive ~+1–2 followers per post when CTAs are absent; with a clear "next post coming" CTA in the pinned comment, expect 2–3x. Don't put the CTA in the caption (TikTok truncates).
+**Do NOT use `Day [N+1] coming next week`-style CTAs.** Day numbers anchor to filming dates, and filming cadence is irregular — the next post might be Day 27, not Day 19. Committing to a specific number or week sets up an unmet expectation. Use goal-anchored or series-anchored framing only.
+
+The data shows progression posts drive ~+1–2 followers per post when CTAs are absent; with a clear stake-creating CTA in the pinned comment, expect 2–3x. Don't put the CTA in the caption (TikTok truncates).
 
 **Series-freshness rule for long-running progressions.** As a series progresses past ~5 posts, vary the hook variant to keep the algorithm from reading repeated posts as duplicate content. Rotate between **attempt count**, **breakthrough / cue**, and **plateau / failure point** rather than running 10 consecutive "Day [N] chasing..." posts. The "then vs now" variant is a strong refresh point every ~10 posts when there's visible delta.
 
