@@ -166,9 +166,16 @@ Two skill-tree views are available in the app, used for different moments in the
 
 ### Note on the "unc" (40+) angle
 
-The creator is 40+ ("unc"). Two analytics batches now confirm unc-angle hooks are the **bottom-tier performers on TikTok** (2.7–5.8% like rates vs. the 7%+ floor for "didn't know" hooks). However, the unc angle performs well on YouTube (1,230 views for tuck push-up).
+The creator is 40+ ("unc"). Analytics across both TikTok and YouTube now confirm unc-angle hooks **underperform on all platforms**:
+- **TikTok:** unc hooks hit bottom-tier like rates (2.7–5.8% vs. 7%+ for "didn't know" hooks)
+- **YouTube:** unc-framed titles like `40 Year Old Tuck Push-Up on Parallettes` pull bottom-tier CTR (1.74% vs. 5–24% range for non-unc titles). The earlier "unc works on YouTube" claim was based on a single high-view data point; broader data refutes it.
 
-**Current strategy:** **Never use unc framing in the on-screen hook for TikTok.** Reserve unc-style framing for YouTube only (title or description copy). Across all platforms, keep the unc identity in the bio/profile/brand and comment replies. The "didn't know" hook is the primary hook on TikTok and IG; on YouTube the search-friendly title format is canonical. The unc persona differentiates the creator, but the muscle activation curiosity gap is what makes people watch.
+**Current strategy:** **Never use unc framing in on-screen hooks, video titles, or descriptions on any platform.** Keep the unc identity in:
+- The bio/profile/brand (display name `tenxunc`, brand color choices)
+- Comment replies (responding to viewers in the unc voice)
+- Persona expression elsewhere
+
+The unc persona differentiates the creator, but the muscle activation curiosity gap (TikTok/IG) and plain exercise-name titles (YouTube) are what make people watch.
 
 ### TikTok performance benchmarks (from 15-video analysis)
 
@@ -205,6 +212,41 @@ The data shows progression posts drive ~+1–2 followers per post when CTAs are 
 - Weighted-load variations where the load isn't the visual joke (weighted pull-ups format pulled 944 views but 2.4% like rate — the algorithm pushed wide, viewers didn't engage). Don't optimize for this.
 - Unc-angle hooks (see above).
 
+### YouTube performance benchmarks (from 22-video analysis)
+
+**The mental model:** YouTube is not a search library. **93.4% of views come from the Shorts feed** (algorithmic recommendation), 2% from search, ~5% from other features. Treat YouTube as "Shorts feed v2" with broader audience than TikTok, not as a search engine. Search is a small long-tail bonus, not the engine.
+
+**CTR benchmarks** (impressions → clicks, measured in browse/search contexts; the Shorts feed itself doesn't surface CTR):
+
+| Tier | CTR | What hits this tier |
+|------|-----|---------------------|
+| **Outlier** | **15%+** | Bare plain-noun titles (`What a Pistol Squat Actually Targets` 23.65%, `Every Muscle the Elevated Pike Push-Up Targets` 14.89%). Short and immediately legible. |
+| Strong | 5–15% | Clean exercise-name titles, comparison/vs format, conditioning/drill series labels (`Press to Handstand` 10.14%, `Push-Ups With My Kid/nephews` 8.04%, `Day 1 Handstand` 6.25%) |
+| Solid | 2.5–5% | Standard "Every Muscle..." templates without clutter |
+| Floor | <2.5% | Cluttered titles — unc framing (`40 Year Old Tuck Push-Up on Parallettes — Muscle Activation` 1.74%), redundant suffixes (`— Muscle Activation` appended, `on Parallettes` when not the point) |
+
+**YouTube audience differs from TikTok.** Top YouTube view-getters include mainstream/isolation exercises that TikTok curation rules would *skip*:
+- Pistol Squat (2,093 views) — not posted on TT, top performer on YT
+- Side lateral raise (1,727 views) — not posted on TT, #2 on YT
+- Leaning side lateral raise (1,689 views) — not posted on TT, #3 on YT
+
+This validates the **"YouTube = full library, TikTok = curated"** strategy, but for a different reason than originally assumed. It's not search reach — it's that YouTube Shorts feed has a broader, more mainstream fitness audience that rewards content TikTok wouldn't.
+
+**Subscriber conversion is low (~1.5 subs/video).** Same problem as TikTok: views ≠ subs. Activation videos get views, progression journey videos drive subscribers. Same fix applies on YouTube but with different surface — see "Subscriber CTA" below.
+
+**Subscriber CTA for YouTube progression journey videos.** YouTube doesn't have TikTok-style pinned comments, but the **first line of the description shows above the fold on Shorts**. Use line 1 of the description as the CTA. Format examples:
+- `Subscribe if you want to see if I hit [goal]` — **goal-anchored. Preferred.**
+- `New [skill] update every week — subscribe for the journey`
+- `Following the [skill] series? Subscribe to catch the next one`
+
+Place the CTA as the description's first line, then the normal 1–2 line expansion below it, then hashtags.
+
+**YouTube title simplification rules:**
+- **Strip `— Muscle Activation` suffixes.** Redundant on YouTube — the muscle reveal happens in the video, not in the title. Adding it pads the title and depresses CTR.
+- **Drop `on Parallettes` (or other equipment) unless the equipment is the actual point.** It clutters the title and isn't searched as often as you'd think.
+- **Drop unc framing entirely** (`40 Year Old [X]` → just `[X]`). Underperforms across all platforms.
+- **Bare exercise-name titles tend to outperform.** `Press to Handstand` (10.14% CTR) beat the conditioning/drill template. When in doubt, less is more.
+
 ## Step 4: Produce the content
 
 Once you've picked the hook, generate content for the platforms requested.
@@ -239,10 +281,14 @@ Examples:
 - Progression (then vs now) → `[Skill] Progression: [X] Months`
 
 Rules:
-- Write like a search query
+- **Title must include the exercise/skill name in plain form** (e.g., `Archer Push-Ups`, `Press to Handstand`, `Weighted Pull-Up` — not "the X" or paraphrased). App users click through from the TenXRep exercise library and the title is the biggest, most-visible confirmation they're on the right video.
+- **Simplify aggressively** — YouTube CTR data shows bare titles outperform cluttered ones. Strip these suffixes/qualifiers:
+  - `— Muscle Activation` (the muscle reveal is *in* the video, not the title)
+  - `on Parallettes` / equipment suffixes when the equipment isn't the actual point
+  - `40 Year Old` / unc framing (bottom-tier CTR across the catalog)
+- **Bare exercise-name titles often win.** `Press to Handstand` outperformed templated variants in CTR. When in doubt, less is more.
 - Keep under 70 characters
 - No clickbait punctuation (!!)
-- **Title must include the exercise/skill name in plain form** (e.g., `Archer Push-Ups`, `Press to Handstand`, `Weighted Pull-Up` — not "the X" or paraphrased). App users click through from the TenXRep exercise library and the title is the biggest, most-visible confirmation they're on the right video. This rule is the *only* place the exercise name needs to appear above the description fold — don't also put it on description line 1 (redundant with the title).
 
 **Description:**
 ```
@@ -411,7 +457,8 @@ All times are local to your audience's timezone. Once you have 15-20+ posts, che
 The creator has 270+ exercises in the TenXRep app. Each platform serves a different purpose:
 
 ### YouTube Shorts — upload ALL exercises
-- YouTube is search-driven. Every exercise is a potential search entry point ("how to do a Bulgarian split squat").
+- **YouTube is Shorts-feed-driven, not search-driven.** 93% of views come from the algorithmic Shorts feed, only 2% from search. Treat YouTube as "Shorts feed v2" with a broader audience than TikTok. Search is a small long-tail bonus, not the engine.
+- YouTube's Shorts audience is **more mainstream** than TikTok's calisthenics-niche audience. Mainstream/isolation exercises (pistol squat, lateral raise) often outperform niche calisthenics here — they get reach TikTok wouldn't give them.
 - These videos also serve as reference links in the TenXRep exercise library, replacing third-party video links.
 - YouTube doesn't punish "boring" content — low-view videos still serve their purpose as app reference material.
 - Volume builds channel authority in fitness/calisthenics.
