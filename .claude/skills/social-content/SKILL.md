@@ -514,9 +514,36 @@ tenxrep.com
 
 **Bad:** dark silhouettes, desk/work setups, non-fitness pets/people, abstract logos.
 
-### YouTube and Instagram bios
+### Instagram bio
 
-TBD — defaults to the TikTok approach (calisthenics niche, journey tease, app link, no unc framing) until platform-specific analytics show otherwise.
+**Character limit: 150** (more generous than TikTok — room for a real tagline).
+
+**Required signals, in priority order:**
+1. **Journey tease** — same as TikTok. Active skill chase, verb-first.
+2. **Value tagline** — IG's extra character budget lets you include a benefit-oriented tagline that TikTok doesn't have room for. Lead with what the viewer *gets*, not what the account *is*.
+3. **App link** — `tenxrep.com` on its own line. Lowercase, no arrow emoji or "Available on the App Store"-style phrasing (`tenxrep.com` is platform-agnostic and more memorable than an App Store reference).
+
+**Forbidden in Instagram bio:**
+- **Unc framing** in line 1 or anywhere prominent — same data argument as TikTok (unc hooks bottom-tier across both platforms). The unc identity lives in the display name and tone, not the bio.
+- **Pure feature description.** "3D muscle activation app" is a feature, not a follow pitch. Pair feature mentions with viewer-benefit framing ("see what you're actually training").
+
+**Current canonical Instagram bio (locked 2026-05-22):**
+```
+Chasing: handstand, planche, muscle-up
+See every muscle you're actually training
+tenxrep.com
+```
+~94 chars. Line 1 matches the TikTok bio for cross-platform consistency. Line 2 is the value tagline — leads with viewer benefit ("see every muscle..."). Line 3 is the app link.
+
+**Why the IG bio differs from TikTok:** IG has 150 chars vs. TikTok's 80, so the IG bio can carry a richer middle line. The `See every muscle you're actually training` tagline is benefit-first ("what will I get") rather than content-type ("what does this account post"). This converts better on profile visits because IG viewers reaching the profile have already decided the content is interesting — they need the *promise of value* sealed.
+
+**Edit triggers:** same as TikTok — update when skill list changes or content-type focus shifts. The tagline (`See every muscle you're actually training`) is a strong line worth keeping; only edit if the app's positioning changes.
+
+**Note on the TikTok bio:** the IG tagline (`See every muscle you're actually training`) is genuinely stronger copy than the current TikTok bio's middle line (`Muscle activation breakdowns`). If character budget allows on TikTok, consider backporting it (76 chars including line breaks — fits the 80-char limit). Test on TikTok if you want consistency, but the current "Muscle activation breakdowns" is also valid as a content-type signal.
+
+### YouTube bio (channel description)
+
+YouTube channel descriptions are functionally different — viewers don't browse to a YouTube channel page the way they do an IG/TikTok profile. The Shorts-feed-driven distribution means most viewers never see the channel description at all. Apply the same TikTok/IG template if filling it in, but **don't prioritize this** — it's the lowest-leverage profile element across all three platforms.
 
 ## Guidelines
 - Reference `docs/marketing/SHORT_FORM_VIDEO_BLUEPRINT.md` for the full strategy
