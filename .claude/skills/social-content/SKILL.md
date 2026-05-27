@@ -164,6 +164,20 @@ Two skill-tree views are available in the app, used for different moments in the
 
 **Default rule:** tree node view for the rep itself, detail sheet for outro/receipt moments.
 
+### Where the skill tree belongs across video types
+
+The skill tree is the brand's single biggest visual differentiator — no other calisthenics creator has a progression-tree visualization. That makes it tempting to put everywhere, but **placement matters more than presence**: forcing it onto activation videos competes with the muscle-activation curiosity gap that drives the "didn't know" hook (7%+ like rates — the algorithm engine). One clear payoff per video. Use this matrix to decide:
+
+| Video type | Skill tree? | How |
+|------------|-------------|-----|
+| Progression journey (attempt count / plateau / breakthrough / then-vs-now) | **Yes — hero overlay** | Tree node view during the rep; detail sheet as the outro/receipt. Already the default (see above). |
+| Conditioning / drill hybrid | **Yes — inset + 3D muscles** | The drill *is* a tree node; show both overlays. |
+| Calisthenics-skill activation video (handstand / planche / lever progressions, etc.) | **Light end-card only** | 1-second skill-tree end card connecting the exercise to its path ("step 2 of 4 in the Handstand path"). The 3D muscle overlay stays the hero — the end card *connects*, it doesn't compete. |
+| Isolation / gym activation video (curls, lateral raises, bench, etc.) | **No** | No progression context to connect to; protect the curiosity gap. |
+| Skill-tree reveal / revamp | **Yes — it's the whole post** | Standalone build-in-public flex (TikTok/IG). The tree itself is the payoff. |
+
+**Brand-signature effect:** a consistent corner tree-node across calisthenics content trains viewers to associate the tree with the account. That recognition compounds — keep the placement consistent so it reads as a signature, not a one-off.
+
 ### Note on the "unc" (40+) angle
 
 The creator is 40+ ("unc"). Analytics across both TikTok and YouTube now confirm unc-angle hooks **underperform on all platforms**:
@@ -254,6 +268,8 @@ Once you've picked the hook, generate content for the platforms requested.
 **Platform-flag handling:** flags are repeatable. Output the blocks for every platform flag present and omit the others. No flag = generate all three. The on-screen hook is burned into the video regardless and stays at the top of the output for any partial-platform run.
 
 **On-screen hook text (all platforms):** the hook you picked in Step 3. The same on-screen text is burned into the video and used across TikTok, YouTube Shorts, and Instagram Reels — list it once at the top of the output, not inside any single platform section.
+
+**Overlay reminder:** confirm the right visual overlay for the video type via the placement matrix in *"Where the skill tree belongs across video types"* (Step 3). In particular, **calisthenics-skill activation videos** (handstand/planche/lever progressions) get a light 1-second skill-tree end card on top of the 3D muscle overlay; isolation/gym activation videos get the 3D overlay alone.
 
 ### TikTok
 

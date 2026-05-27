@@ -69,6 +69,24 @@ Film yourself progressing through a skill tree (e.g., push-up to planche progres
 
 ---
 
+## The Skill Tree as a Brand Asset
+
+The TenXRep skill tree is the brand's single biggest visual differentiator — no other calisthenics creator has a progression-tree visualization. Lean into it, but **placement beats presence**: it's a scroll-stopper in the right slot and a hook-diluter in the wrong one.
+
+| Video type | Skill tree? |
+|------------|-------------|
+| Progression journey (attempt / plateau / breakthrough / then-vs-now) | **Yes — hero overlay** (tree node during the rep, detail sheet as the receipt) |
+| Conditioning / drill hybrid | **Yes — inset + 3D muscle overlay** |
+| Calisthenics-skill activation video (handstand/planche/lever progressions) | **Light 1-second end-card only** — connects the exercise to its path; 3D muscle overlay stays the hero |
+| Isolation / gym activation video (curls, lateral raises, bench) | **No** — protect the muscle-activation curiosity gap |
+| Skill-tree reveal / revamp | **Yes — its own standalone build-in-public post** |
+
+Activation videos stay 3D-overlay-first because the muscle-activation curiosity gap ("didn't know" hook) is the algorithm engine (7%+ like rates) — one clear payoff per video. A consistent corner tree-node on calisthenics content becomes a **signature** viewers associate with the account, so keep placement consistent and it compounds.
+
+> Operational detail (applied during content generation) lives in `.claude/skills/social-content/SKILL.md` → *"Where the skill tree belongs across video types."*
+
+---
+
 ## Video Formula
 
 ### Structure (15-30 seconds)
