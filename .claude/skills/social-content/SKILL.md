@@ -150,7 +150,7 @@ These hooks are tuned to keep working when the rep itself doesn't look dramatica
 
 **Visual overlay — use the TenXRep skill tree, not the 3D muscle overlay** (except for the **conditioning / drill** variant — see below). The skill tree is the better visual for progression videos because it (a) shows the viewer exactly where the creator is in the progression (e.g., step 2 of 4 in the Dips path), (b) gives them a roadmap to care about, and (c) quietly differentiates the brand — no other calisthenics creator has a skill tree visualization. The 3D muscle overlay is for activation videos and the conditioning / drill variant only; skip it for attempt count / breakthrough / plateau / then-vs-now videos.
 
-Two skill-tree views are available in the app, used for different moments in the cut:
+Three skill-tree views are available in the app, used for different moments in the cut:
 
 - **Tree node view** (compact vertical chain, e.g., "Dips — 4 skills | 25%" with orange/gray nodes) — **default overlay**. Glanceable in under a second. Use as:
   - Corner inset during the rep
@@ -158,11 +158,16 @@ Two skill-tree views are available in the app, used for different moments in the
   - Both panels of a then-vs-now split-screen (the color delta tells the story)
   - Plateau and attempt-count posts (the unchanged orange node *is* the message)
 
+- **Radial category map** (the wheel view — a category hub like "PUSHING — 4 skills" ringed by wedges per skill family, each branching into its full progression chain out to the destination skill) — **the big-picture journey map**. Answers "here's the whole mountain I'm climbing." Gorgeous but busy: node labels are tiny and truncate, so it can't be parsed in motion. Use as:
+  - Held intro/outro setup card (~2s) on a first-post-in-series — highlight the relevant wedge and trace current node → destination so "you are here" is unmistakable
+  - Standalone skill-tree reveal/revamp post (the map itself is the payoff)
+  - **NOT** as a during-the-rep inset (too dense — that's the tree node view's job)
+
 - **Detail sheet view** (mobile bottom-sheet with title, stars, level, full progression path, rep/set targets, "Mastered!" badge, PR, date) — **the receipt**. Too text-dense to read during motion, but exactly what you want when you need credibility. Use as:
   - Outro card on a "I just hit it" / breakthrough post (hold for ~2 seconds: green bar, PR, date)
-  - First-post-in-series setup ("here's what I'm chasing — 5 reps × 5 sets of Impossible Dip")
+  - First-post setup when you want the concrete target stats ("5 reps × 5 sets of Impossible Dip") — pairs with the radial map (map shows the path, sheet shows the target's numbers)
 
-**Default rule:** tree node view for the rep itself, detail sheet for outro/receipt moments.
+**Default rule:** tree node view for the rep itself, radial category map for first-post/journey-setup intros and reveal posts, detail sheet for credibility/receipt (PR, date) moments.
 
 ### Where the skill tree belongs across video types
 
@@ -170,11 +175,11 @@ The skill tree is the brand's single biggest visual differentiator — no other 
 
 | Video type | Skill tree? | How |
 |------------|-------------|-----|
-| Progression journey (attempt count / plateau / breakthrough / then-vs-now) | **Yes — hero overlay** | Tree node view during the rep; detail sheet as the outro/receipt. Already the default (see above). |
+| Progression journey (attempt count / plateau / breakthrough / then-vs-now) | **Yes — hero overlay** | Tree node view during the rep; radial category map for a first-post journey-setup intro; detail sheet as the breakthrough/receipt. Already the default (see above). |
 | Conditioning / drill hybrid | **Yes — inset + 3D muscles** | The drill *is* a tree node; show both overlays. |
 | Calisthenics-skill activation video (handstand / planche / lever progressions, etc.) | **Light end-card only** | 1-second skill-tree end card connecting the exercise to its path ("step 2 of 4 in the Handstand path"). The 3D muscle overlay stays the hero — the end card *connects*, it doesn't compete. |
 | Isolation / gym activation video (curls, lateral raises, bench, etc.) | **No** | No progression context to connect to; protect the curiosity gap. |
-| Skill-tree reveal / revamp | **Yes — it's the whole post** | Standalone build-in-public flex (TikTok/IG). The tree itself is the payoff. |
+| Skill-tree reveal / revamp | **Yes — it's the whole post** | Standalone build-in-public flex (TikTok/IG) — the radial category map is the payoff. |
 
 **Brand-signature effect:** a consistent corner tree-node across calisthenics content trains viewers to associate the tree with the account. That recognition compounds — keep the placement consistent so it reads as a signature, not a one-off.
 

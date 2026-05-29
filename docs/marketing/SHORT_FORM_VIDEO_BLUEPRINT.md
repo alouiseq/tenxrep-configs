@@ -75,13 +75,18 @@ The TenXRep skill tree is the brand's single biggest visual differentiator — n
 
 | Video type | Skill tree? |
 |------------|-------------|
-| Progression journey (attempt / plateau / breakthrough / then-vs-now) | **Yes — hero overlay** (tree node during the rep, detail sheet as the receipt) |
+| Progression journey (attempt / plateau / breakthrough / then-vs-now) | **Yes — hero overlay** (tree node during the rep, radial map for first-post setup, detail sheet as the receipt) |
 | Conditioning / drill hybrid | **Yes — inset + 3D muscle overlay** |
 | Calisthenics-skill activation video (handstand/planche/lever progressions) | **Light 1-second end-card only** — connects the exercise to its path; 3D muscle overlay stays the hero |
 | Isolation / gym activation video (curls, lateral raises, bench) | **No** — protect the muscle-activation curiosity gap |
-| Skill-tree reveal / revamp | **Yes — its own standalone build-in-public post** |
+| Skill-tree reveal / revamp | **Yes — its own standalone build-in-public post** (the radial category map is the payoff) |
 
 Activation videos stay 3D-overlay-first because the muscle-activation curiosity gap ("didn't know" hook) is the algorithm engine (7%+ like rates) — one clear payoff per video. A consistent corner tree-node on calisthenics content becomes a **signature** viewers associate with the account, so keep placement consistent and it compounds.
+
+**Three views, three jobs:**
+- **Tree node view** (compact chain) — glanceable during-the-rep inset; "step X of Y."
+- **Radial category map** (the wheel) — big-picture "here's the whole mountain"; held intro/outro setup card and standalone reveal posts. Too busy for in-motion use — highlight the relevant wedge and trace current → destination so "you are here" is unmistakable.
+- **Detail sheet** (stats card) — credibility receipt (stars, PR, date) on breakthrough / "I just hit it" posts.
 
 > Operational detail (applied during content generation) lives in `.claude/skills/social-content/SKILL.md` → *"Where the skill tree belongs across video types."*
 
