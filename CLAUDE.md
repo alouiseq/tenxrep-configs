@@ -114,16 +114,28 @@ cd tenxrep-go
 
 ### Starting All Services
 
+Use these version-correct commands (Python 3.11.14 via the API venv, Node 20 via `.nvmrc`):
+
 ```bash
-# Terminal 1: Backend API
-cd tenxrep-api && source venv/bin/activate && python run.py
+# Terminal 1: Backend API (Python 3.11.14, port 8000)
+cd tenxrep-api && source venv/bin/activate && python --version && python run.py
 
-# Terminal 2: Frontend App
-cd tenxrep-web && npm run dev
+# Terminal 2: Frontend App (Node 20, port 8080)
+cd tenxrep-web && nvm use && npm run dev
 
-# Terminal 3: Marketing Site (if needed)
-cd tenxrep-marketing && npm run dev
+# Terminal 3: Marketing Site (if needed, port 3000)
+cd tenxrep-marketing && nvm use && npm run dev
 ```
+
+**Required versions:**
+| Project | Required | Pinned in |
+|---------|----------|-----------|
+| tenxrep-api | Python 3.11.14 | `.python-version`, `Dockerfile`, venv |
+| tenxrep-web | Node 20 | `.nvmrc` |
+
+- API venv is locked to 3.11.14 — just activate it (no `pyenv` switch needed). `python --version` is a sanity check before launch.
+- `nvm use` reads `.nvmrc` automatically. If Node 20 isn't installed: `nvm install 20` once.
+- Default shell Node may be newer (e.g. 23.x) — always `nvm use` in `tenxrep-web` before `npm run dev`.
 
 ### Common Cross-Project Tasks
 
