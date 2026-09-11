@@ -132,6 +132,10 @@ Keep it factual. No flattery, no "we noticed you've been crushing it." The point
 
 > **Current data (2026-09-11): there are no active users**, so the Active template is unused for now. The positioning signal the plan wanted from actives has to come from ghost Q1 ("What made you download it?") — it reveals which pitch actually converted.
 
+`{first_name}` and `{personal_line}` are generated per recipient (see Step 3) — read them over, don't write them. The reply-log sheet's `email_body` column renders each full email from them, so edits to either cell flow through.
+
+Template choices worth keeping: your name goes in the first line (it's sent from personal Gmail, so the sender isn't recognizable); "sign up", not "download" (most signups were on web); ghosts get a neutral reminder of what TenXRep is ("the workout app") — a pitch like "the 3D muscle app" would bias their answer to Q1.
+
 Three questions, hard cap. No links of any kind. No pitch, no feature announcements, no discount codes — the moment it becomes a sales email the honest answers stop.
 
 ### Active
@@ -151,7 +155,7 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 > No wrong answers, and blunt is more useful than polite.
 >
 > Thanks,
-> {your_name}
+> Louie
 
 ### Churned
 
@@ -159,7 +163,7 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 >
 > Hey {first_name},
 >
-> I built TenXRep — solo, no team behind it.
+> I'm Louie, and I built TenXRep. It's just me, no team.
 >
 > {personal_line} I'd really like to know why. Three questions:
 >
@@ -167,10 +171,10 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 > 2. What made you stop?
 > 3. Are you using something else now?
 >
-> I'm not trying to win you back — I just need to know what's broken. Harsh answers are the useful ones.
+> I'm not trying to win you back. I just need to know what's broken, and harsh answers are the useful ones.
 >
 > Thanks,
-> {your_name}
+> Louie
 
 ### Ghost
 
@@ -178,18 +182,18 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 >
 > Hey {first_name},
 >
-> I'm the solo developer behind TenXRep.
+> I'm Louie, the solo developer behind TenXRep, the workout app.
 >
 > {personal_line} You're the person I most want to hear from. Three questions:
 >
-> 1. What made you download it in the first place?
+> 1. What made you sign up in the first place?
 > 2. What did you expect to see when you opened it?
 > 3. What stopped you from logging a workout?
 >
-> Even a one-line answer helps. "Looked confusing" or "forgot about it" is genuinely useful data.
+> Even a one-line answer helps. "Looked confusing" or "forgot about it" is genuinely useful.
 >
 > Thanks,
-> {your_name}
+> Louie
 
 ---
 
@@ -200,7 +204,8 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 **Order:** churned (15, warmer) first, then ghosts. Expect single-digit replies overall — send to everyone.
 
 - **Individually.** No BCC, no "Dear user."
-- **Plain text.** No HTML template, no logo, no unsubscribe footer.
+- **Plain text.** No HTML template, no logo, no unsubscribe footer. In Gmail compose: ⋮ → **Plain text mode** before pasting.
+- **Copying from the sheet:** double-click into the `email_body` cell and copy the text from inside it. Copying the whole cell wraps multi-line text in quotes.
 - **Spread the send.** ~20/day over a few days, not 60 in ten minutes.
 - **No links.** In a low-volume personal email, links are the strongest spam signal in the message — and there's nothing to click anyway.
 - **Never** from `noreply@` or a transactional service (SendGrid/Resend/Mailchimp). Those land in Promotions; the whole point is the primary inbox.
@@ -212,7 +217,10 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 
 ## Step 6 — Handling replies
 
-Reply to every single one, same day if possible, and ask **one** follow-up question. The second exchange is where the real answer usually shows up.
+Reply to every single one, same day if possible, and ask **one** follow-up question. The second exchange is where the real answer usually shows up. Good defaults:
+
+- Ghost: *"When you opened it, what was the first thing you tried to do?"*
+- Churned: *"What were you using before TenXRep, and what did you go back to?"*
 
 Log responses in a simple table: `email | segment | positioning_noun | mentioned_skill_tree | reason_stopped | verbatim_quote`.
 
