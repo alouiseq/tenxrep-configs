@@ -216,6 +216,8 @@ Reply to every single one, same day if possible, and ask **one** follow-up quest
 
 Log responses in a simple table: `email | segment | positioning_noun | mentioned_skill_tree | reason_stopped | verbatim_quote`.
 
+**Reply log:** [TenXRep User Interviews — Reply Log](https://docs.google.com/spreadsheets/d/13gYQ7zthNXZv9A9tGT6Uhr6RBJuvAs3J5hrmGeb2Qqw/edit) (private Google Sheet — contains user emails). The *Outreach* tab lists all recipients in send order with sent/replied/follow-up and `blocker_category` dropdowns; the *Decision rules* tab tallies categories live against the ≥3-of-8 rule.
+
 `positioning_noun` is the important column — how they describe the product in their own words. If actives consistently reach for "the muscle map thing" or "the imbalance app," that's your positioning, handed over for free.
 
 Expect: highest response from actives, lowest from ghosts. But ghosts carry the highest information per reply — one person saying "I opened it and there was nothing to look at" outweighs five actives saying they like the 3D model.
