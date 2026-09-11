@@ -54,6 +54,16 @@ Also pull in the same pass:
 
 If that histogram is a wall at 1 with almost nothing after it, the empty-state problem is confirmed before building anything.
 
+### Baseline results (prod, 2026-09-11)
+
+After excluding deactivated bots and test accounts: **67 reachable users**.
+
+- **52 never logged a workout, 15 logged ≥1, 0 active.** Histogram of the 15: 5×1, 6×2, 2×3, 1×4, 1×8. It's a wall at *zero*, not at 1.
+- **Median signup → first workout = day 0.** 13 of 15 activated within 4 days. Activation happens in the first session or never.
+- **Ghosts don't come back:** only 2 logged in again more than a day after signup (lower bound — older accounts predate `last_login_at`).
+- **Cohorts:** Apr–May 9/32 activated; Jul–Sep 1/18, *after* the June activation PRs (#32–37). Small n, and the acquisition channel may have shifted — the emails help separate the two.
+- **Caveat:** workout drafts are local-first, so 0 workouts in the DB doesn't prove they never tried. The PostHog activation funnel (built June) shows *where* they drop; the emails show *why*. Check it — and session replays if enabled — before sending.
+
 ---
 
 ## Step 2 — Segment the list
@@ -110,11 +120,17 @@ Output one CSV: `outreach.csv`
 
 Keep it factual. No flattery, no "we noticed you've been crushing it." The point is to prove a human looked at their account.
 
-**Exclusions:** filter out your own test accounts, any address matching your own domain, and obvious throwaways.
+**Exclusions:** filter out your own test accounts, any address matching your own domain, and obvious throwaways. Also:
+
+- **Deactivated accounts (`is_active = false`).** These are mostly July bot signups made with *victims'* addresses (incl. an SMS gateway). Emailing them contacts strangers who never signed up. Same rule as every other user-facing email (api PR #43).
+- **Undeliverable addresses** (e.g. typo domains like `yahoo.con`) — bounces hurt sender reputation.
+- Still worth an eyeball: pre-double-opt-in username signups with no setup and no return visit (user ids 70, 88, 91) may be unflagged bots. Deactivating them in admin also drops them from the CSV on regeneration.
 
 ---
 
 ## Step 4 — Email templates
+
+> **Current data (2026-09-11): there are no active users**, so the Active template is unused for now. The positioning signal the plan wanted from actives has to come from ghost Q1 ("What made you download it?") — it reveals which pitch actually converted.
 
 Three questions, hard cap. No links of any kind. No pitch, no feature announcements, no discount codes — the moment it becomes a sales email the honest answers stop.
 
@@ -179,7 +195,9 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 
 ## Step 5 — Sending
 
-The address matters less than the pattern. Use `you@tenxrep.com` if you have it — the recipient recognizes the domain from signup and it authenticates cleanly. Personal Gmail is fine as a fallback; a cold email from an unrecognized Gmail can read as phishing.
+**Send from personal Gmail, not `@tenxrep.com`.** `tenxrep.com` mail is Porkbun forwarding: SPF authorizes only Porkbun and DMARC is `p=quarantine`, so Gmail "send as you@tenxrep.com" fails DMARC and lands in spam. Personal Gmail needs no setup, sidesteps the domain's abuse-dented reputation, and replies land where you already read mail. To avoid reading as phishing, name TenXRep in the first line and sign as its founder.
+
+**Order:** churned (15, warmer) first, then ghosts. Expect single-digit replies overall — send to everyone.
 
 - **Individually.** No BCC, no "Dear user."
 - **Plain text.** No HTML template, no logo, no unsubscribe footer.
@@ -203,3 +221,15 @@ Log responses in a simple table: `email | segment | positioning_noun | mentioned
 Expect: highest response from actives, lowest from ghosts. But ghosts carry the highest information per reply — one person saying "I opened it and there was nothing to look at" outweighs five actives saying they like the 3D model.
 
 **Decision gate:** once ~8 replies are in, make the positioning call and unblock the Week 4+ work in the No-Regret Plan.
+
+### Pre-registered interpretation (decide before reading replies)
+
+With single-digit replies, anything can look like confirmation. Fix the meaning of each answer now, and act when **≥3 of the first ~8 replies name the same blocker**. Tag each reply with one `blocker_category` in the log:
+
+| `blocker_category` | Replies sound like | Means | Response |
+|---|---|---|---|
+| `first-session` | "Didn't know what to do", "nothing to look at" | Activation / onboarding problem | Fix the first session — not a pivot |
+| `message-mismatch` | "Saw a video, app wasn't what I expected" | Marketing promises a different product | Change positioning |
+| `already-use-other` | "I use Hevy/Strong", "logging was slower" | Competing on logging, which you'll lose | **Pivot option:** become the visualization layer over existing trackers (import Hevy/Strong/Apple Health) — also kills the empty day-one state |
+| `low-intent` | "Just curious", "not training right now" | Acquisition channel brings low-intent users | Change channel, not product |
+| `other` | Anything else | — | Note it; look for a new pattern |
