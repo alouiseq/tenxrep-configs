@@ -1,7 +1,7 @@
 # Turnstile / Email-Abuse Mitigation — Rollout Plan & Status
 
 **Last updated:** 2026-09-10
-**Owner:** Louie
+**Owner:** Alouise
 **Related:** [AUDIT_FINDINGS.md](AUDIT_FINDINGS.md) · memory `project_email_abuse_captcha.md`
 
 > ## ✅ COMPLETE (verified 2026-09-10): Turnstile ENFORCING in prod, alongside double opt-in.
