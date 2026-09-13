@@ -155,7 +155,7 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 > No wrong answers, and blunt is more useful than polite.
 >
 > Thanks,
-> Louie
+> Alouise
 
 ### Churned
 
@@ -163,7 +163,7 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 >
 > Hey {first_name},
 >
-> I'm Louie, and I built TenXRep. It's just me, no team.
+> I'm Alouise, and I built TenXRep. It's just me, no team.
 >
 > {personal_line} I'd really like to know why. Three questions:
 >
@@ -174,7 +174,7 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 > I'm not trying to win you back. I just need to know what's broken, and harsh answers are the useful ones.
 >
 > Thanks,
-> Louie
+> Alouise
 
 ### Ghost
 
@@ -182,7 +182,7 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 >
 > Hey {first_name},
 >
-> I'm Louie, the solo developer behind TenXRep, the workout app.
+> I'm Alouise, the solo developer behind TenXRep, the workout app.
 >
 > {personal_line} You're the person I most want to hear from. Three questions:
 >
@@ -193,7 +193,7 @@ Three questions, hard cap. No links of any kind. No pitch, no feature announceme
 > Even a one-line answer helps. "Looked confusing" or "forgot about it" is genuinely useful.
 >
 > Thanks,
-> Louie
+> Alouise
 
 ---
 
