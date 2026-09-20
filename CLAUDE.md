@@ -233,3 +233,4 @@ Each project has comprehensive documentation:
 - **Marketing:** `tenxrep-marketing/CLAUDE.md`
 - **URL Shortener:** `tenxrep-go/vercel.json` (minimal config, uses API short-links endpoint)
 - **Monetization:** [`docs/MONETIZATION_STRATEGY.md`](docs/MONETIZATION_STRATEGY.md) - Pricing model, feature access matrix, trial strategy
+- **Backlog:** [`docs/BACKLOG.md`](docs/BACKLOG.md) - Planned work across all four projects (Now/Next/Later/Parked). Add new planned work here rather than starting a separate list; it links to AUDIT_FINDINGS.md, TURNSTILE_ROLLOUT.md, and docs/user-interview-plan.md rather than duplicating them
