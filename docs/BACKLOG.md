@@ -15,6 +15,19 @@ Single list of planned work across all four projects. Add items here rather than
 
 ---
 
+## What users have told us
+
+Evidence behind the items below. Full replies live in the [reply log](https://docs.google.com/spreadsheets/d/13gYQ7zthNXZv9A9tGT6Uhr6RBJuvAs3J5hrmGeb2Qqw/edit); this is the running summary. **1 reply so far** — under the ≥3-of-8 bar, so treat as signal, not a mandate.
+
+**Reply 1 (2026-09-20, user 68 — churned, TRIAL, 0 workouts, one session):** `first-session`
+- **Came for calisthenics.** That was the draw, and it's what the skill tree is.
+- **"Lotta stuff on the app" → overwhelmed**, "didn't care to figure it out". Day one was demo data + an 11-step tour + a trial banner.
+- **Perceived an immediate subscription paywall** — though nothing was actually locked for him; he was on an active trial. The paywall feel came from the banner (and on iOS, Upgrade opens Apple's purchase sheet in one tap).
+- **Didn't want a second fitness subscription.** Already uses **Arrow Fitness** — free at first, he enjoyed it, its **Discord community** showed him other real users, and only then did he pay **$18/yr**.
+- **His own suggestion:** "ease you in… most of the features free… then allowing for the choice to pay money and not be a necessity."
+
+**Reading it:** the conversion pattern he describes is value → belonging → payment. TenXRep currently asks on day zero and runs a countdown whether or not value ever landed. Note he also got trial-reminder and winback emails having never logged a workout.
+
 ## Now
 
 - [ ] **Delay the trial banner until the user's first logged workout (or day 3).**
