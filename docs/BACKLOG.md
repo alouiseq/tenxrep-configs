@@ -45,6 +45,18 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 ## Next
 
+- [ ] **Simplify the first session (progressive disclosure) — don't cut features.**
+  Multiple users report the app is overwhelming to learn. The data says the problem is *how much is shown before anyone has done anything*, not the feature count: day one presents a dashboard with ~27 top-level controls, 5 nav destinations, demo data that isn't theirs, an 11-step tour, and a trial countdown — before a single set is logged. Meanwhile engaged users do use the depth (9 of 18 loggers use the skill tree; 5 of the 7 with 3+ workouts), so subtracting features would remove what retains people.
+  Scope:
+  1. Land new users on an obvious empty state ("add your first exercise") instead of demo data.
+  2. Hold back secondary surfaces (Volume/Balance modes, recommendations, stats depth) until a workout exists.
+  3. Reveal the 3D model as the payoff right after the first logged set — the existing `model_lit_first_time` event marks it.
+  4. Stop auto-prompting the 11-step tour; keep it behind the help icon.
+  **Leave the skill tree prominent** — it's the acquisition draw (interview reply 1 came for calisthenics) and half of all loggers use it.
+  *where:* `tenxrep-web/src/pages/Index.tsx` (2,144 lines — split as part of this), `src/components/tutorial/*` · *size:* M · *source:* interview reply 1 + several users' feedback, 2026-09-20
+  *measure:* PostHog funnel ① activation rate, and first-workout rate for new signups, before/after. Cohort caution: Apr–May activated 9/32, Jul–Sep 1/18 after June added first-session surface — small n, channel may also have shifted.
+  *sequence:* ship the trial-banner delay (Now) first, so the two changes can be measured apart.
+
 - [ ] **Ship a native build carrying the OAuth-only auth UX.**
   Web main hides the open username signup form on native and routes forgot-password to web; the last iOS release (06-23) predates it, so existing installs still show the username form and get a 403 once Turnstile enforces.
   *where:* `tenxrep-web` native build + App Store release · *size:* M · *source:* TURNSTILE_ROLLOUT.md
@@ -92,6 +104,10 @@ Don't build these until ~8 replies are in and one blocker category has ≥3 (see
 - **Reshape free vs paid.** If replies cluster on pricing/paywall feel: full features first, then a genuine free tier, rather than a 14-day countdown that starts on day zero.
 - **Become the visualization layer over other trackers.** If replies cluster on `already-use-other`: import from Hevy/Strong/Apple Health, which also removes the empty day-one state.
 - **Change acquisition channel.** If replies cluster on `low-intent`.
+
+## Decided against — don't re-propose
+
+- **Removing or burying exercise favorites.** Only 3 of 18 loggers have ever favorited an exercise, so it came up as a deletion candidate during the 2026-09-21 simplification discussion. **Decision: keep as-is.** Simplification work targets first-session sequencing, not feature removal.
 
 ## From other sessions — to triage
 
