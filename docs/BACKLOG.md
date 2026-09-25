@@ -26,7 +26,11 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 - **Didn't want a second fitness subscription.** Already uses **Arrow Fitness** — free at first, he enjoyed it, its **Discord community** showed him other real users, and only then did he pay **$18/yr**.
 - **His own suggestion:** "ease you in… most of the features free… then allowing for the choice to pay money and not be a necessity."
 
-**Reading it:** the conversion pattern he describes is value → belonging → payment. TenXRep currently asks on day zero and runs a countdown whether or not value ever landed. Note he also got trial-reminder and winback emails having never logged a workout.
+**Feedback 2 (2026-09-25, native mobile):** set logging is clunky. Tapping a weight/reps field opens the keyboard, which covers half the screen; you have to tap away to dismiss it, then repeat for the next value. Several other users have separately said the app has a lot going on and is hard to learn (see the first-session item in Next).
+
+**Reading it:** overwhelm reports are about *activation* (people who never started); logging friction is about *retention* (people who did). Both point at the core loop, which is why the two items below are sequenced rather than competing.
+
+**Reading reply 1:** the conversion pattern he describes is value → belonging → payment. TenXRep currently asks on day zero and runs a countdown whether or not value ever landed. Note he also got trial-reminder and winback emails having never logged a workout.
 
 ## Now
 
@@ -34,6 +38,19 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   Today the banner renders on the dashboard from the first second: "Your free trial — 14 days remaining [Upgrade Now]". A new user is asked to pay before seeing any value. Interview reply (user 68) described the first session as "an immediate subscription paywall" even though nothing was locked for them.
   *where:* `tenxrep-web/src/components/TrialBanner.tsx`, mounted `src/pages/Index.tsx` · *size:* S · *source:* user interview 2026-09-20
   *measure:* PostHog activation funnel — first-workout rate before/after.
+
+- [ ] **Mobile set-logging input friction — phase 1 (steppers, chips, typed fallback).**
+  On native, every value entry opens the keyboard, which covers half the screen and has to be dismissed by tapping away. Decided approach: make the common path keyboard-free, keep typing as the fallback for weight. Increments below come from the 576 logged exercise rows, not guesses.
+  1. **Input attributes (do first, smallest win):** `inputMode="decimal"` on weight, `inputMode="numeric"` on reps/sets, `enterKeyHint="done"`, and blur on Enter — this gives the compact numeric keypad and lets the keyboard dismiss itself. Nothing in the app sets these today.
+  2. **Fix the increments.** The weight stepper currently moves **±0.5 lb** (270 taps to reach 135). Of 416 non-zero weights logged, **338 are multiples of 5** and 379 of 2.5; only 37 need finer. So: **weight ±5 primary, 2.5 as a secondary/long-press**, reps **±1**.
+  3. **Quick chips from real distributions.** Reps **8 / 10 / 12** (8 and 10 alone are ~60% of all values logged; then 12, 5, 20, 15, 3). Sets **2 / 3** (89% of rows). Weight chips optional — top values are 30, 45, 25, 52.5, 205.
+  4. **Add steppers/chips where they're missing.** The summary row has them; the surfaces people actually log on don't — the per-set breakdown rows (`ExerciseCard.tsx` ~1225–1275) and `RepsInputDialog` are bare `type="number"` inputs.
+  5. **Keep tap-to-type for weight** as the escape hatch (52.5, 205, and the 37 sub-2.5 values).
+  6. **"Same as last set" one-tap.** Last-session prefill already exists, so most logging should be confirmation, not entry.
+  7. **Hide weight controls for bodyweight exercises.** 371 of 576 rows have no weight at all — for most sets, reps is the entire interaction.
+  8. Also check focus handling: no `scrollIntoView` on focus anywhere, and Capacitor keyboard resize mode is `KeyboardResize.Body` (`src/capacitor.ts:21`), which resizes the whole webview and causes the layout shift.
+  *where:* `tenxrep-web/src/components/ExerciseCard.tsx` (~555–700 summary, ~1225–1275 per-set), `src/components/RepsInputDialog.tsx`, `src/capacitor.ts` · *size:* M · *source:* user feedback 2026-09-25
+  *measure:* sets logged per session and mid-workout abandonment; `workout_logged` in PostHog.
 
 - [ ] **Stop sending trial-reminder / winback emails to users who never activated.**
   User 68 logged zero workouts and still got the 1-day reminder and the winback. With 53 ghosts on the list, "your trial is ending" is the wrong email for people who never started — either skip them or send a different one.
@@ -77,6 +94,11 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *where:* Apple Developer portal / admin · *size:* S · *source:* outreach prep 2026-09-11
 
 ## Later
+
+- [ ] **Mobile set logging — phase 2: drum picker for weight (only if phase 1 isn't enough).**
+  Conditional follow-up to the phase-1 item in Now. A bottom-sheet wheel/drum picker (as in Hevy/Strong) replaces typed weight entry: flick to any value, no keyboard, and the reel only offers valid steps so 52.5 and 205 cost the same as 25. **Trigger for doing it:** users still report keyboard friction after phase 1 ships, or typed entry stays common in practice.
+  Notes if built: reel needs momentum scrolling + haptic notches (no native picker in a Tailwind/shadcn app — it's a CSS scroll-snap list); 0–500 in 2.5 steps is ~200 stops, so consider a coarse/fine split; keep a small keypad fallback inside the sheet for accessibility (VoiceOver, large text) and odd values. **Reps stay on chips** — they cluster in a narrow range, so a wheel would be slower than one tap.
+  *where:* `tenxrep-web/src/components/ExerciseCard.tsx`, new picker component · *size:* L · *source:* design discussion 2026-09-25
 
 - [ ] **Delete the dead `POST /recommendations/week` endpoint.** Fully built, no frontend wiring, unreachable by any user. Remove route + `WeekRecommendation*` schemas + tests.
   *where:* `tenxrep-api/app/api/v1/endpoints/recommendations.py:100` · *size:* S · *source:* 2026-06-12 decision
