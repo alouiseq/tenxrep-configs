@@ -6,6 +6,7 @@ Single list of planned work across all four projects. Add items here rather than
 
 | Tracker | Scope |
 |---|---|
+| [TENXREP_STRATEGY.md](TENXREP_STRATEGY.md) | **Positioning, diagnosis, growth — the *why*.** Source for the repositioning, readiness-score, content and distribution items below. This doc owns trackable items; where the two disagree, decisions recorded here win. |
 | [AUDIT_FINDINGS.md](../AUDIT_FINDINGS.md) | Security/quality audit (16 open, 8 fixed) |
 | [TURNSTILE_ROLLOUT.md](../TURNSTILE_ROLLOUT.md) | Email-abuse mitigation — done, 3 open items pulled in below |
 | [user-interview-plan.md](user-interview-plan.md) | Interview campaign + decision gate |
@@ -78,6 +79,14 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *measure:* PostHog funnel ① activation rate, and first-workout rate for new signups, before/after. Cohort caution: Apr–May activated 9/32, Jul–Sep 1/18 after June added first-session surface — small n, channel may also have shifted.
   *sequence:* ship the trial-banner delay (Now) first, so the two changes can be measured apart.
 
+- [ ] **Reposition: lead with calisthenics, 3D as proof (strategy §3–§4).**
+  Homepage, App Store listing, and short-form video framing. Current hero leads with technology ("See Your Muscles in 3D") and competes with Muscle & Motion, which is 1,200+ exercises deep on anatomy. Shift to naming the outcome ("know exactly why your muscle-up isn't happening yet"), reorder the page so skill tree is first and the exercise library last, and make it fully calisthenics-first with one line for lifters. Strategy §3 is explicit that half-narrowing doesn't work.
+  *where:* `tenxrep-marketing` · *size:* M · *source:* [TENXREP_STRATEGY.md](TENXREP_STRATEGY.md) §3–§4, sequenced plan Step 2
+  *gate:* strategy Step 0 says don't move past the interviews blind — confirm nobody contradicts the calisthenics bet first.
+
+- [ ] **Fix marketing copy inconsistencies (strategy §4). Verified real numbers:** the DB has **251 exercises**, **15 skills**, **91 progressions**. The site says 206+ in features vs 160+ in the free tier (both wrong), and 14 skills in features vs 15 in pricing (pricing is right). Also: "TenxRep" casing in the workout-recommendations section, and the FAQ "Is TenXRep available now?" makes the product sound unfinished — drop it. Note the monorepo CLAUDE.md also says 160+ exercises and 88 progressions; update it too.
+  *where:* `tenxrep-marketing`, root `CLAUDE.md` · *size:* S · *source:* strategy §4
+
 - [ ] **Ship a native build carrying the OAuth-only auth UX.**
   Web main hides the open username signup form on native and routes forgot-password to web; the last iOS release (06-23) predates it, so existing installs still show the username form and get a 403 once Turnstile enforces.
   *where:* `tenxrep-web` native build + App Store release · *size:* M · *source:* TURNSTILE_ROLLOUT.md
@@ -98,6 +107,18 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *where:* Apple Developer portal / admin · *size:* S · *source:* outreach prep 2026-09-11
 
 ## Later
+
+- [ ] **Skill readiness score (strategy §7.1) — first genuinely new feature.**
+  Turn logged volume into a percentage toward each skill ("you're 60% ready for a muscle-up"). Most of the work exists: the tree already has prerequisite progressions with concrete thresholds, so this surfaces that checklist as one number. Strongest retention lever, because calisthenics skills take months and a number that ticks up weekly gives progress on days the skill hasn't moved.
+  **Verified prerequisite:** the skill tree is **not currently linked to imbalance/volume data** — 0 references to balance or volume-history data across every skill component (`CategoryColumn`, `RadialSkillTree`, `SkillDetailPanel`, `SkillTreeView`, `SkillTree.tsx`), and no readiness or weak-link code in the API. That linkage is the build, and it answers strategy §2's open question.
+  Include the "prerequisites met but still can't do it" case (§7.1): when all prerequisites clear and the skill still isn't happening, say strength likely isn't the limiter and offer the 3D weak-link view plus a technique checklist.
+  *where:* `tenxrep-api` (new endpoint + scoring), `tenxrep-web/src/components/skills/*` · *size:* L · *source:* strategy §7.1, Step 3
+
+- [ ] **Distribution: go where the audience already is (strategy §8–§9).** Non-code. Content reframe from "post the attempt" to "post the diagnosis"; platform split (TikTok skill content, YouTube age angle, separate Instagram account); calisthenics subreddits by answering questions rather than launch posts; **Bay Area Bars Calisthenics is the best single contact** (has an organizer and a real community). Detail lives in the strategy doc — not broken into items here.
+  *size:* ongoing · *source:* strategy §8–§9
+
+- [ ] **Later-not-now features (strategy §7.2–§7.5).** Prescriptive linking, weak-link detection from failed reps, video capture tied to skill nodes, adaptive programs. All wait on the day-one drop-off being fixed; adaptive programs also wait on retention existing.
+  *source:* strategy §7
 
 - [ ] **Mobile set logging — phase 2: drum picker for weight (only if phase 1 isn't enough).**
   Conditional follow-up to the phase-1 item in Now. A bottom-sheet wheel/drum picker (as in Hevy/Strong) replaces typed weight entry: flick to any value, no keyboard, and the reel only offers valid steps so 52.5 and 205 cost the same as 25. **Trigger for doing it:** users still report keyboard friction after phase 1 ships, or typed entry stays common in practice.
@@ -132,6 +153,7 @@ Don't build these until ~8 replies are in and one blocker category has ≥3 (see
 
 - **Rework the first session.** If replies cluster on `first-session`: a guided path to one logged workout instead of demo data + an 11-step tour.
 - **Reshape free vs paid.** If replies cluster on pricing/paywall feel: full features first, then a genuine free tier, rather than a 14-day countdown that starts on day zero.
+  Strategy §4 has a concrete proposal — move one or two complete skills (or the first few progressions of every skill) into Free, keep the *diagnosis* layer paid (imbalance analysis, readiness score, corrective programs). Rationale: hook people on the tree, charge for the answer to "why am I stuck?" Today the skill tree, Balance View, Volume View and corrective programs are all Pro-only, so a free user gets a logger plus basic 3D — which is the product Strong and Hevy already do better. Still parked because strategy Step 0 says don't move past the interviews blind, and unlocking changes trial conversion.
 - **Become the visualization layer over other trackers.** If replies cluster on `already-use-other`: import from Hevy/Strong/Apple Health, which also removes the empty day-one state.
 - **Change acquisition channel.** If replies cluster on `low-intent`.
 
