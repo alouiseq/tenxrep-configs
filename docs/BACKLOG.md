@@ -14,6 +14,14 @@ Single list of planned work across all four projects. Add items here rather than
 
 **Item format:** one line of what + why, then `where` (repo/file), `size` (S/M/L), `source`. Keep decided-but-unbuilt work in Now/Next; keep anything awaiting a decision in Parked.
 
+## Working agreement — state the intent before building
+
+**Before starting any item, summarize the intent — *what* the change is and *why* — and wait for a green light or pushback.** Keep it short (a few lines, not a spec): the user-visible behaviour change, the reasoning, and any judgement call being made on the user's behalf. Then build.
+
+Why: the point is to catch wrong-shaped work before it's written, not after. The trial-banner item is the worked example — the first implementation gated the banner on "has logged a workout, or day 3"; stating that intent surfaced a better rule ("don't show until the last few days of the trial"), which was both simpler and closer to what was actually wanted. That correction cost one message instead of a discarded branch.
+
+Applies to items already recorded here too — being in Now/Next means the *problem* is agreed, not that the approach is.
+
 ---
 
 ## What users have told us
@@ -35,8 +43,10 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 ## Now
 
-- [ ] **Delay the trial banner until the user's first logged workout (or day 3).**
+- [ ] **Delay the trial banner until the last few days of the trial.**
   Today the banner renders on the dashboard from the first second: "Your free trial — 14 days remaining [Upgrade Now]". A new user is asked to pay before seeing any value. Interview reply (user 68) described the first session as "an immediate subscription paywall" even though nothing was locked for them.
+  **Decided rule (2026-09-27):** show at **5 days left**, escalate to the existing urgent styling at **3**; an expired trial always shows. Nothing else changes.
+  Why a time gate rather than "after the first logged workout": simpler (no extra data dependencies), and "11 days remaining" was never actionable — the early banner was noise with a payment button attached. Nothing is lost, because trial status stays visible in Settings (`SettingsView.tsx:475`) and the reminder emails fire at 7, 2 and 1 days left. The two constants are also the knob to widen if conversion, rather than activation, becomes the bottleneck.
   *where:* `tenxrep-web/src/components/TrialBanner.tsx`, mounted `src/pages/Index.tsx` · *size:* S · *source:* user interview 2026-09-20
   *measure:* PostHog activation funnel — first-workout rate before/after.
 
