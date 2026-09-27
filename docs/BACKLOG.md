@@ -79,13 +79,9 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *measure:* PostHog funnel ① activation rate, and first-workout rate for new signups, before/after. Cohort caution: Apr–May activated 9/32, Jul–Sep 1/18 after June added first-session surface — small n, channel may also have shifted.
   *sequence:* ship the trial-banner delay (Now) first, so the two changes can be measured apart.
 
-- [ ] **Reposition: lead with calisthenics, 3D as proof (strategy §3–§4).**
-  Homepage, App Store listing, and short-form video framing. Current hero leads with technology ("See Your Muscles in 3D") and competes with Muscle & Motion, which is 1,200+ exercises deep on anatomy. Shift to naming the outcome ("know exactly why your muscle-up isn't happening yet"), reorder the page so skill tree is first and the exercise library last, and make it fully calisthenics-first with one line for lifters. Strategy §3 is explicit that half-narrowing doesn't work.
-  *where:* `tenxrep-marketing` · *size:* M · *source:* [TENXREP_STRATEGY.md](TENXREP_STRATEGY.md) §3–§4, sequenced plan Step 2
-  *gate:* strategy Step 0 says don't move past the interviews blind — confirm nobody contradicts the calisthenics bet first.
-
 - [ ] **Fix marketing copy inconsistencies (strategy §4). Verified real numbers:** the DB has **251 exercises**, **15 skills**, **91 progressions**. The site says 206+ in features vs 160+ in the free tier (both wrong), and 14 skills in features vs 15 in pricing (pricing is right). Also: "TenxRep" casing in the workout-recommendations section, and the FAQ "Is TenXRep available now?" makes the product sound unfinished — drop it. Note the monorepo CLAUDE.md also says 160+ exercises and 88 progressions; update it too.
   *where:* `tenxrep-marketing`, root `CLAUDE.md` · *size:* S · *source:* strategy §4
+  *not blocked by the repositioning hold* — wrong counts and inconsistent brand casing are factual errors regardless of which direction the positioning lands.
 
 - [ ] **Ship a native build carrying the OAuth-only auth UX.**
   Web main hides the open username signup form on native and routes forgot-password to web; the last iOS release (06-23) predates it, so existing installs still show the username form and get a 403 once Turnstile enforces.
@@ -150,6 +146,11 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 ## Parked — awaiting the interview decision gate
 
 Don't build these until ~8 replies are in and one blocker category has ≥3 (see [user-interview-plan.md](user-interview-plan.md)).
+
+- **Reposition: lead with calisthenics, 3D as proof (strategy §3–§4).** **HELD 2026-09-26 pending more interview replies.**
+  Homepage, App Store listing, and short-form video framing. Current hero leads with technology ("See Your Muscles in 3D") and competes with Muscle & Motion, which is 1,200+ exercises deep on anatomy. Shift to naming the outcome ("know exactly why your muscle-up isn't happening yet"), reorder the page so skill tree is first and the exercise library last, and make it fully calisthenics-first with one line for lifters. Strategy §3 is explicit that half-narrowing doesn't work.
+  *specific gate:* do replies mention calisthenics or the skill tree **unprompted**? 1 of 1 so far does ("downloading the app for calisthenics training") — supportive, but a repositioning on a single data point is a guess. Strategy Step 0: don't move past the interviews blind.
+  *where:* `tenxrep-marketing` · *size:* M · *source:* [TENXREP_STRATEGY.md](TENXREP_STRATEGY.md) §3–§4, Step 2
 
 - **Rework the first session.** If replies cluster on `first-session`: a guided path to one logged workout instead of demo data + an 11-step tour.
 - **Reshape free vs paid.** If replies cluster on pricing/paywall feel: full features first, then a genuine free tier, rather than a 14-day countdown that starts on day zero.

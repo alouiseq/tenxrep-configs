@@ -169,9 +169,11 @@ Keep hand-emailing every existing user. Looking specifically for:
 
 Cheapest high-impact fix, independent of the positioning question. See §6.
 
-### Step 2 — Reposition
+### Step 2 — Reposition *(HELD 2026-09-26 — waiting on more interview replies)*
 
 Homepage, App Store listing, and the framing of short-form videos. See §4.
+
+Held deliberately: 1 reply in, and it does mention calisthenics unprompted, but that's a single data point behind a full repositioning. Resume when enough replies are in to show whether anyone else reaches for calisthenics or the skill tree on their own. The factual copy fixes in §4 (wrong exercise/skill counts, brand casing, the "available now?" FAQ) are *not* held — they're wrong either way.
 
 ### Step 3 — Ship the skill readiness score
 
