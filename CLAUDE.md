@@ -196,6 +196,22 @@ Each project has its own `.env` file (gitignored). See each project's CLAUDE.md 
 
 ## AI Assistant Guidelines
 
+### Keep the docs current as you work — split by depth
+
+When work produces a correction worth remembering or a pattern worth following, record it. This is **default behavior, not something to request each time**: after a change lands, self-classify — new or changed functionality → propose the doc edit as part of wrapping up; a bug fix or refactor → skip, unless it surfaced a durable gotcha. Override phrases: **"doc this"** forces an update, **"skip docs"** suppresses one.
+
+**Where it goes depends on depth, not topic:**
+
+| Kind | Home | Shape |
+|---|---|---|
+| Terse warning or convention for one project | that project's `CLAUDE.md` → "Common Pitfalls to Avoid" | 1–2 imperative lines, linking to the deep version |
+| Pattern spanning projects, with reasoning | [`docs/ENGINEERING_PATTERNS.md`](docs/ENGINEERING_PATTERNS.md) | pattern + why + worked example |
+| Deep project-specific detail | that project's `docs/` (e.g. `tenxrep-api/docs/DATABASE.md`, `tenxrep-web/docs/COMPONENTS.md`) | full writeups |
+| Planned work | [`docs/BACKLOG.md`](docs/BACKLOG.md) | what + why, `where`, `size`, `source` |
+| User-facing change | `tenxrep-marketing/content/changelog/` | changelog entry |
+
+The `CLAUDE.md` files are auto-loaded into every session; the `docs/` are not. So the warning that stops a repeat mistake belongs in `CLAUDE.md` even when its explanation lives elsewhere — and when a pitfall's body outgrows two lines, move the body out and leave the warning.
+
 ### Security Audits
 When asked to run a security audit, follow the checklist in **[SECURITY_AUDIT.md](SECURITY_AUDIT.md)**. Focus on:
 - Authentication/authorization flaws
@@ -233,4 +249,5 @@ Each project has comprehensive documentation:
 - **Marketing:** `tenxrep-marketing/CLAUDE.md`
 - **URL Shortener:** `tenxrep-go/vercel.json` (minimal config, uses API short-links endpoint)
 - **Monetization:** [`docs/MONETIZATION_STRATEGY.md`](docs/MONETIZATION_STRATEGY.md) - Pricing model, feature access matrix, trial strategy
+- **Engineering Patterns:** [`docs/ENGINEERING_PATTERNS.md`](docs/ENGINEERING_PATTERNS.md) - Cross-project design/code patterns with the incidents behind them. Read before non-trivial work; add to it when a correction generalises beyond one project
 - **Backlog:** [`docs/BACKLOG.md`](docs/BACKLOG.md) - Planned work across all four projects (Now/Next/Later/Parked). Add new planned work here rather than starting a separate list; it links to AUDIT_FINDINGS.md, TURNSTILE_ROLLOUT.md, and docs/user-interview-plan.md rather than duplicating them
