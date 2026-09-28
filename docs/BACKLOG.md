@@ -52,6 +52,8 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 - [ ] **Mobile set-logging input friction — phase 1 (steppers, chips, typed fallback).**
   On native, every value entry opens the keyboard, which covers half the screen and has to be dismissed by tapping away. Decided approach: make the common path keyboard-free, keep typing as the fallback for weight. Increments below come from the 576 logged exercise rows, not guesses.
+  **Split into two PRs. Phase 1a is in review (web PR #54) — steps 2 (increments) and the keyboard-attribute half of step 1 are done and manually verified; everything below is what's left.**
+  Still outstanding from 1a, both descoped because they need on-device testing: a **±5 secondary increment for duration** (needs a second control, i.e. a layout change — fold into the chips work), and **`scrollIntoView` on focus + the Capacitor `KeyboardResize.Body` mode** (affects every screen).
   1. **Remove the text input from reps and sets entirely** — steppers + chips only, so those fields can never open a keyboard. Weight is the sole exception (step 5). For the one remaining typed field, plus any other typed input in the logging flow, set `inputMode="decimal"`, `enterKeyHint="done"`, and blur on Enter so the keypad is compact and dismisses itself. Nothing in the app sets these today.
   2. **Fix the increments.** The weight stepper currently moves **±0.5 lb** (270 taps to reach 135). Of 416 non-zero weights logged, **338 are multiples of 5** and 379 of 2.5; only 37 need finer. So: **weight ±5 primary, 2.5 as a secondary/long-press**, reps **±1**.
   3. **Quick chips from real distributions.** Reps **8 / 10 / 12** (8 and 10 alone are ~60% of all values logged; then 12, 5, 20, 15, 3). Sets **2 / 3** (89% of rows). Weight chips optional — top values are 30, 45, 25, 52.5, 205.
@@ -70,10 +72,6 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 - [ ] **Stop sending trial-reminder / winback emails to users who never activated.**
   User 68 logged zero workouts and still got the 1-day reminder and the winback. With 53 ghosts on the list, "your trial is ending" is the wrong email for people who never started — either skip them or send a different one.
   *where:* `tenxrep-api` trial-reminder cron (`cron.py`, `/internal/trial-reminders/run`) · *size:* S · *source:* user interview 2026-09-20
-
-- [ ] **iOS: don't open Apple's purchase sheet on the first tap.**
-  `handleUpgrade` calls `purchase()` directly on iOS, so one tap on the banner raises a native payment dialog. Put a "what Pro includes" screen in front of it so a purchase dialog requires intent.
-  *where:* `tenxrep-web/src/components/TrialBanner.tsx` · *size:* S · *source:* user interview 2026-09-20
 
 ## Next
 
@@ -134,6 +132,13 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 - [ ] **`workout_exercises.is_weighted` is unreliable — decide whether it's the source of truth or drop it.**
   The flag is true on only **29 of 576 rows**, while **175 rows carry a non-zero weight without it set**. The frontend ignores the column entirely and derives weighted-ness instead (`ExerciseCard.tsx:307`: `type === 'free' || type === 'machine' || (type === 'body' && weight > 0)`), using it only to render a "Weighted {type}" label. So the DB column and the UI disagree about what "weighted" means. Either populate it wherever a weight is entered and read from it, or delete it and derive consistently. Worth settling before the set-logging work leans on it for the "+ Add weight" default state.
   *where:* `tenxrep-api/app/models/workout.py`, `tenxrep-web/src/components/ExerciseCard.tsx`, `src/pages/Index.tsx:370`, `src/hooks/useAddToTodayWorkout.ts` · *size:* S–M · *source:* observed 2026-09-25
+
+- [ ] **iOS: don't open Apple's purchase sheet on the first tap.** *(moved down 2026-09-27 — largely defused.)*
+  `TrialBanner.handleUpgrade` calls `purchase()` directly on iOS, so one tap raises a native payment dialog. That was a day-one problem when the banner rendered from the first session; now that it only appears at 5 days left (web PR #53), a brand-new user can't reach it, and `showUpgradeToast` already routes iOS users to Settings rather than purchasing directly. A user at day 5+ still gets a one-tap dialog, so it's not zero — put a "what Pro includes" step in front of it so a purchase dialog requires intent.
+  *where:* `tenxrep-web/src/components/TrialBanner.tsx` · *size:* S · *source:* user interview 2026-09-20
+
+- [ ] **Give the icon-only stepper buttons accessible names.** The ±  buttons on the mobile weight/reps/sets steppers are icon-only with no `aria-label`, so a screen reader announces them as unlabelled buttons. Noticed while testing them (had to query by DOM position instead of by name). Small, and worth doing as part of a wider a11y sweep rather than alone.
+  *where:* `tenxrep-web/src/components/ExerciseCard.tsx` · *size:* S · *source:* observed 2026-09-27
 
 - [ ] **Delete the dead `POST /recommendations/week` endpoint.** Fully built, no frontend wiring, unreachable by any user. Remove route + `WeekRecommendation*` schemas + tests.
   *where:* `tenxrep-api/app/api/v1/endpoints/recommendations.py:100` · *size:* S · *source:* 2026-06-12 decision
