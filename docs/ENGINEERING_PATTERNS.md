@@ -2,7 +2,9 @@
 
 Design and code patterns that hold across the TenXRep projects, with the reasoning and the incident behind each one.
 
-**How this relates to the CLAUDE.md files:** those are auto-loaded into every session, so they carry terse imperative warnings (`Common Pitfalls to Avoid`) and link here. This doc is where the depth lives — read it before non-trivial work, and add to it when a correction turns out to generalise. Project-specific detail stays in its own project: [`tenxrep-api/docs/DATABASE.md`](../tenxrep-api/docs/DATABASE.md) for data migrations, [`tenxrep-web/docs/COMPONENTS.md`](../tenxrep-web/docs/COMPONENTS.md) for React conventions.
+**How this relates to the CLAUDE.md files:** those are auto-loaded into every session, so they carry terse imperative warnings (`Common Pitfalls to Avoid`) and link here. This doc is where the depth lives — read it before non-trivial work, and add to it when a correction turns out to generalise. Project-specific detail stays in its own project: [`tenxrep-api/docs/DATABASE.md`](https://github.com/alouiseq/tenxrep-api/blob/main/docs/DATABASE.md) for data migrations, [`tenxrep-web/docs/COMPONENTS.md`](https://github.com/alouiseq/tenxrep-web/blob/main/docs/COMPONENTS.md) for React conventions.
+
+> **Links here are absolute on purpose.** This doc lives in the `tenxrep-configs` repo; the project directories are separate repos that it doesn't track, so a relative `../tenxrep-api/...` resolves in a local checkout but 404s on GitHub. See [Project Structure](../CLAUDE.md#project-structure).
 
 **Last updated:** 2026-09-27
 

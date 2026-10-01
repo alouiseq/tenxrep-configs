@@ -28,14 +28,38 @@ TenXRep is a fitness tracking application that combines real-time workout tracki
 
 ## Project Structure
 
+**This is not a monorepo. It's five independent git repositories that happen to sit side by side on disk.**
+
 ```
-tenxrep/
-├── tenxrep-api/        # Backend API (FastAPI/Python)
-├── tenxrep-web/        # Main application (React/Vite)
-├── tenxrep-marketing/  # Marketing site (Next.js)
-├── tenxrep-go/         # URL shortener/redirect service (Vercel)
-└── CLAUDE.md           # This file
+tenxrep/                     ← a git repo → github.com/alouiseq/tenxrep-configs
+├── CLAUDE.md                   tracked by tenxrep-configs
+├── docs/                       tracked by tenxrep-configs (BACKLOG, strategy, patterns…)
+├── AUDIT_FINDINGS.md           tracked by tenxrep-configs
+├── TURNSTILE_ROLLOUT.md        tracked by tenxrep-configs
+│
+├── tenxrep-api/             ← separate repo → github.com/alouiseq/tenxrep-api
+├── tenxrep-web/             ← separate repo → github.com/alouiseq/tenxrep-web
+├── tenxrep-marketing/       ← separate repo → github.com/alouiseq/tenxrep-marketing
+└── tenxrep-go/              ← separate repo (static files + vercel.json)
 ```
+
+The parent repo is named **`tenxrep-configs`** on GitHub, and its `.gitignore` excludes `tenxrep-*/` — so it tracks **zero** files from the project directories. They are **not** git submodules either; nothing on GitHub records the parent/child relationship. The nesting exists only in this working copy.
+
+### What follows from that
+
+**1. Cross-repo relative links work locally and break on GitHub.** `../docs/ENGINEERING_PATTERNS.md` in `tenxrep-web/CLAUDE.md` resolves here (`tenxrep-web/..` is `tenxrep/`), but on GitHub the `tenxrep-web` repo's root *is* `tenxrep-web/`, so `../` points above the repository and 404s. **Use absolute URLs for any link that crosses a repo boundary:**
+
+```markdown
+[Engineering Patterns](https://github.com/alouiseq/tenxrep-configs/blob/main/docs/ENGINEERING_PATTERNS.md)
+```
+
+Relative links *within* one repo are fine and preferred.
+
+**2. A change spanning projects is several commits in several repos** — never one. A full-stack feature means a PR on `tenxrep-api` and a PR on `tenxrep-web`, merged in that order, plus possibly a `tenxrep-configs` commit for the docs. There is no atomic cross-repo commit, so order matters when one side depends on the other (e.g. ship the API contract before the frontend that calls it).
+
+**3. Check which repo you're in before branching.** `cd` moves you between repos; `git status` in `tenxrep/` reports only `tenxrep-configs` files and will look suspiciously clean when your real edits are a directory down. The sub-repos require feature branches + PRs; `tenxrep-configs` commits straight to `main`.
+
+**4. Each repo has its own `CLAUDE.md`,** and `tenxrep-api`/`tenxrep-web` have their own `docs/`. Only cross-project material belongs in `tenxrep-configs/docs/`.
 
 ## Projects
 
