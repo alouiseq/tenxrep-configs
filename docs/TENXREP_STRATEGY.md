@@ -138,7 +138,7 @@ Equal cards for calisthenics athletes and gym-goers tells visitors it's for ever
 
 ### Copy inconsistencies (quietly hurt credibility)
 
-- [x] ~~Exercise count~~ — **fixed (marketing PR #6).** The actual conflict was **160+** in the free-tier list vs **240** in the blog/changelog (there was no "206+" anywhere — that figure in an earlier draft of this doc was wrong). DB has **251**; copy now reads "250+" so it doesn't go stale.
+- [x] ~~Exercise count~~ — **fixed (marketing PR #6).** This doc was right: the feature header said **206+ Exercises** while the free-tier list said **160+** (plus **240** in the blog). All now "250+" (DB has 251; the "+" keeps it from going stale). *A first pass missed the 206+ because a case-sensitive grep skipped "Exercises" with a capital E — it was caught by the page self-consistency test in PR #7.*
 - [x] ~~Skill count~~ — **fixed (marketing PR #6).** Features section said "14 skills with 85 progressions", pricing said "15 skills", on the same page. Now "15 skills with 90+ progressions" (DB: 15 and 91). Root `CLAUDE.md` said 88 progressions — also corrected.
       *Dated changelog entries were deliberately left alone: "240+ exercises" and "14 skills" were true when published, and rewriting a changelog defeats its purpose.*
 - [ ] Brand written **"TenxRep"** in the workout-recommendations section, **"TenXRep"** everywhere else
