@@ -138,8 +138,9 @@ Equal cards for calisthenics athletes and gym-goers tells visitors it's for ever
 
 ### Copy inconsistencies (quietly hurt credibility)
 
-- [ ] Exercise count: **206+** in features vs **160+** in free tier — both wrong, the DB has **251**
-- [ ] Skill count: **14** in features vs **15** in pricing — **15** is correct (91 progressions, not 88 as the monorepo CLAUDE.md says)
+- [x] ~~Exercise count~~ — **fixed (marketing PR #6).** The actual conflict was **160+** in the free-tier list vs **240** in the blog/changelog (there was no "206+" anywhere — that figure in an earlier draft of this doc was wrong). DB has **251**; copy now reads "250+" so it doesn't go stale.
+- [x] ~~Skill count~~ — **fixed (marketing PR #6).** Features section said "14 skills with 85 progressions", pricing said "15 skills", on the same page. Now "15 skills with 90+ progressions" (DB: 15 and 91). Root `CLAUDE.md` said 88 progressions — also corrected.
+      *Dated changelog entries were deliberately left alone: "240+ exercises" and "14 skills" were true when published, and rewriting a changelog defeats its purpose.*
 - [ ] Brand written **"TenxRep"** in the workout-recommendations section, **"TenXRep"** everywhere else
 - [ ] FAQ "Is TenXRep available now?" makes the product sound unfinished — drop it
 

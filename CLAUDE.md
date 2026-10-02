@@ -8,7 +8,7 @@ TenXRep is a fitness tracking application that combines real-time workout tracki
 
 **Key Features:**
 - Workout planning and tracking
-- Exercise library with muscle targeting (160+ exercises)
+- Exercise library with muscle targeting (250+ exercises)
 - Interactive 3D muscle visualization (237 meshes, 40+ sub-muscles)
 - Three 3D view modes: Activation, Volume, and Balance
 - Visual Progression — timeline slider to scrub past weeks on 3D model
@@ -16,7 +16,7 @@ TenXRep is a fitness tracking application that combines real-time workout tracki
 - Corrective micro-programs — targeted exercises to fix imbalances
 - Workout recommendations with single-exercise swap
 - Overtraining Red Zone alerts (>30 sets)
-- Calisthenics skill tree progression (15 skills, 88 progressions)
+- Calisthenics skill tree progression (15 skills, 90+ progressions)
 - Progress tracking with personal records
 - Desktop side-by-side layout with mini 3D preview
 - Open registration + Google OAuth login
