@@ -10,7 +10,7 @@ arguments:
 
 # Social Content Generator
 
-Generate social media content for a TenXRep exercise video upload. Follow the SHORT_FORM_VIDEO_BLUEPRINT.md conventions exactly.
+Generate social media content for a TenXRep exercise video upload. Follow the short_form_video_blueprint.md conventions exactly.
 
 ## Input
 
@@ -567,7 +567,7 @@ tenxrep.com
 YouTube channel descriptions are functionally different — viewers don't browse to a YouTube channel page the way they do an IG/TikTok profile. The Shorts-feed-driven distribution means most viewers never see the channel description at all. Apply the same TikTok/IG template if filling it in, but **don't prioritize this** — it's the lowest-leverage profile element across all three platforms.
 
 ## Guidelines
-- Reference `docs/marketing/SHORT_FORM_VIDEO_BLUEPRINT.md` for the full strategy
+- Reference `docs/marketing/short_form_video_blueprint.md` for the full strategy
 - Use "a" or "an" appropriately before the exercise name
 - Output ONLY the formatted content — no extra commentary unless the user asks
 - If you're unsure whether an exercise is surprising or textbook, ask the user rather than guessing

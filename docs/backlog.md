@@ -6,10 +6,10 @@ Single list of planned work across all four projects. Add items here rather than
 
 | Tracker | Scope |
 |---|---|
-| [TENXREP_STRATEGY.md](TENXREP_STRATEGY.md) | **Positioning, diagnosis, growth — the *why*.** Source for the repositioning, readiness-score, content and distribution items below. This doc owns trackable items; where the two disagree, decisions recorded here win. |
+| [tenxrep_strategy.md](tenxrep_strategy.md) | **Positioning, diagnosis, growth — the *why*.** Source for the repositioning, readiness-score, content and distribution items below. This doc owns trackable items; where the two disagree, decisions recorded here win. |
 | [AUDIT_FINDINGS.md](../AUDIT_FINDINGS.md) | Security/quality audit (16 open, 8 fixed) |
 | [TURNSTILE_ROLLOUT.md](../TURNSTILE_ROLLOUT.md) | Email-abuse mitigation — done, 3 open items pulled in below |
-| [user-interview-plan.md](user-interview-plan.md) | Interview campaign + decision gate |
+| [user_interview_plan.md](user_interview_plan.md) | Interview campaign + decision gate |
 | [product_overview.md](product_overview.md) | What the app does today — features, pricing, free vs Pro |
 
 **Item format:** one line of what + why, then `where` (repo/file), `size` (S/M/L), `source`. Keep decided-but-unbuilt work in Now/Next; keep anything awaiting a decision in Parked.
@@ -162,12 +162,12 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 ## Parked — awaiting the interview decision gate
 
-Don't build these until ~8 replies are in and one blocker category has ≥3 (see [user-interview-plan.md](user-interview-plan.md)).
+Don't build these until ~8 replies are in and one blocker category has ≥3 (see [user_interview_plan.md](user_interview_plan.md)).
 
 - **Reposition: lead with calisthenics, 3D as proof (strategy §3–§4).** **HELD 2026-09-26 pending more interview replies.**
   Homepage, App Store listing, and short-form video framing. Current hero leads with technology ("See Your Muscles in 3D") and competes with Muscle & Motion, which is 1,200+ exercises deep on anatomy. Shift to naming the outcome ("know exactly why your muscle-up isn't happening yet"), reorder the page so skill tree is first and the exercise library last, and make it fully calisthenics-first with one line for lifters. Strategy §3 is explicit that half-narrowing doesn't work.
   *specific gate:* do replies mention calisthenics or the skill tree **unprompted**? 1 of 1 so far does ("downloading the app for calisthenics training") — supportive, but a repositioning on a single data point is a guess. Strategy Step 0: don't move past the interviews blind.
-  *where:* `tenxrep-marketing` · *size:* M · *source:* [TENXREP_STRATEGY.md](TENXREP_STRATEGY.md) §3–§4, Step 2
+  *where:* `tenxrep-marketing` · *size:* M · *source:* [tenxrep_strategy.md](tenxrep_strategy.md) §3–§4, Step 2
 
 - **Rework the first session.** If replies cluster on `first-session`: a guided path to one logged workout instead of demo data + an 11-step tour.
 - **Reshape free vs paid.** If replies cluster on pricing/paywall feel: full features first, then a genuine free tier, rather than a 14-day countdown that starts on day zero.

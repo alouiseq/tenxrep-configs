@@ -167,7 +167,7 @@ A genuine "hey, I remember you were looking for X - I actually found/built somet
 
 1. Check r/fitness, r/gym, r/bodyweightfitness for new tracking/app threads
 2. Engage genuinely on 2-3 threads (answer questions, ask follow-ups)
-3. Note any insights in USER_FEEDBACK.md
+3. Note any insights in user_feedback.md
 4. Don't force it - skip days when there's nothing relevant
 
 **Weekly:** Review saved threads, update feedback doc, check karma progress.

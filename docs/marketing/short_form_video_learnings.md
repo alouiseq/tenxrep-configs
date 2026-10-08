@@ -1,6 +1,6 @@
 # Short-Form Video Learnings & Strategy Notes
 
-Companion to `SHORT_FORM_VIDEO_BLUEPRINT.md`. The blueprint defines the **original strategy**; this doc captures **what we've learned executing it** — the analytics findings, validated formats, ruled-out paths, conversion benchmarks, and strategic ideas for the next iteration.
+Companion to `short_form_video_blueprint.md`. The blueprint defines the **original strategy**; this doc captures **what we've learned executing it** — the analytics findings, validated formats, ruled-out paths, conversion benchmarks, and strategic ideas for the next iteration.
 
 Operational rules for content generation live in `.claude/skills/social-content/SKILL.md`. This doc explains the *why* behind those rules and the *what's next*.
 

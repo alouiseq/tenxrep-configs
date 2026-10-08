@@ -85,4 +85,4 @@ Reference: `tenxrep-api/scripts/generate_outreach_csv.py`. Output containing use
 
 ## 6. State the intent before building
 
-Every backlog task gets a short what + why before implementation, so the approach can be green-lit or corrected. Being in the backlog means the *problem* is agreed, not the *approach*. Full statement of the agreement, and the worked example that produced it, is in [BACKLOG.md](BACKLOG.md#working-agreement--state-the-intent-before-building).
+Every backlog task gets a short what + why before implementation, so the approach can be green-lit or corrected. Being in the backlog means the *problem* is agreed, not the *approach*. Full statement of the agreement, and the worked example that produced it, is in [backlog.md](backlog.md#working-agreement--state-the-intent-before-building).

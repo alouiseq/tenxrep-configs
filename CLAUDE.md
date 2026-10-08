@@ -33,7 +33,7 @@ TenXRep is a fitness tracking application that combines real-time workout tracki
 ```
 tenxrep/                     ← a git repo → github.com/alouiseq/tenxrep-configs
 ├── CLAUDE.md                   tracked by tenxrep-configs
-├── docs/                       tracked by tenxrep-configs (BACKLOG, strategy, patterns…)
+├── docs/                       tracked by tenxrep-configs (backlog, strategy, patterns…)
 ├── AUDIT_FINDINGS.md           tracked by tenxrep-configs
 ├── TURNSTILE_ROLLOUT.md        tracked by tenxrep-configs
 │
@@ -47,10 +47,10 @@ The parent repo is named **`tenxrep-configs`** on GitHub, and its `.gitignore` e
 
 ### What follows from that
 
-**1. Cross-repo relative links work locally and break on GitHub.** `../docs/ENGINEERING_PATTERNS.md` in `tenxrep-web/CLAUDE.md` resolves here (`tenxrep-web/..` is `tenxrep/`), but on GitHub the `tenxrep-web` repo's root *is* `tenxrep-web/`, so `../` points above the repository and 404s. **Use absolute URLs for any link that crosses a repo boundary:**
+**1. Cross-repo relative links work locally and break on GitHub.** `../docs/engineering_patterns.md` in `tenxrep-web/CLAUDE.md` resolves here (`tenxrep-web/..` is `tenxrep/`), but on GitHub the `tenxrep-web` repo's root *is* `tenxrep-web/`, so `../` points above the repository and 404s. **Use absolute URLs for any link that crosses a repo boundary:**
 
 ```markdown
-[Engineering Patterns](https://github.com/alouiseq/tenxrep-configs/blob/main/docs/ENGINEERING_PATTERNS.md)
+[Engineering Patterns](https://github.com/alouiseq/tenxrep-configs/blob/main/docs/engineering_patterns.md)
 ```
 
 Relative links *within* one repo are fine and preferred.
@@ -229,9 +229,9 @@ When work produces a correction worth remembering or a pattern worth following, 
 | Kind | Home | Shape |
 |---|---|---|
 | Terse warning or convention for one project | that project's `CLAUDE.md` → "Common Pitfalls to Avoid" | 1–2 imperative lines, linking to the deep version |
-| Pattern spanning projects, with reasoning | [`docs/ENGINEERING_PATTERNS.md`](docs/ENGINEERING_PATTERNS.md) | pattern + why + worked example |
+| Pattern spanning projects, with reasoning | [`docs/engineering_patterns.md`](docs/engineering_patterns.md) | pattern + why + worked example |
 | Deep project-specific detail | that project's `docs/` (e.g. `tenxrep-api/docs/DATABASE.md`, `tenxrep-web/docs/COMPONENTS.md`) | full writeups |
-| Planned work | [`docs/BACKLOG.md`](docs/BACKLOG.md) | what + why, `where`, `size`, `source` |
+| Planned work | [`docs/backlog.md`](docs/backlog.md) | what + why, `where`, `size`, `source` |
 | User-facing change | `tenxrep-marketing/content/changelog/` **and** [`docs/product_overview.md`](docs/product_overview.md) | changelog entry (history) + edit the overview in place (current state) |
 
 The `CLAUDE.md` files are auto-loaded into every session; the `docs/` are not. So the warning that stops a repeat mistake belongs in `CLAUDE.md` even when its explanation lives elsewhere — and when a pitfall's body outgrows two lines, move the body out and leave the warning.
@@ -273,5 +273,5 @@ Each project has comprehensive documentation:
 - **Marketing:** `tenxrep-marketing/CLAUDE.md`
 - **URL Shortener:** `tenxrep-go/vercel.json` (minimal config, uses API short-links endpoint)
 - **Product Overview:** [`docs/product_overview.md`](docs/product_overview.md) - Single source of truth for what the app does today (features, counts, free vs Pro, platforms). Self-contained — the file to hand an external AI or person
-- **Engineering Patterns:** [`docs/ENGINEERING_PATTERNS.md`](docs/ENGINEERING_PATTERNS.md) - Cross-project design/code patterns with the incidents behind them. Read before non-trivial work; add to it when a correction generalises beyond one project
-- **Backlog:** [`docs/BACKLOG.md`](docs/BACKLOG.md) - Planned work across all four projects (Now/Next/Later/Parked). Add new planned work here rather than starting a separate list; it links to AUDIT_FINDINGS.md, TURNSTILE_ROLLOUT.md, and docs/user-interview-plan.md rather than duplicating them
+- **Engineering Patterns:** [`docs/engineering_patterns.md`](docs/engineering_patterns.md) - Cross-project design/code patterns with the incidents behind them. Read before non-trivial work; add to it when a correction generalises beyond one project
+- **Backlog:** [`docs/backlog.md`](docs/backlog.md) - Planned work across all four projects (Now/Next/Later/Parked). Add new planned work here rather than starting a separate list; it links to AUDIT_FINDINGS.md, TURNSTILE_ROLLOUT.md, and docs/user_interview_plan.md rather than duplicating them

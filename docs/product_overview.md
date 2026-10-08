@@ -1,6 +1,6 @@
 # TenXRep — Product Overview
 
-> **Purpose:** the single, self-contained description of what TenXRep is and does today. Written to be pasted into another AI (ChatGPT, Gemini, Claude, Grok…) or handed to anyone outside the codebase. It describes **current state only**; for change history see the [marketing changelog](https://tenxrep.com/changelog), for planned work see `BACKLOG.md`.
+> **Purpose:** the single, self-contained description of what TenXRep is and does today. Written to be pasted into another AI (ChatGPT, Gemini, Claude, Grok…) or handed to anyone outside the codebase. It describes **current state only**; for change history see the [marketing changelog](https://tenxrep.com/changelog), for planned work see `backlog.md`.
 >
 > **Last verified:** 2026-10-07 — counts below come from the production database, gates from the app code.
 >

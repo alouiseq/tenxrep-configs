@@ -1,7 +1,7 @@
 # TenXRep — Positioning & Product Strategy
 
 > Single source of truth for positioning, growth, and product priorities — the *why* behind the work.
-> Trackable items (file paths, sizes, checkboxes) live in [BACKLOG.md](BACKLOG.md), which links back to the sections here. **Where the two disagree, a decision already recorded in BACKLOG.md wins** — this doc is the argument, not the work queue.
+> Trackable items (file paths, sizes, checkboxes) live in [backlog.md](backlog.md), which links back to the sections here. **Where the two disagree, a decision already recorded in backlog.md wins** — this doc is the argument, not the work queue.
 
 **Last updated:** 2026-09-26
 
@@ -66,7 +66,7 @@ TenXRep can say: *"your front lever has stalled because your posterior chain vol
 
 That's a **diagnosis, not a curriculum**. Narrower ground, but nobody's standing on it.
 
-**Answered (2026-09-26): no, it doesn't.** Zero references to balance or volume-history data across every skill component (`CategoryColumn`, `RadialSkillTree`, `SkillDetailPanel`, `SkillTreeView`, `SkillTree.tsx`), and no readiness or weak-link code in the API. So the defensible ground above is currently a *claim about two separate features*, not something the app actually does. Building that link is the readiness score (§7.1) — tracked in BACKLOG.md.
+**Answered (2026-09-26): no, it doesn't.** Zero references to balance or volume-history data across every skill component (`CategoryColumn`, `RadialSkillTree`, `SkillDetailPanel`, `SkillTreeView`, `SkillTree.tsx`), and no readiness or weak-link code in the API. So the defensible ground above is currently a *claim about two separate features*, not something the app actually does. Building that link is the readiness score (§7.1) — tracked in backlog.md.
 
 ---
 
@@ -211,7 +211,7 @@ TenXRep isn't finished — it's mid-diagnosis with an untested repositioning bet
 ### Fixes
 
 - [x] ~~Prefill last session's weight and reps by default~~ — **already shipped.** `buildPrefillFromLastSession` carries `weightPerSet`, `repsPerSet`, `sets` and `is_weighted` from the last logged session of the same exercise (`useAddToTodayWorkout.ts`, `Index.tsx:601`). So the single biggest win here is done, and the remaining problem is narrower than this section implies.
-- [ ] ~~Replace steppers with tap-the-number → keypad, plus preset chips~~ — **superseded (2026-09-25).** Decided the other way: keep steppers, **remove the text input from reps and sets entirely**, and keep tap-to-type **only as the weight fallback** — so the common path never opens the keyboard at all. The real defect isn't steppers, it's that weight steps by **±0.5 lb** (270 taps to reach 135) while 338 of 416 logged weights are multiples of 5. See the phase-1 item in BACKLOG.md for the full spec, including duration increments for timed exercises and the "+ Add weight" collapse.
+- [ ] ~~Replace steppers with tap-the-number → keypad, plus preset chips~~ — **superseded (2026-09-25).** Decided the other way: keep steppers, **remove the text input from reps and sets entirely**, and keep tap-to-type **only as the weight fallback** — so the common path never opens the keyboard at all. The real defect isn't steppers, it's that weight steps by **±0.5 lb** (270 taps to reach 135) while 338 of 416 logged weights are multiples of 5. See the phase-1 item in backlog.md for the full spec, including duration increments for timed exercises and the "+ Add weight" collapse.
 - [ ] Add duplicate / repeat-previous-set button
 - [ ] Strip the logging screen to essentials: exercise, previous performance, inputs
 - [ ] Add **skill attempt logging** — holds, negatives, failed reps (feeds the tree and readiness score)
