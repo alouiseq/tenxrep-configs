@@ -5,7 +5,7 @@
 **Scope:** `tenxrep-api` + `tenxrep-web` (marketing npm audit only)
 **Method:** Read-only inline investigation.
 
-For the audit checklist used to scope each pass, see [SECURITY_AUDIT.md](SECURITY_AUDIT.md). This file tracks findings + status across audits.
+For the audit checklist used to scope each pass, see [security_audit.md](security_audit.md). This file tracks findings + status across audits.
 
 When re-auditing, **verify each open finding is still present** before acting — code may have changed since this was written.
 
@@ -160,5 +160,5 @@ These items were checked and were correct as of 2026-06-05 — no need to re-inv
    cd tenxrep-web && npm run test:coverage   # once @vitest/coverage-v8 is installed
    ```
 2. For each open `[ ]` item above, grep/read to confirm it's still present.
-3. New audit pass: focus areas in `SECURITY_AUDIT.md` checklist.
+3. New audit pass: focus areas in `security_audit.md` checklist.
 4. Update this file in place — mark items `[x]` as fixed, add new findings.

@@ -34,8 +34,8 @@ TenXRep is a fitness tracking application that combines real-time workout tracki
 tenxrep/                     ← a git repo → github.com/alouiseq/tenxrep-configs
 ├── CLAUDE.md                   tracked by tenxrep-configs
 ├── docs/                       tracked by tenxrep-configs (backlog, strategy, patterns…)
-├── AUDIT_FINDINGS.md           tracked by tenxrep-configs
-├── TURNSTILE_ROLLOUT.md        tracked by tenxrep-configs
+├── audit_findings.md           tracked by tenxrep-configs
+├── turnstile_rollout.md        tracked by tenxrep-configs
 │
 ├── tenxrep-api/             ← separate repo → github.com/alouiseq/tenxrep-api
 ├── tenxrep-web/             ← separate repo → github.com/alouiseq/tenxrep-web
@@ -237,7 +237,7 @@ When work produces a correction worth remembering or a pattern worth following, 
 The `CLAUDE.md` files are auto-loaded into every session; the `docs/` are not. So the warning that stops a repeat mistake belongs in `CLAUDE.md` even when its explanation lives elsewhere — and when a pitfall's body outgrows two lines, move the body out and leave the warning.
 
 ### Security Audits
-When asked to run a security audit, follow the checklist in **[SECURITY_AUDIT.md](SECURITY_AUDIT.md)**. Focus on:
+When asked to run a security audit, follow the checklist in **[security_audit.md](security_audit.md)**. Focus on:
 - Authentication/authorization flaws
 - Input validation & injection risks
 - Secrets management
@@ -274,4 +274,4 @@ Each project has comprehensive documentation:
 - **URL Shortener:** `tenxrep-go/vercel.json` (minimal config, uses API short-links endpoint)
 - **Product Overview:** [`docs/product_overview.md`](docs/product_overview.md) - Single source of truth for what the app does today (features, counts, free vs Pro, platforms). Self-contained — the file to hand an external AI or person
 - **Engineering Patterns:** [`docs/engineering_patterns.md`](docs/engineering_patterns.md) - Cross-project design/code patterns with the incidents behind them. Read before non-trivial work; add to it when a correction generalises beyond one project
-- **Backlog:** [`docs/backlog.md`](docs/backlog.md) - Planned work across all four projects (Now/Next/Later/Parked). Add new planned work here rather than starting a separate list; it links to AUDIT_FINDINGS.md, TURNSTILE_ROLLOUT.md, and docs/user_interview_plan.md rather than duplicating them
+- **Backlog:** [`docs/backlog.md`](docs/backlog.md) - Planned work across all four projects (Now/Next/Later/Parked). Add new planned work here rather than starting a separate list; it links to audit_findings.md, turnstile_rollout.md, and docs/user_interview_plan.md rather than duplicating them

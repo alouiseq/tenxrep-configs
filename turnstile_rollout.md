@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-09-10
 **Owner:** Alouise
-**Related:** [AUDIT_FINDINGS.md](AUDIT_FINDINGS.md) · memory `project_email_abuse_captcha.md`
+**Related:** [audit_findings.md](audit_findings.md) · memory `project_email_abuse_captcha.md`
 
 > ## ✅ COMPLETE (verified 2026-09-10): Turnstile ENFORCING in prod, alongside double opt-in.
 > - **API** (PR #45, merged 08-26): `TURNSTILE_SECRET_KEY` set on App Runner → enforcing. Verified: `forgot-password` with no token → **403**.
@@ -71,7 +71,7 @@ Turnstile has no native SDK, and an `Origin`-header exemption is client-spoofabl
 - [ ] **Ship a native build** with the OAuth-only auth UX (see caveat above).
 - [ ] Monitor Gmail reputation (Google Postmaster Tools).
 - [ ] *(optional)* Redeploy staging web from main + reconcile the staging secret.
-- [ ] From the audit: dependency bumps (`python-multipart`/`starlette`, `npm audit fix` web+marketing), `beta_signups` PII gap on account deletion. See [AUDIT_FINDINGS.md](AUDIT_FINDINGS.md).
+- [ ] From the audit: dependency bumps (`python-multipart`/`starlette`, `npm audit fix` web+marketing), `beta_signups` PII gap on account deletion. See [audit_findings.md](audit_findings.md).
 
 ---
 

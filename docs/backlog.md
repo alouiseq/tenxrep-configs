@@ -7,8 +7,8 @@ Single list of planned work across all four projects. Add items here rather than
 | Tracker | Scope |
 |---|---|
 | [tenxrep_strategy.md](tenxrep_strategy.md) | **Positioning, diagnosis, growth — the *why*.** Source for the repositioning, readiness-score, content and distribution items below. This doc owns trackable items; where the two disagree, decisions recorded here win. |
-| [AUDIT_FINDINGS.md](../AUDIT_FINDINGS.md) | Security/quality audit (16 open, 8 fixed) |
-| [TURNSTILE_ROLLOUT.md](../TURNSTILE_ROLLOUT.md) | Email-abuse mitigation — done, 3 open items pulled in below |
+| [audit_findings.md](../audit_findings.md) | Security/quality audit (16 open, 8 fixed) |
+| [turnstile_rollout.md](../turnstile_rollout.md) | Email-abuse mitigation — done, 3 open items pulled in below |
 | [user_interview_plan.md](user_interview_plan.md) | Interview campaign + decision gate |
 | [product_overview.md](product_overview.md) | What the app does today — features, pricing, free vs Pro |
 
@@ -95,7 +95,7 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 - [ ] **Ship a native build carrying the OAuth-only auth UX.**
   Web main hides the open username signup form on native and routes forgot-password to web; the last iOS release (06-23) predates it, so existing installs still show the username form and get a 403 once Turnstile enforces.
-  *where:* `tenxrep-web` native build + App Store release · *size:* M · *source:* TURNSTILE_ROLLOUT.md
+  *where:* `tenxrep-web` native build + App Store release · *size:* M · *source:* turnstile_rollout.md
 
 - [ ] **Cap verification-email resends per pending signup.**
   `POST /auth/resend-verification` isn't CAPTCHA-gated; its only limits are a 2-minute per-email cooldown and 3/min per IP. One solved CAPTCHA can therefore send ~720 emails to one address over a pending signup's 24h life. A total-resend cap (e.g. 3) is platform-agnostic and needs no widget.
@@ -107,7 +107,7 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 - [ ] **Monitor Gmail sender reputation (Google Postmaster Tools).**
   Post-abuse follow-up. If reputation is dented, isolate the verification-email sender onto a subdomain so the root domain recovers.
-  *where:* DNS + Resend config · *size:* M · *source:* TURNSTILE_ROLLOUT.md
+  *where:* DNS + Resend config · *size:* M · *source:* turnstile_rollout.md
 
 - [ ] **Outreach follow-through.** 9 recipients are on `@privaterelay.appleid.com` and can't be emailed from personal Gmail (Apple only accepts registered senders) — check Resend logs for delivery to a relay address to learn whether `tenxrep.com` is already registered. Also review user ids 70, 88, 91 (pre-opt-in signups, no setup, never returned — possible unflagged bots).
   *where:* Apple Developer portal / admin · *size:* S · *source:* outreach prep 2026-09-11
@@ -158,7 +158,7 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *size:* S
 
 - [ ] **Work the audit backlog.** 16 open findings — dependency bumps, `beta_signups` PII on account deletion, auth error-message enumeration, rate limits on authenticated writes, request body size limit, slowapi in-memory storage, coverage tooling, oversized components, one-off scripts cleanup.
-  *where:* [AUDIT_FINDINGS.md](../AUDIT_FINDINGS.md) · *size:* L
+  *where:* [audit_findings.md](../audit_findings.md) · *size:* L
 
 ## Parked — awaiting the interview decision gate
 
