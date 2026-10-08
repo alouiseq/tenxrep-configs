@@ -10,7 +10,7 @@ Single list of planned work across all four projects. Add items here rather than
 | [AUDIT_FINDINGS.md](../AUDIT_FINDINGS.md) | Security/quality audit (16 open, 8 fixed) |
 | [TURNSTILE_ROLLOUT.md](../TURNSTILE_ROLLOUT.md) | Email-abuse mitigation — done, 3 open items pulled in below |
 | [user-interview-plan.md](user-interview-plan.md) | Interview campaign + decision gate |
-| [MONETIZATION_STRATEGY.md](MONETIZATION_STRATEGY.md) | Pricing/packaging reference |
+| [product_overview.md](product_overview.md) | What the app does today — features, pricing, free vs Pro |
 
 **Item format:** one line of what + why, then `where` (repo/file), `size` (S/M/L), `source`. Keep decided-but-unbuilt work in Now/Next; keep anything awaiting a decision in Parked.
 

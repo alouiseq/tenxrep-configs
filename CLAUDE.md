@@ -232,7 +232,7 @@ When work produces a correction worth remembering or a pattern worth following, 
 | Pattern spanning projects, with reasoning | [`docs/ENGINEERING_PATTERNS.md`](docs/ENGINEERING_PATTERNS.md) | pattern + why + worked example |
 | Deep project-specific detail | that project's `docs/` (e.g. `tenxrep-api/docs/DATABASE.md`, `tenxrep-web/docs/COMPONENTS.md`) | full writeups |
 | Planned work | [`docs/BACKLOG.md`](docs/BACKLOG.md) | what + why, `where`, `size`, `source` |
-| User-facing change | `tenxrep-marketing/content/changelog/` | changelog entry |
+| User-facing change | `tenxrep-marketing/content/changelog/` **and** [`docs/product_overview.md`](docs/product_overview.md) | changelog entry (history) + edit the overview in place (current state) |
 
 The `CLAUDE.md` files are auto-loaded into every session; the `docs/` are not. So the warning that stops a repeat mistake belongs in `CLAUDE.md` even when its explanation lives elsewhere — and when a pitfall's body outgrows two lines, move the body out and leave the warning.
 
@@ -272,6 +272,6 @@ Each project has comprehensive documentation:
 - **Web:** `tenxrep-web/CLAUDE.md` and `tenxrep-web/docs/`
 - **Marketing:** `tenxrep-marketing/CLAUDE.md`
 - **URL Shortener:** `tenxrep-go/vercel.json` (minimal config, uses API short-links endpoint)
-- **Monetization:** [`docs/MONETIZATION_STRATEGY.md`](docs/MONETIZATION_STRATEGY.md) - Pricing model, feature access matrix, trial strategy
+- **Product Overview:** [`docs/product_overview.md`](docs/product_overview.md) - Single source of truth for what the app does today (features, counts, free vs Pro, platforms). Self-contained — the file to hand an external AI or person
 - **Engineering Patterns:** [`docs/ENGINEERING_PATTERNS.md`](docs/ENGINEERING_PATTERNS.md) - Cross-project design/code patterns with the incidents behind them. Read before non-trivial work; add to it when a correction generalises beyond one project
 - **Backlog:** [`docs/BACKLOG.md`](docs/BACKLOG.md) - Planned work across all four projects (Now/Next/Later/Parked). Add new planned work here rather than starting a separate list; it links to AUDIT_FINDINGS.md, TURNSTILE_ROLLOUT.md, and docs/user-interview-plan.md rather than duplicating them
