@@ -94,9 +94,16 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *where:* `tenxrep-marketing`, root `CLAUDE.md` · *size:* S · *source:* strategy §4
   *not blocked by the repositioning hold* — wrong counts and inconsistent brand casing are factual errors regardless of which direction the positioning lands.
 
-- [ ] **Ship a native build carrying the OAuth-only auth UX.**
-  Web main hides the open username signup form on native and routes forgot-password to web; the last iOS release (06-23) predates it, so existing installs still show the username form and get a 403 once Turnstile enforces.
-  *where:* `tenxrep-web` native build + App Store release · *size:* M · *source:* turnstile_rollout.md
+- [ ] **Ship a native build — HIGHEST PRIORITY as of 2026-10-09.** Two reasons:
+
+  **1. iOS username signup has been broken since 2026-08-26.** Turnstile enforcement went live that day and web #47 (which hides the open username form on native and routes forgot-password to web) shipped the same day — but native bundles a *copy* of the web app, so that steering never reached users. The App Store build is **1.3.0 (8), 2026-06-23**, which still renders the username form; the API now rejects it with **403**. Google/Apple sign-in are unaffected, so it's a broken path rather than a broken app.
+
+  **2. Nothing from the last two weeks has reached a user.** All of it is on `main` only: trial-banner delay (#53), set-logging 1a/2a/2b (#54/#60/#61). The set-logging work exists *because* a native user complained, and they cannot receive it without an App Store release.
+
+  **Readiness (verified 2026-10-09):** `main` is buildable. `.env.production.local` has `VITE_API_BASE_URL`, `VITE_ENVIRONMENT`, `VITE_SENTRY_DSN`, PostHog, Google, Stripe. `VITE_TURNSTILE_SITE_KEY` is correctly **absent** — native hides the username form, so no widget is needed and the invite flow isn't CAPTCHA-gated.
+
+  **Steps:** `npm run build` → `npx cap sync ios` → bump `MARKETING_VERSION`/`CURRENT_PROJECT_VERSION` to **1.3.1 / 9** (bug fixes and ergonomics, no new features) → verify in the bundle that the native register screen has no username form, forgot-password routes to web, the API URL is production, and `VITE_ENVIRONMENT=production` (PostHog mislabels prod users as dev otherwise — see `reference_posthog_data_reliability`). Then Xcode: signing, archive, upload, submit. **Claude can do everything up to Xcode; the user does Xcode and submission.**
+  *where:* `tenxrep-web` native build + App Store release · *size:* M · *source:* turnstile_rollout.md, session 2026-10-09
 
 - [ ] **Cap verification-email resends per pending signup.**
   `POST /auth/resend-verification` isn't CAPTCHA-gated; its only limits are a 2-minute per-email cooldown and 3/min per IP. One solved CAPTCHA can therefore send ~720 emails to one address over a pending signup's 24h life. A total-resend cap (e.g. 3) is platform-agnostic and needs no widget.
