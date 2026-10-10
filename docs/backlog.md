@@ -43,14 +43,15 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 ## Now
 
-- [ ] **Delay the trial banner until the last few days of the trial.**
+- [x] ~~**Delay the trial banner until the last few days of the trial.**~~ **SHIPPED** (web #53, 2026-09-27). Shows at 5 days left, urgent styling at 3; expired always shows. Rule in `src/lib/trialBanner.ts`.
   Today the banner renders on the dashboard from the first second: "Your free trial — 14 days remaining [Upgrade Now]". A new user is asked to pay before seeing any value. Interview reply (user 68) described the first session as "an immediate subscription paywall" even though nothing was locked for them.
   **Decided rule (2026-09-27):** show at **5 days left**, escalate to the existing urgent styling at **3**; an expired trial always shows. Nothing else changes.
   Why a time gate rather than "after the first logged workout": simpler (no extra data dependencies), and "11 days remaining" was never actionable — the early banner was noise with a payment button attached. Nothing is lost, because trial status stays visible in Settings (`SettingsView.tsx:475`) and the reminder emails fire at 7, 2 and 1 days left. The two constants are also the knob to widen if conversion, rather than activation, becomes the bottleneck.
   *where:* `tenxrep-web/src/components/TrialBanner.tsx`, mounted `src/pages/Index.tsx` · *size:* S · *source:* user interview 2026-09-20
   *measure:* PostHog activation funnel — first-workout rate before/after.
 
-- [ ] **Mobile set-logging input friction — phase 1 (steppers, chips, typed fallback).**
+- [x] ~~**Mobile set-logging input friction.**~~ **SHIPPED in three parts** (web #54, #60, #61 — all mobile-only). **1a:** numeric `inputMode`/`enterKeyHint`/blur-on-Enter so the keypad is compact and self-dismissing; weight step 0.5 → 5. **2a:** duration coarse ±5 + 10/30/60 presets, `DEFAULT_HOLD_SECONDS` 30 → 10, per-set weight aligned to ±5, steppers in `RepsInputDialog`. **2b:** every stepper labelled with its magnitude (device feedback: identical icons moving by 5 vs 1 read as a bug), secondary weight ±10/±2.5, weight collapsed behind "+ Add weight" with an × to clear. Logic in `src/lib/setLogging.ts`.
+  *Deliberately not done, with reasons recorded:* reps/sets presets (defaults 8/3 are already the modes, so 0 taps in the common case), removing the reps/sets text inputs (1a fixed the keyboard trap, and reps has a long tail at 20/15/3 that ±1 alone would worsen), ±25 weight step (zero logged changes; plates load in pairs on a bar), and "same as last set" (per-set rows already propagate forward).
   On native, every value entry opens the keyboard, which covers half the screen and has to be dismissed by tapping away. Decided approach: make the common path keyboard-free, keep typing as the fallback for weight. Increments below come from the 576 logged exercise rows, not guesses.
   **Split into two PRs. Phase 1a is in review (web PR #54) — steps 2 (increments) and the keyboard-attribute half of step 1 are done and manually verified; everything below is what's left.**
   Still outstanding from 1a, both descoped because they need on-device testing: a **±5 secondary increment for duration** (needs a second control, i.e. a layout change — fold into the chips work), and **`scrollIntoView` on focus + the Capacitor `KeyboardResize.Body` mode** (affects every screen).
@@ -89,7 +90,7 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *measure:* PostHog funnel ① activation rate, and first-workout rate for new signups, before/after. Cohort caution: Apr–May activated 9/32, Jul–Sep 1/18 after June added first-session surface — small n, channel may also have shifted.
   *sequence:* ship the trial-banner delay (Now) first, so the two changes can be measured apart.
 
-- [ ] **Fix marketing copy inconsistencies (strategy §4). Verified real numbers:** the DB has **251 exercises**, **15 skills**, **91 progressions**. The site says 206+ in features vs 160+ in the free tier (both wrong), and 14 skills in features vs 15 in pricing (pricing is right). Also: "TenxRep" casing in the workout-recommendations section, and the FAQ "Is TenXRep available now?" makes the product sound unfinished — drop it. Note the monorepo CLAUDE.md also says 160+ exercises and 88 progressions; update it too.
+- [x] ~~**Fix marketing copy inconsistencies.**~~ **SHIPPED** (marketing #6 + #8). Verified real numbers: the DB has **251 exercises**, **15 skills**, **91 progressions**. The site says 206+ in features vs 160+ in the free tier (both wrong), and 14 skills in features vs 15 in pricing (pricing is right). Also: "TenxRep" casing in the workout-recommendations section, and the FAQ "Is TenXRep available now?" makes the product sound unfinished — drop it. Note the monorepo CLAUDE.md also says 160+ exercises and 88 progressions; update it too.
   *where:* `tenxrep-marketing`, root `CLAUDE.md` · *size:* S · *source:* strategy §4
   *not blocked by the repositioning hold* — wrong counts and inconsistent brand casing are factual errors regardless of which direction the positioning lands.
 
@@ -126,7 +127,8 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 - [ ] **Later-not-now features (strategy §7.2–§7.5).** Prescriptive linking, weak-link detection from failed reps, video capture tied to skill nodes, adaptive programs. All wait on the day-one drop-off being fixed; adaptive programs also wait on retention existing.
   *source:* strategy §7
 
-- [ ] **Mobile set logging — phase 2: drum picker for weight (only if phase 1 isn't enough).**
+- [ ] **Mobile set logging — drum picker for weight (only if the labelled steppers aren't enough).**
+  *Trigger revised 2026-10-09:* 2b labelled the steppers and added ±10/±2.5, which addressed the reported friction without a new control. Build this only if typed weight entry stays common in practice or keyboard friction is reported again.
   Conditional follow-up to the phase-1 item in Now. A bottom-sheet wheel/drum picker (as in Hevy/Strong) replaces typed weight entry: flick to any value, no keyboard, and the reel only offers valid steps so 52.5 and 205 cost the same as 25. **Trigger for doing it:** users still report keyboard friction after phase 1 ships, or typed entry stays common in practice.
   Notes if built: reel needs momentum scrolling + haptic notches (no native picker in a Tailwind/shadcn app — it's a CSS scroll-snap list); 0–500 in 2.5 steps is ~200 stops, so consider a coarse/fine split; keep a small keypad fallback inside the sheet for accessibility (VoiceOver, large text) and odd values. **Reps stay on chips** — they cluster in a narrow range, so a wheel would be slower than one tap.
   *where:* `tenxrep-web/src/components/ExerciseCard.tsx`, new picker component · *size:* L · *source:* design discussion 2026-09-25
