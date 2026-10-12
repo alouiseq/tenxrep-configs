@@ -79,12 +79,12 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 ## Next
 
 - [ ] **Finish the rebrand rollout (Handstand X + heat palette).**
-  The new logo and palette are implemented in three open PRs: web [#63](https://github.com/alouiseq/tenxrep-web/pull/63), marketing [#9](https://github.com/alouiseq/tenxrep-marketing/pull/9), API emails [#53](https://github.com/alouiseq/tenxrep-api/pull/53). Until the steps below are done, users see a mix of old and new brand.
-  1. Review on the Vercel previews with real data (dashboard rows, upgrade prompts, trial banner, celebration toast, skill tree mastered states, light mode), then merge **web and API first, marketing last** so the changelog entry doesn't lead the app.
+  The new logo and palette **merged and deployed 2026-10-12**: web [#63](https://github.com/alouiseq/tenxrep-web/pull/63), API emails [#53](https://github.com/alouiseq/tenxrep-api/pull/53), marketing [#9](https://github.com/alouiseq/tenxrep-marketing/pull/9). Until the steps below are done, users still see a mix of old and new brand.
+  1. ~~Review and merge, web and API first, marketing last.~~ **Done.** Worth one pass through production with a real account for the surfaces only checked with stubbed data: dashboard rows, upgrade prompts, trial banner, celebration toast, skill tree mastered states.
   2. **Re-record the marketing hero video and `public/screenshots/`** — they show the old yellow UI and old in-app logo under the new site header.
-  3. **Native:** build and check the new icon and splash on an iOS simulator and Android emulator (never run after regeneration). Ship in the build *after* 1.3.1 so the signup fix isn't held up; upload `public/brand/icon-1024.png` and fresh store screenshots to App Store Connect at the same time.
+  3. **Native:** build and check the new icon and splash on an iOS simulator and Android emulator (never run after regeneration). `chore/ios-1.3.1-build-9` branched before the rebrand: build 1.3.1 from it as-is to ship the signup fix with the old icon, or rebase onto `main` to include the new icon and splash (then do this check first). Either way upload `public/brand/icon-1024.png` and fresh store screenshots to App Store Connect at the same time.
   4. Send one test email from staging and check the navy header and heat button in Gmail and Outlook.
-  5. Update `product_overview.md` §3 "Rollout status" once live, and remove the `tenxrep-web-rebrand/` worktree.
+  5. Update `product_overview.md` §3 "Rollout status" as each remaining piece lands (native icon, marketing media).
   *where:* all three repos; reference `tenxrep-web/docs/BRAND.md` · *size:* S–M · *source:* rebrand brief 2026-10-11
 
 - [ ] **Simplify the first session (progressive disclosure) — don't cut features.**

@@ -37,7 +37,7 @@ Sign-in: email + password (with email verification), Google, and Sign in with Ap
 
 - **Logo:** the **Handstand X** — an X drawn as a straddle handstand, with warm yellow-to-red legs over cool blue arms on a navy tile. It mirrors the 3D model, where trained muscles light up. It replaced the earlier navy-and-yellow "10X REP" circular badge in October 2026.
 - **Colours:** dark navy base with a **heat accent** (yellow → orange `#FF8A1F` → red) used for primary buttons, Pro badges, personal records and mastered skills. Errors and destructive actions use a separate crimson. Light and dark themes in the app; the marketing site is dark only.
-- **Rollout status (2026-10-12):** implemented and in review for the web app, marketing site and emails; not yet merged. The iOS app icon and splash change with the next App Store build. The 3D model's own colour scale is unchanged.
+- **Rollout status (2026-10-12):** live on the web app, the marketing site and transactional emails. The iOS app still shows the old icon and splash until the next App Store build, and the marketing site's demo video and screenshots still show the old in-app look. The 3D model's own colour scale is unchanged.
 
 ## 4. Core features
 
