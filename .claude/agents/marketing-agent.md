@@ -113,8 +113,10 @@ Use `lg:order-first` on alternating blocks to flip layout direction.
 ## Design Tokens
 
 Defined as CSS variables in `globals.css`:
-- **Primary:** Blue (222° 67% 33%) → yellow accent in dark mode
-- **Accent:** Yellow/gold for highlights
+- **Base:** Navy/blue (222° 67% 33%). The site renders dark-only, where `--primary` is heat orange (`#FF8A1F`) and `--accent` is blue
+- **Brand accent:** the heat ramp — `bg-heat-cta` (primary CTAs), `bg-heat-headline` (gradient headlines), `text-heat-2` (accent icons), always with `text-heat-foreground` (dark ink). Never raw `yellow-*`, never white text on orange
+- **Errors:** crimson-rose `destructive` tokens; `text-destructive-text` for error text and icons
+- **Logo:** `public/brand/lockup-dark-bg.svg` in headers and footers
 - Light/dark mode via `:root` and `.dark` selectors
 - Must stay consistent with `tenxrep-web` design tokens
 

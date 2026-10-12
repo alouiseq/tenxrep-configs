@@ -78,6 +78,15 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 ## Next
 
+- [ ] **Finish the rebrand rollout (Handstand X + heat palette).**
+  The new logo and palette are implemented in three open PRs: web [#63](https://github.com/alouiseq/tenxrep-web/pull/63), marketing [#9](https://github.com/alouiseq/tenxrep-marketing/pull/9), API emails [#53](https://github.com/alouiseq/tenxrep-api/pull/53). Until the steps below are done, users see a mix of old and new brand.
+  1. Review on the Vercel previews with real data (dashboard rows, upgrade prompts, trial banner, celebration toast, skill tree mastered states, light mode), then merge **web and API first, marketing last** so the changelog entry doesn't lead the app.
+  2. **Re-record the marketing hero video and `public/screenshots/`** — they show the old yellow UI and old in-app logo under the new site header.
+  3. **Native:** build and check the new icon and splash on an iOS simulator and Android emulator (never run after regeneration). Ship in the build *after* 1.3.1 so the signup fix isn't held up; upload `public/brand/icon-1024.png` and fresh store screenshots to App Store Connect at the same time.
+  4. Send one test email from staging and check the navy header and heat button in Gmail and Outlook.
+  5. Update `product_overview.md` §3 "Rollout status" once live, and remove the `tenxrep-web-rebrand/` worktree.
+  *where:* all three repos; reference `tenxrep-web/docs/BRAND.md` · *size:* S–M · *source:* rebrand brief 2026-10-11
+
 - [ ] **Simplify the first session (progressive disclosure) — don't cut features.**
   Multiple users report the app is overwhelming to learn. The data says the problem is *how much is shown before anyone has done anything*, not the feature count: day one presents a dashboard with ~27 top-level controls, 5 nav destinations, demo data that isn't theirs, an 11-step tour, and a trial countdown — before a single set is logged. Meanwhile engaged users do use the depth (9 of 18 loggers use the skill tree; 5 of the 7 with 3+ workouts), so subtracting features would remove what retains people.
   Scope:
@@ -121,6 +130,14 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *where:* Apple Developer portal / admin · *size:* S · *source:* outreach prep 2026-09-11
 
 ## Later
+
+- [ ] **Move the 3D model's activation/volume scale onto the brand ramp (decision needed first).**
+  The rebrand left the model, its legends, chart data colours and the `SkillDetailPanel` activation badges on the old purple/blue/green/yellow scale, so the model no longer matches the logo it inspired. The brief proposes cool `#1F56D6 → #3B82FF` for low and heat `#FFD728 → #FF8A1F → #FF3B30` for high. **Open question:** heat red would then mean "high activation" beside Red Zone alerts where red means "too much" — either cap the scale at orange or restyle Red Zone. Also invalidates every marketing screenshot and video again, so batch it with the re-record.
+  *where:* `tenxrep-web/src/components/anatomy/MuscleModelLoader.tsx`, `MuscleAnatomyView.tsx`, `MobileExercisePreview.tsx`, `MuscleTargetingStats.tsx`, `docs/3D_ANATOMY.md` · *size:* M · *source:* rebrand brief (optional follow-up 1)
+
+- [ ] **Add the logo to transactional emails.**
+  Emails are rebranded by colour only; they have never carried a logo image. Needs a hosted PNG (SVG is unreliable in mail clients) and a text fallback for image blocking.
+  *where:* `tenxrep-api/app/services/email_service.py` · *size:* S · *source:* rebrand 2026-10-12
 
 - [ ] **Skill readiness score (strategy §7.1) — first genuinely new feature.**
   Turn logged volume into a percentage toward each skill ("you're 60% ready for a muscle-up"). Most of the work exists: the tree already has prerequisite progressions with concrete thresholds, so this surfaces that checklist as one number. Strongest retention lever, because calisthenics skills take months and a number that ticks up weekly gives progress on days the skill hasn't moved.

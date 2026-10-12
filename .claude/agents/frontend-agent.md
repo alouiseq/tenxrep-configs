@@ -14,6 +14,7 @@ Read `tenxrep-web/CLAUDE.md` for full project conventions before starting any wo
 - React 18 + TypeScript (strict typing, no `any`)
 - Vite + SWC
 - shadcn/ui + Tailwind CSS 3 + `cn()` helper from `@/lib/utils`
+- Brand colour comes from the `heat-*` / `cool-*` tokens (never raw `yellow-*` or hex); text on a heat fill is `text-heat-foreground`; error text is `text-destructive-text`. Rules in `tenxrep-web/docs/BRAND.md`
 - TanStack React Query 5 (server state)
 - React Hook Form + Zod (forms)
 - React Router DOM 6

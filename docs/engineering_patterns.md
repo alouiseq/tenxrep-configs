@@ -6,7 +6,7 @@ Design and code patterns that hold across the TenXRep projects, with the reasoni
 
 > **Links here are absolute on purpose.** This doc lives in the `tenxrep-configs` repo; the project directories are separate repos that it doesn't track, so a relative `../tenxrep-api/...` resolves in a local checkout but 404s on GitHub. See [Project Structure](../CLAUDE.md#project-structure).
 
-**Last updated:** 2026-09-27
+**Last updated:** 2026-10-12
 
 ---
 
@@ -86,3 +86,36 @@ Reference: `tenxrep-api/scripts/generate_outreach_csv.py`. Output containing use
 ## 6. State the intent before building
 
 Every backlog task gets a short what + why before implementation, so the approach can be green-lit or corrected. Being in the backlog means the *problem* is agreed, not the *approach*. Full statement of the agreement, and the worked example that produced it, is in [backlog.md](backlog.md#working-agreement--state-the-intent-before-building).
+
+---
+
+## 7. Brand colour goes through semantic tokens, and a foreground token travels with each fill
+
+**Pattern:** brand colour is never a raw Tailwind palette class or a hex in a component. Both frontends define the same tokens in their global CSS and expose them in `tailwind.config.ts`:
+
+```
+--heat-1 / --heat-2 / --heat-3     yellow → orange → red, from the Handstand X mark
+--heat-cta-end                     text-safe end stop for gradients that carry text
+--heat-foreground                  dark ink; the ONLY text colour allowed on a heat fill
+--cool-1 / --cool-2                the mark's blues
+--destructive-text                 error text and icons (lighter than the fill in dark mode)
+
+bg-heat-cta        primary CTA gradient        bg-heat-2      solid accent
+bg-heat-headline   gradient titles             text-heat-2    accent icons and text
+```
+
+**Rules that the tokens encode:**
+- **Orange `--heat-2` is the working accent.** Yellow and red appear only as the ends of gradients. `--heat-3` red is decorative: never a fill, never behind text, never a status.
+- **Dark ink on heat, always.** White on `#FF8A1F` is 2.4:1; ink is 6.7:1. Use `text-heat-foreground`, not `text-primary-foreground` — in the web app's light theme `--primary-foreground` is white, so the "obvious" class fails contrast in exactly one theme.
+- **Red means bad, and only bad.** Destructive moved to crimson-rose (hue ~346°) so it can't be mistaken for the heat ramp. Filled buttons use `bg-destructive text-destructive-foreground`; error *text* uses `text-destructive-text`, because a red dark enough to carry white text is too dark to read as text on a dark background.
+- **Don't cross-fade blue into orange in one fill.** The midpoint is grey-brown. Text gradients get away with it via the tuned stops in `bg-heat-headline`; buttons and tiles are either all-cool or all-heat.
+- **Raw `amber-*` / `yellow-*` / `orange-*` are status colours** (warnings, imbalance severity, category chips), not brand. They were left alone on purpose.
+
+**Why (the incident):** the October 2026 rebrand replaced a yellow accent that had been applied three different ways — through `--primary`/`--accent`, through ~90 raw `yellow-500`/`yellow-600` classes, and through hex literals in CSS and email templates. Only the first kind changed when the tokens changed; the rest had to be found by grep across three repos, and each one needed a judgement call about whether that yellow meant "brand", "Pro", "achievement" or "warning". Several were also white text on yellow at under 3:1, which nobody had noticed because the colour and its text colour were chosen separately at each call site.
+
+**Where the values live:** the token table, class recipes and logo files are documented in [`tenxrep-web/docs/BRAND.md`](https://github.com/alouiseq/tenxrep-web/blob/main/docs/BRAND.md).
+
+**How to apply:** this is the design-token idea — name colours by role, not by value, and ship the fill and its legible foreground as a pair so contrast is decided once. When a new colour need comes up, ask what role it plays: if it's brand, use a heat/cool token; if it's status, use the status palette; if neither fits, add a token rather than a literal. Emails can't read CSS variables, so `tenxrep-api/app/services/email_service.py` repeats the hex values — a known duplicate to update by hand if the palette moves.
+
+**Not yet on the ramp:** the 3D model's activation/volume scale and chart data colours still use their original palette. Moving them is a separate change, because heat red would then mean "high activation" right next to Red Zone alerts where red means "too much".
+

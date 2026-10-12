@@ -194,6 +194,7 @@ alembic upgrade head
 - Tailwind CSS across all projects
 - Shared design tokens (colors, spacing)
 - CSS variables for theming
+- **Brand:** the Handstand X mark on a navy base with a heat accent (yellow → orange → red). Web and marketing define the same `--heat-*` / `--cool-*` tokens; logo files are in each project's `public/brand/`. Reference: [`tenxrep-web/docs/BRAND.md`](https://github.com/alouiseq/tenxrep-web/blob/main/docs/BRAND.md); reasoning: [Engineering Patterns §7](docs/engineering_patterns.md)
 
 ## Environment Variables
 
@@ -273,5 +274,6 @@ Each project has comprehensive documentation:
 - **Marketing:** `tenxrep-marketing/CLAUDE.md`
 - **URL Shortener:** `tenxrep-go/vercel.json` (minimal config, uses API short-links endpoint)
 - **Product Overview:** [`docs/product_overview.md`](docs/product_overview.md) - Single source of truth for what the app does today (features, counts, free vs Pro, platforms). Self-contained — the file to hand an external AI or person
+- **Brand:** [`tenxrep-web/docs/BRAND.md`](https://github.com/alouiseq/tenxrep-web/blob/main/docs/BRAND.md) - Logo files, colour tokens and usage rules for web and marketing
 - **Engineering Patterns:** [`docs/engineering_patterns.md`](docs/engineering_patterns.md) - Cross-project design/code patterns with the incidents behind them. Read before non-trivial work; add to it when a correction generalises beyond one project
 - **Backlog:** [`docs/backlog.md`](docs/backlog.md) - Planned work across all four projects (Now/Next/Later/Parked). Add new planned work here rather than starting a separate list; it links to audit_findings.md, turnstile_rollout.md, and docs/user_interview_plan.md rather than duplicating them

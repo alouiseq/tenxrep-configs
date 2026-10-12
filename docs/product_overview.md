@@ -2,7 +2,7 @@
 
 > **Purpose:** the single, self-contained description of what TenXRep is and does today. Written to be pasted into another AI (ChatGPT, Gemini, Claude, Grok…) or handed to anyone outside the codebase. It describes **current state only**; for change history see the [marketing changelog](https://tenxrep.com/changelog), for planned work see `backlog.md`.
 >
-> **Last verified:** 2026-10-07 — counts below come from the production database, gates from the app code.
+> **Last verified:** 2026-10-07 — counts below come from the production database, gates from the app code. Brand section added 2026-10-12.
 >
 > **Keep it current:** when a user-facing feature ships, update this file in the same wrap-up as the changelog entry.
 
@@ -32,6 +32,12 @@ During setup the user picks a focus — **Resistance Training, Calisthenics, or 
 | Marketing site — tenxrep.com | Live (features, pricing, FAQ, blog, changelog) | — |
 
 Sign-in: email + password (with email verification), Google, and Sign in with Apple (iOS). Accounts can link multiple sign-in methods. One account works across web and iOS.
+
+### Brand
+
+- **Logo:** the **Handstand X** — an X drawn as a straddle handstand, with warm yellow-to-red legs over cool blue arms on a navy tile. It mirrors the 3D model, where trained muscles light up. It replaced the earlier navy-and-yellow "10X REP" circular badge in October 2026.
+- **Colours:** dark navy base with a **heat accent** (yellow → orange `#FF8A1F` → red) used for primary buttons, Pro badges, personal records and mastered skills. Errors and destructive actions use a separate crimson. Light and dark themes in the app; the marketing site is dark only.
+- **Rollout status (2026-10-12):** implemented and in review for the web app, marketing site and emails; not yet merged. The iOS app icon and splash change with the next App Store build. The 3D model's own colour scale is unchanged.
 
 ## 4. Core features
 
