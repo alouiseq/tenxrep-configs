@@ -72,7 +72,8 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *where:* `tenxrep-web/src/components/ExerciseCard.tsx` (~555–700 summary, ~1225–1275 per-set), `src/components/RepsInputDialog.tsx`, `src/capacitor.ts` · *size:* M · *source:* user feedback 2026-09-25
   *measure:* sets logged per session and mid-workout abandonment; `workout_logged` in PostHog.
 
-- [ ] **Stop sending trial-reminder / winback emails to users who never activated.**
+- [x] ~~**Stop sending trial-reminder / winback emails to users who never activated.**~~ **SHIPPED** (API [#54](https://github.com/alouiseq/tenxrep-api/pull/54), 2026-10-12). The cron's candidate query now requires at least one workout row, so never-activated users get no 7/2/1-day reminder and no win-back. Skipped users aren't stamped, so a first workout logged mid-trial makes them eligible for the bands still ahead. The run summary reports a `never_activated` count (visible in the GitHub Actions log).
+  *Decided 2026-10-12:* skip them rather than send a different email. A "you never got started" nudge is a possible later item once more interview replies say what it should say.
   User 68 logged zero workouts and still got the 1-day reminder and the winback. With 53 ghosts on the list, "your trial is ending" is the wrong email for people who never started — either skip them or send a different one.
   *where:* `tenxrep-api` trial-reminder cron (`cron.py`, `/internal/trial-reminders/run`) · *size:* S · *source:* user interview 2026-09-20
 
@@ -82,7 +83,7 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   The new logo and palette **merged and deployed 2026-10-12**: web [#63](https://github.com/alouiseq/tenxrep-web/pull/63), API emails [#53](https://github.com/alouiseq/tenxrep-api/pull/53), marketing [#9](https://github.com/alouiseq/tenxrep-marketing/pull/9). Until the steps below are done, users still see a mix of old and new brand.
   1. ~~Review and merge, web and API first, marketing last.~~ **Done.** Worth one pass through production with a real account for the surfaces only checked with stubbed data: dashboard rows, upgrade prompts, trial banner, celebration toast, skill tree mastered states.
   2. **Re-record the marketing hero video and `public/screenshots/`** — they show the old yellow UI and old in-app logo under the new site header.
-  3. **Native:** build and check the new icon and splash on an iOS simulator and Android emulator (never run after regeneration). `chore/ios-1.3.1-build-9` branched before the rebrand: build 1.3.1 from it as-is to ship the signup fix with the old icon, or rebase onto `main` to include the new icon and splash (then do this check first). Either way upload `public/brand/icon-1024.png` and fresh store screenshots to App Store Connect at the same time.
+  3. **Native:** ~~iOS~~ — the new icon and splash are in **1.4.0 (9)**, submitted for review 2026-10-12 (see "Ship a native build" below). Still open: replace the App Store screenshots if they show the old logo and yellow accent, and check the regenerated icon and splash on an Android emulator (never run after regeneration).
   4. Send one test email from staging and check the navy header and heat button in Gmail and Outlook.
   5. Update `product_overview.md` §3 "Rollout status" as each remaining piece lands (native icon, marketing media).
   *where:* all three repos; reference `tenxrep-web/docs/BRAND.md` · *size:* S–M · *source:* rebrand brief 2026-10-11
@@ -103,15 +104,16 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   *where:* `tenxrep-marketing`, root `CLAUDE.md` · *size:* S · *source:* strategy §4
   *not blocked by the repositioning hold* — wrong counts and inconsistent brand casing are factual errors regardless of which direction the positioning lands.
 
-- [ ] **Ship a native build — HIGHEST PRIORITY as of 2026-10-09.** Two reasons:
+- [ ] **Ship a native build — SUBMITTED for App Store review 2026-10-12 as 1.4.0 (9).** Tick this off when Apple approves and it is live.
+  Built from `tenxrep-web` main at `3a1f9bd`; version bump in web [#64](https://github.com/alouiseq/tenxrep-web/pull/64). First release since **1.3.0 (8), 2026-06-23**. It carries everything merged since: native sign-up steering (#47), trial-banner delay (#53), set logging (#54/#60/#61) and the rebrand (#63) — hence 1.4.0 rather than the 1.3.1 first planned.
 
-  **1. iOS username signup has been broken since 2026-08-26.** Turnstile enforcement went live that day and web #47 (which hides the open username form on native and routes forgot-password to web) shipped the same day — but native bundles a *copy* of the web app, so that steering never reached users. The App Store build is **1.3.0 (8), 2026-06-23**, which still renders the username form; the API now rejects it with **403**. Google/Apple sign-in are unaffected, so it's a broken path rather than a broken app.
+  **Until it is live, iOS username signup still returns 403** (broken since Turnstile enforcement on 2026-08-26; the 1.3.0 bundle still renders the username form). Google/Apple sign-in are unaffected.
 
-  **2. Nothing from the last two weeks has reached a user.** All of it is on `main` only: trial-banner delay (#53), set-logging 1a/2a/2b (#54/#60/#61). The set-logging work exists *because* a native user complained, and they cannot receive it without an App Store release.
+  **Verified before upload:** 492/492 tests; bundle has the production API URL, `environment = "production"`, Sentry DSN, no Turnstile site key, and the web-steering links for sign-up and forgot-password; unsigned simulator build succeeded.
 
-  **Readiness (verified 2026-10-09):** `main` is buildable. `.env.production.local` has `VITE_API_BASE_URL`, `VITE_ENVIRONMENT`, `VITE_SENTRY_DSN`, PostHog, Google, Stripe. `VITE_TURNSTILE_SITE_KEY` is correctly **absent** — native hides the username form, so no widget is needed and the invite flow isn't CAPTCHA-gated.
+  **If rejected:** past rejection causes and the reviewer-notes template are in `tenxrep-web/docs/APP_STORE_SUBMISSION.md`.
 
-  **Steps:** `npm run build` → `npx cap sync ios` → bump `MARKETING_VERSION`/`CURRENT_PROJECT_VERSION` to **1.3.1 / 9** (bug fixes and ergonomics, no new features) → verify in the bundle that the native register screen has no username form, forgot-password routes to web, the API URL is production, and `VITE_ENVIRONMENT=production` (PostHog mislabels prod users as dev otherwise — see `reference_posthog_data_reliability`). Then Xcode: signing, archive, upload, submit. **Claude can do everything up to Xcode; the user does Xcode and submission.**
+  **Next build:** `nvm use && npm run build`, then `cap sync ios` under Node 22+ (the Capacitor 8 CLI refuses the `.nvmrc` Node 20 — web pitfall #22), bump the version, verify the bundle as above. **Claude can do everything up to Xcode; the user does Xcode and submission.**
   *where:* `tenxrep-web` native build + App Store release · *size:* M · *source:* turnstile_rollout.md, session 2026-10-09
 
 - [ ] **Cap verification-email resends per pending signup.**
