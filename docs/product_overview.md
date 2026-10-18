@@ -2,7 +2,7 @@
 
 > **Purpose:** the single, self-contained description of what TenXRep is and does today. Written to be pasted into another AI (ChatGPT, Gemini, Claude, Grok…) or handed to anyone outside the codebase. It describes **current state only**; for change history see the [marketing changelog](https://tenxrep.com/changelog), for planned work see `backlog.md`.
 >
-> **Last verified:** 2026-10-07 — counts below come from the production database, gates from the app code. Brand section added 2026-10-12.
+> **Last verified:** 2026-10-07 — gates from the app code. Exercise counts re-checked against the production database (Neon `main`) 2026-10-18. Brand section added 2026-10-12.
 >
 > **Keep it current:** when a user-facing feature ships, update this file in the same wrap-up as the changelog entry.
 
@@ -51,7 +51,7 @@ Sign-in: email + password (with email verification), Google, and Sign in with Ap
 - Mobile set-logging redesign (steppers and quick-pick chips instead of the keyboard) is **in progress**.
 
 ### 4.2 Exercise library
-- **250 built-in exercises** (126 of them calisthenics), plus user-created custom exercises.
+- **256 built-in exercises** (106 of them calisthenics), plus user-created custom exercises.
 - Organized into **9 muscle groups** (Chest, Back, Deltoids, Biceps, Triceps, Forearms, Core, Legs, Glutes) and **36 specific target muscles** (e.g. upper chest, rear delts, lats, adductors).
 - Each exercise lists its target muscles with an **activation level** (maximal / high / medium / low). Activation data is sourced from peer-reviewed EMG studies or evidence-based coaches (e.g. Jeremy Ethier, FitnessFAQs) — not invented.
 - Filter by muscle group, target muscle, weight type (free weights / bodyweight / machine), calisthenics skill, default vs custom; search; sort.
