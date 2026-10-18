@@ -37,6 +37,8 @@ for ex in exercises:
 "
 ```
 
+**`tenxrep-api/.env` is the Neon *development* branch, not production** (prod = Neon `main`; see `tenxrep-api/docs/DEPLOYMENT.md`). A DB query from `.env` checks dev, which lags and has drifted from prod. Report it as "dev" — never as "prod" — and say in your report that prod wasn't checked. The migration must still skip existing names so a prod-only duplicate can't double-insert.
+
 If a duplicate or near-duplicate exists:
 - **Stop and ask the user** — should we skip, replace, or add as a distinct variant?
 - Common gotchas: "Skull Crusher" vs "Skull Crushers (Barbell)", "Elbow Lever" vs "Elbow Lever on Parallettes", "Hip Thrust" vs "Barbell Hip Thrust"
