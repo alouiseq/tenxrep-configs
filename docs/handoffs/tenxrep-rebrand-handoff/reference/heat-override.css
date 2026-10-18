@@ -1,0 +1,34 @@
+/* TenXRep heat palette override (mockup). Tokens are HSL triplets as in the site's shadcn theme. */
+:root{
+  --heat-1:49 100% 58%; --heat-2:29 100% 56%; --heat-3:3 100% 59%; --heat-cta-end:14 100% 58%;
+  --cool-1:218 100% 62%; --cool-2:222 75% 48%;
+}
+html:not(.dark){                   /* light theme (scoped so it can't leak into .dark) */
+  --accent:29 100% 56%;            /* was 45 100% 58% #FFC929 -> #FF8A1F heat orange */
+  --destructive:347 77% 50%;       /* was 0 84.2% 60.2% #EF4444 -> #E21D48 crimson-rose */
+  --destructive-text:347 77% 50%;
+}
+.dark{
+  --primary:29 100% 56%;           /* was 45 100% 58% #FFC929 -> #FF8A1F */
+  --ring:29 100% 56%;              /* was 45 100% 58% */
+  --destructive:346 75% 52%;       /* was 0 62.8% 50% #D02F2F -> #E02954 */
+  --destructive-text:347 96% 64%;  /* new: #FB4D72 for error text/icons on dark */
+}
+.text-destructive{color:hsl(var(--destructive-text))!important}
+/* hard-coded Tailwind yellows */
+.text-yellow-500{color:#FF8A1F!important}
+.border-yellow-500\/50{border-color:rgba(255,138,31,.5)!important}
+.from-yellow-500{--tw-gradient-from:#FF8A1F var(--tw-gradient-from-position)!important;--tw-gradient-to:rgba(255,138,31,0) var(--tw-gradient-to-position)!important;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)!important}
+.from-yellow-500\/5{--tw-gradient-from:rgba(255,138,31,.05) var(--tw-gradient-from-position)!important;--tw-gradient-to:rgba(255,138,31,0) var(--tw-gradient-to-position)!important;--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)!important}
+.to-yellow-600{--tw-gradient-to:#FF5A2A var(--tw-gradient-to-position)!important}
+/* heat CTA: the yellow-gradient pricing button/badge and the hero CTA (was blue->yellow with dark text on blue = 2.35:1) */
+.bg-gradient-to-r.from-yellow-500.to-yellow-600,
+a.bg-gradient-to-r.from-accent.to-primary{
+  background-image:linear-gradient(90deg,hsl(var(--heat-1)) 0%,hsl(var(--heat-2)) 55%,hsl(var(--heat-cta-end)) 100%)!important;
+  color:hsl(222 30% 15%)!important}
+/* headline: cool -> hot, like the mark */
+h1 .bg-gradient-to-r.from-accent.to-primary{
+  background-image:linear-gradient(90deg,#3B82FF 0%,#4F8DFF 34%,#FFB224 47%,#FF8A1F 70%,#FF5A2A 100%)!important}
+/* hero wash: was primary/20 -> primary/10 -> accent/20 (olive with yellow; turns rust-brown with orange). Keep it cool, add a faint ember top-left. */
+section > .absolute.inset-0.bg-gradient-to-br.from-primary\/20{
+  background-image:radial-gradient(ellipse 60% 70% at 0% 0%,hsl(14 100% 58%/.13),transparent 70%),linear-gradient(to bottom right,hsl(222 67% 45%/.06),hsl(222 67% 45%/.08) 45%,hsl(222 67% 45%/.22))!important}
