@@ -173,6 +173,14 @@ def downgrade() -> None:
 
 Add to `tenxrep-api/scripts/all_exercises.py` for consistency:
 
+**`NEXT_ID` = max over *every* `"id":` in the file + 1 — not the last entry's id.** The file is grouped by muscle, not sorted by id, so later-added exercises sit mid-file with higher ids. Compute it:
+
+```bash
+grep -oE '"id": [0-9]+' scripts/all_exercises.py | grep -oE '[0-9]+' | sort -n | tail -1
+```
+
+Then run `pytest tests/test_seed_file_validation.py` (`test_no_duplicate_integer_ids`) before committing. Seed ids are not DB ids — prod ids have drifted, so the migration must look exercises up by name, never by seed id.
+
 ```python
 {
     "id": NEXT_ID,
