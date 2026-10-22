@@ -2,7 +2,7 @@
 
 > **Purpose:** the single, self-contained description of what TenXRep is and does today. Written to be pasted into another AI (ChatGPT, Gemini, Claude, Grok…) or handed to anyone outside the codebase. It describes **current state only**; for change history see the [marketing changelog](https://tenxrep.com/changelog), for planned work see `backlog.md`.
 >
-> **Last verified:** 2026-10-07 — gates from the app code. Exercise counts re-checked against the production database (Neon `main`) 2026-10-18. Brand section added 2026-10-12.
+> **Last verified:** 2026-10-07 — gates from the app code. Exercise counts re-checked against the production database (Neon `main`) 2026-10-22. Brand section added 2026-10-12.
 >
 > **Keep it current:** when a user-facing feature ships, update this file in the same wrap-up as the changelog entry.
 
@@ -51,7 +51,7 @@ Sign-in: email + password (with email verification), Google, and Sign in with Ap
 - Mobile set-logging redesign (steppers and quick-pick chips instead of the keyboard) is **in progress**.
 
 ### 4.2 Exercise library
-- **256 built-in exercises** (106 of them calisthenics), plus user-created custom exercises.
+- **256 built-in exercises**, plus user-created custom exercises. **128** are calisthenics exercises, and **106** of those belong to a skill-tree skill. "Calisthenics" is its own property of an exercise (a Nordic Curl is calisthenics without being in a skill tree), and every skill-tree exercise is calisthenics. Users can mark their own custom exercises as calisthenics.
 - Organized into **9 muscle groups** (Chest, Back, Deltoids, Biceps, Triceps, Forearms, Core, Legs, Glutes) and **36 specific target muscles** (e.g. upper chest, rear delts, lats, adductors).
 - Each exercise lists its target muscles with an **activation level** (maximal / high / medium / low). Activation data is sourced from peer-reviewed EMG studies or evidence-based coaches (e.g. Jeremy Ethier, FitnessFAQs) — not invented.
 - Filter by muscle group, target muscle, weight type (free weights / bodyweight / machine), calisthenics skill, default vs custom; search; sort.
