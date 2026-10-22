@@ -59,9 +59,13 @@ db.close()
 "
 ```
 
-Existing skill trees: Planche, Front Lever, Back Lever, Handstand, HSPU, L-Sit, Human Flag, Dragon Flag, Pistol Squat, Skin the Cat, Muscle-Up, One-Arm Pull-Up, One-Arm Push-Up, Dips.
+Existing skills (exact `skills.name`): Planche, Front Lever, Back Lever, Handstand, Advanced Handstand, Handstand Push-Up, L-Sit, Human Flag, Dragon Flag, Pistol Squat, Skin the Cat, Muscle-Up, One-Arm Pull-Up, One-Arm Push-Up, Dips.
 
-If the exercise is a progression step in any of these (e.g. "Tuck Planche" → Planche tree, "Elevated Pike Push-Up" → HSPU tree), set `calisthenics_type` and link to the appropriate `skill_progression_id`. If not, leave `calisthenics_type` as None even if it's bodyweight.
+Two separate decisions:
+- **`is_calisthenics` / `isCalisthenics`** — is it a calisthenics exercise at all? Independent of the skill tree (a Nordic Curl is calisthenics with no skill). Usually matches having the `"calisthenics"` split tag.
+- **`skill` / `skill_id`** — only if it's a progression step or accessory in a skill tree (e.g. "Tuck Planche" → Planche, "Elevated Pike Push-Up" → Handstand Push-Up). Use the exact skill name; set `skill_id` by name in the migration, never by id, and link the `skill_progression_id` if it's a rung. A skill forces `is_calisthenics` true (DB CHECK constraint).
+
+Never write `calisthenics_type`: it's a legacy column the API only derives for old iOS clients.
 
 ### 4. Research Target Muscles
 
@@ -111,7 +115,7 @@ EXERCISES = [
         "muscle_group": "Chest",
         "weight_type": "BODY",
         "is_calisthenics": True,
-        "calisthenics_type": "Planche",  # or None
+        "skill": "Planche",  # exact skills.name, or None (a skill forces is_calisthenics)
         "is_timed": False,
         "split_types": ["push", "upper", "calisthenics", "perMuscleGroup"],
         "target_muscles": [
@@ -128,9 +132,10 @@ def upgrade() -> None:
         split_types_json = str(ex["split_types"]).replace("'", '"')
         conn.execute(sa.text(f"""
             INSERT INTO library_exercises
-            (name, muscle_group, weight_type, is_calisthenics, calisthenics_type,
+            (name, muscle_group, weight_type, is_calisthenics, skill_id,
              is_default, is_timed, instructions, tips, equipment, split_types, required_equipment)
-            VALUES (:name, :muscle_group, :weight_type, :is_calisthenics, :calisthenics_type,
+            VALUES (:name, :muscle_group, :weight_type, :is_calisthenics,
+                    (SELECT id FROM skills WHERE name = :skill),  -- by name, never by id
                     true, :is_timed, '[]'::json, '[]'::json, '[]'::json, '{split_types_json}'::json, '[]'::json)
             ON CONFLICT (name) DO NOTHING
         """), {
@@ -138,7 +143,7 @@ def upgrade() -> None:
             "muscle_group": ex["muscle_group"],
             "weight_type": ex["weight_type"],
             "is_calisthenics": ex["is_calisthenics"],
-            "calisthenics_type": ex["calisthenics_type"],
+            "skill": ex["skill"],
             "is_timed": ex["is_timed"],
         })
 
@@ -193,7 +198,8 @@ Then run `pytest tests/test_seed_file_validation.py` (`test_no_duplicate_integer
         {"muscle": "Mid Chest", "activationLevel": "maximal"},
         {"muscle": "Front Delts", "activationLevel": "high"},
     ],
-    "calisthenicsType": "Planche",  # if applicable
+    "isCalisthenics": True,  # required on every entry
+    "skill": "Planche",      # only if in a skill tree: exact skills.name
     "splitTypes": ["push", "upper", "calisthenics", "perMuscleGroup"],
     "isTimed": False
 }

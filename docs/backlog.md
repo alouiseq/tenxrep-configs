@@ -133,6 +133,26 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
 
 ## Later
 
+- [ ] **Contract step for the skill_id change: drop the legacy `calisthenics_type`.**
+  The expand phase (tenxrep-api #57 + the matching web PR) still returns a derived `calisthenics_type` and accepts it from installed iOS clients, and stored setups (`user_setup_configs.day_split_mapping`) still hold legacy labels ("HSPU", "Front-Lever"). **Precondition:** pre-1.4.1 iOS traffic has aged out. Measure it from the `X-App-Version` / `X-App-Platform` headers the web PR adds; a native request *without* the header is a pre-header build. **Then, in order:** (1) an idempotent data migration rewriting `day_split_mapping` to canonical skill names, shipped with the web settings switching to canonical names; (2) remove `calisthenics_type` from requests/responses, the legacy enum and aliases in `app/services/skill_vocabulary.py`, and drop the DB column.
+  *where:* `tenxrep-api` (migration, `skill_vocabulary.py`, schemas), `tenxrep-web` (`SettingsView.tsx`, `MuscleGroupSelectionStep.tsx`) · *size:* M · *source:* skill_id refactor 2026-10-21
+
+- [ ] **Make a fresh database buildable from migrations.**
+  `alembic upgrade head` on an empty schema fails at `43512d07ba75` (it inserts target muscles before the seed has created muscle groups), so fresh environments can't follow the documented "migrate, then seed" order. Workaround is in `tenxrep-api/docs/DATABASE.md` → Seeding Data. Fix the chain (or add a squashed baseline migration), then add a CI job that builds a fresh DB from migrations + seed and compares it to a reference, so seed drift is caught automatically.
+  *where:* `tenxrep-api/alembic/versions/`, `.github/workflows/` · *size:* M · *source:* skill_id refactor 2026-10-21
+
+- [ ] **Retire `scripts/fix_generic_glute_names.py` from the deploy workflows.**
+  A one-off fix that still runs against prod and staging on every deploy, the same multiple-writer smell the seed had. Confirm it's a no-op in prod, fold any remaining effect into a migration, and remove the step.
+  *where:* `tenxrep-api/.github/workflows/deploy.yml`, `deploy-staging.yml` · *size:* S · *source:* skill_id refactor 2026-10-21
+
+- [ ] **Long-term reference-data ownership.**
+  Decided for now: migrations are the single writer and the seed only bootstraps fresh DBs. Still open: generate `scripts/all_exercises.py` *from* a migrated DB instead of hand-editing both, or keep hand-sync guarded by tests. Revisit once the fresh-DB item above lands.
+  *where:* `tenxrep-api/scripts/` · *size:* S–M · *source:* skill_id refactor 2026-10-21
+
+- [ ] **Review four doubtful skill tags and one prod-only exercise.**
+  Tagged as skill-tree accessories without being progressions: **Ring Fly** and **Ring Triceps Extension** (→ One-Arm Push-Up; closer to general ring strength), **Handstand to Planche Push-Up** (→ One-Arm Push-Up; probably Planche or Advanced Handstand), **"Push-up variation"** (name looks like a placeholder). Also **"Planche Hold - Bent Arms and V Legs"** exists only in prod; add it to the seed file or remove it. Fix via a migration and the seed file in the same PR, with cited sources.
+  *where:* `tenxrep-api` (migration + `scripts/all_exercises.py`) · *size:* S · *source:* skill_id refactor 2026-10-21
+
 - [ ] **Move the 3D model's activation/volume scale onto the brand ramp (decision needed first).**
   The rebrand left the model, its legends, chart data colours and the `SkillDetailPanel` activation badges on the old purple/blue/green/yellow scale, so the model no longer matches the logo it inspired. The brief proposes cool `#1F56D6 → #3B82FF` for low and heat `#FFD728 → #FF8A1F → #FF3B30` for high. **Open question:** heat red would then mean "high activation" beside Red Zone alerts where red means "too much" — either cap the scale at orange or restyle Red Zone. Also invalidates every marketing screenshot and video again, so batch it with the re-record.
   *where:* `tenxrep-web/src/components/anatomy/MuscleModelLoader.tsx`, `MuscleAnatomyView.tsx`, `MobileExercisePreview.tsx`, `MuscleTargetingStats.tsx`, `docs/3D_ANATOMY.md` · *size:* M · *source:* rebrand brief (optional follow-up 1)
