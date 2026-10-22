@@ -145,6 +145,10 @@ Evidence behind the items below. Full replies live in the [reply log](https://do
   A one-off fix that still runs against prod and staging on every deploy, the same multiple-writer smell the seed had. Confirm it's a no-op in prod, fold any remaining effect into a migration, and remove the step.
   *where:* `tenxrep-api/.github/workflows/deploy.yml`, `deploy-staging.yml` · *size:* S · *source:* skill_id refactor 2026-10-21
 
+- [ ] **Decide how `is_calisthenics` relates to the `"calisthenics"` split tag (open question).**
+  After the skill_id change these are two near-identical signals: `is_calisthenics` ("is a calisthenics exercise", the source of truth) and the `"calisthenics"` entry in `split_types` ("fits the Calisthenics Techniques split"). The migration backfilled the flag *from* the tag, so they match today, but nothing keeps them in sync: tag a new exercise for the split and forget the flag, or the reverse, and they drift (staging already had a stray tag on Step-Up). **Options:** (a) keep both as deliberately distinct concepts (exercise property vs. programming choice) and document when they may differ; (b) derive the split's membership from `is_calisthenics` and drop the tag; (c) keep both but add a check or test that flags disagreements. Decide before the next batch of calisthenics exercises.
+  *where:* `tenxrep-api` (`split_types`, recommendation split selection), `scripts/all_exercises.py` · *size:* S to decide, S–M to implement · *source:* skill_id refactor 2026-10-22
+
 - [ ] **Long-term reference-data ownership.**
   Decided for now: migrations are the single writer and the seed only bootstraps fresh DBs. Still open: generate `scripts/all_exercises.py` *from* a migrated DB instead of hand-editing both, or keep hand-sync guarded by tests. Revisit once the fresh-DB item above lands.
   *where:* `tenxrep-api/scripts/` · *size:* S–M · *source:* skill_id refactor 2026-10-21
